@@ -5,226 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSQ Email</title>
     <!--[if !mso]><!-->
-    <!-- Это условный комментарий, который скрывает содержимое от Microsoft Outlook (mso). -->
-    <!-- Подключение кастомных шрифтов Qanelas. Не работает в Outlook. -->
+    <!-- Подключаем кастомные шрифты (работает в поддерживающих клиентах, Outlook их игнорирует) -->
     <style type="text/css">
         @font-face {
             font-family: 'Qanelas';
             font-style: normal;
-            font-weight: 400; /* Regular */
+            font-weight: 400;
             src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/fonts/Qanelas-Regular.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Qanelas';
             font-style: normal;
-            font-weight: 500; /* Medium */
+            font-weight: 500;
             src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/fonts/Qanelas-Medium.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Qanelas';
             font-style: normal;
-            font-weight: 700; /* Bold */
+            font-weight: 700;
             src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/fonts/Qanelas-Bold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Qanelas';
             font-style: normal;
-            font-weight: 800; /* ExtraBold */
+            font-weight: 800;
             src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/fonts/Qanelas-ExtraBold.woff2') format('woff2');
         }
     </style>
     <!--<![endif]-->
     <style>
-        /* --- ОБЩИЕ СТИЛИ ДЛЯ СОВМЕСТИМОСТИ --- */
-        /* Стили для сброса и нормализации отображения в разных почтовых клиентах */
-        body, table, td, a { 
-            -webkit-text-size-adjust: 100%; /* Запрещает авто-изменение размера текста в Safari */
-            -ms-text-size-adjust: 100%;     /* Запрещает авто-изменение размера текста в IE */
+        /* Сброс и обеспечение совместимости */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
-        table, td { 
-            mso-table-lspace: 0pt; /* Удаляет отступы, которые Outlook добавляет к таблицам (слева) */
-            mso-table-rspace: 0pt; /* Удаляет отступы, которые Outlook добавляет к таблицам (справа) */
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
         }
-        img { 
-            -ms-interpolation-mode: bicubic; /* Улучшает качество изображений при масштабировании в IE */
-            border: 0; 
-            height: auto; 
-            line-height: 100%; 
-            outline: none; 
-            text-decoration: none; 
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
         }
-        table { 
-            border-collapse: collapse !important; /* Убирает двойные рамки у таблиц */
+        table {
+            border-collapse: collapse !important;
         }
-        body { 
-            height: 100% !important; 
-            margin: 0 !important; 
-            padding: 0 !important; 
-            width: 100% !important; 
-            background-color: #ffffff; 
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            background-color: #ffffff;
         }
-        /* Класс для запасного (fallback) шрифта, если кастомный Qanelas не загрузится */
-        .fallback-font { 
-            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; 
+        .fallback-font {
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        }
+        /* Чтобы заголовок не переносился */
+        .nowrap {
+            white-space: nowrap;
         }
     </style>
 </head>
-<body style="background-color: #ffffff; margin: 0 !important; padding: 0 !important;">
+<body style="background-color: #ffffff; margin:0; padding:0;">
     <!--[if mso]>
     <style type="text/css">
-        /* Указание запасного шрифта специально для Microsoft Outlook */
-        .fallback-font { font-family: Arial, sans-serif; }
+        .fallback-font { font-family: Arial, sans-serif !important; }
     </style>
     <![endif]-->
-    
-    <!-- 
-        ОСНОВНАЯ СТРУКТУРА ПИСЬМА
-        Email-верстка строится на таблицах. Это самый надежный способ.
-        - cellpadding="0" и cellspacing="0" убирают внутренние отступы в ячейках, которые почтовые клиенты могут добавлять по умолчанию.
-        - border="0" убирает рамки у таблицы.
-    -->
-    
-    <!-- Общая таблица-обертка для всего письма. Растянута на 100% ширины. -->
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+    <!-- Обёртка -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
         <tr>
-            <!-- Центральная ячейка, выравнивает весь контент по центру. -->
-            <!-- padding: 0 10px; создает небольшие боковые отступы для всего письма на мобильных устройствах, чтобы контент не прилипал к краям экрана. -->
             <td align="center" style="padding: 0 10px;">
-                
-                <!-- Контейнер для основного контента. Жесткая ширина 600px для десктопов. -->
-                <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;" role="presentation">
                     
-                    <!-- === ВЕРТИКАЛЬНЫЙ ОТСТУП === -->
-                    <!-- Пустая строка-распорка для создания вертикального отступа сверху. -->
-                    <!-- Регулируйте height, чтобы изменить величину отступа. -->
+                    <!-- Верхний отступ -->
                     <tr>
-                        <td height="40" style="font-size: 40px; line-height: 40px;">&nbsp;</td>
+                        <td height="40" style="font-size:40px; line-height:40px;">&nbsp;</td>
                     </tr>
 
-                    <!-- === СЕКЦИЯ 1: OSQ OCTOBOX (ЗЕЛЕНЫЙ БЛОК) === -->
+                    <!-- === СЕКЦИЯ 1: ОСНОВНОЙ ЗЕЛЁНЫЙ БЛОК === -->
                     <tr>
                         <td>
-                            <!-- Таблица, которая формирует сам зеленый блок. -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 20px; background-color: #00A499;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius:20px; background-color:#00A499;" role="presentation">
                                 <tr>
-                                    <!-- 
-                                        Ячейка для ТОЧНОЙ НАСТРОЙКИ ОТСТУПОВ.
-                                        Вместо одного общего padding, мы используем вложенную таблицу с ячейками-распорками.
-                                        Это дает полный контроль над каждым отступом.
-                                    -->
                                     <td align="center">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <!-- Контент внутри зелёного блока (структура как у оригинала) -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                             <tr>
-                                                <!-- ВЕРХНИЙ ОТСТУП. Регулируйте height. -->
-                                                <td height="5" colspan="3" style="font-size: 5px; line-height: 5px;">&nbsp;</td>
+                                                <!-- Верхний спейсер -->
+                                                <td height="10" colspan="3" style="font-size:10px; line-height:10px;">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <!-- ЛЕВЫЙ ОТСТУП. У картинки его нет, поэтому здесь пусто. -->
-                                                
-                                                <!-- Ячейка с основным контентом (картинка + текст) -->
+                                                <!-- Содержимое: изображение + текст + правый отступ -->
                                                 <td valign="top">
-                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                         <tr>
-                                                            <!-- === Левая колонка Секции 1: Изображение === -->
-                                                            <!-- Картинка теперь прижата к левому краю зеленого блока. -->
-                                                            <td width="224" valign="top" style="font-size: 0;">
-                                                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-image-01.png" alt="OSQ OCTOBOX Product" width="224" style="display: block; width: 100%; max-width: 224px; height: auto; border-radius: 0px;">
+                                                            <!-- Изображение -->
+                                                            <td width="224" valign="top" style="font-size:0;">
+                                                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-image-01.png" alt="OSQ OCTOBOX Product" width="224" style="display:block; width:100%; max-width:224px; height:auto; border-radius:0;">
                                                             </td>
-                                                            
-                                                            <!-- === Горизонтальный отступ между колонками === -->
-                                                            <td width="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
-                                                            
-                                                            <!-- === Правая колонка Секции 1: Текст === -->
+                                                            <!-- Горизонтальный промежуток -->
+                                                            <td width="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
+                                                            <!-- Текстовая часть -->
                                                             <td valign="top">
-                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                    <!-- Заголовок -->
+                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                                     <tr>
-                                                                        <td style="padding-top: 10px; padding-bottom: 20px;">
-                                                                            <p class="fallback-font" style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 25px; font-weight: 800; color: #ffffff; line-height: 1.1;">OSQ OCTOBOX<sup style="font-size: 16px; font-weight: 500;">®</sup></p>
-                                                                            <p class="fallback-font" style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 14px; font-weight: 700; color: #ffffff; line-height: 1.1;">Уникальный продукт на рынке</p>
+                                                                        <td style="padding-top:10px; padding-bottom:20px;">
+                                                                            <p class="fallback-font" style="margin:0; font-family:'Qanelas', Arial, sans-serif; font-size:25px; font-weight:800; color:#ffffff; line-height:1.1;">OSQ OCTOBOX<sup style="font-size:16px; font-weight:500;">®</sup></p>
+                                                                            <p class="fallback-font" style="margin:0; font-family:'Qanelas', Arial, sans-serif; font-size:14px; font-weight:700; color:#ffffff; line-height:1.1;">Уникальный продукт на рынке</p>
                                                                         </td>
                                                                     </tr>
-                                                                    <!-- Блок с преимуществами (буллиты). Перестроен для горизонтального выравнивания. -->
+                                                                    <!-- Буллиты -->
                                                                     <tr>
-                                                                        <td style="padding-bottom: 20px;">
-                                                                            <!-- 
-                                                                                Эта таблица перестроена для горизонтального выравнивания.
-                                                                                Вместо двух колонок с тремя рядами, здесь три ряда по две колонки.
-                                                                                Это гарантирует, что "Два цветовых решения" будет на одной линии с "Не требует сборки" и т.д.
-                                                                                valign="top" у ячеек каждого ряда выравнивает их по верхнему краю.
-                                                                            -->
-                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                                <!-- Ряд 1: Преимущества -->
+                                                                        <td style="padding-bottom:20px;">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                                                <!-- Ряд 1 -->
                                                                                 <tr>
-                                                                                    <!-- Левая колонка с преимуществом -->
-                                                                                    <!-- width="140" - РЕГУЛИРУЕТ ПЕРЕНОС ТЕКСТА. -->
                                                                                     <td valign="top" width="140">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                                                             <tr>
                                                                                                 <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-icon-1.svg" width="22" alt=""></td>
                                                                                                 <td width="8"></td>
-                                                                                                <td valign="middle" class="fallback-font" style="line-height: 1.15; font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Два цветовых решения упаковки</td>
+                                                                                                <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Два цветовых решения упаковки</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
-                                                                                    <!-- Отступ между колонками -->
                                                                                     <td width="10"></td>
-                                                                                    <!-- Правая колонка с преимуществом -->
-                                                                                    <!-- width="126" - РЕГУЛИРУЕТ ПЕРЕНОС ТЕКСТА. -->
                                                                                     <td valign="top" width="126">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="60%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="60%" role="presentation">
                                                                                             <tr>
                                                                                                 <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-icon-4.svg" width="22" alt=""></td>
                                                                                                 <td width="8"></td>
-                                                                                                <td valign="middle" class="fallback-font" style="line-height: 1.15; font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Не требует сборки</td>
+                                                                                                <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Не требует сборки</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
                                                                                 </tr>
-                                                                                <!-- Вертикальный отступ между рядами. Регулируйте height. -->
-                                                                                <tr><td colspan="3" height="12" style="font-size: 12px; line-height: 12px;">&nbsp;</td></tr>
-                                                                                <!-- Ряд 2: Преимущества -->
+                                                                                <!-- Отступ между рядами -->
+                                                                                <tr><td colspan="3" height="12" style="font-size:12px; line-height:12px;">&nbsp;</td></tr>
+                                                                                <!-- Ряд 2 -->
                                                                                 <tr>
                                                                                     <td valign="top" width="140">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                                                             <tr>
                                                                                                 <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-icon-2.svg" width="22" alt=""></td>
                                                                                                 <td width="8"></td>
-                                                                                                <td valign="middle" class="fallback-font" style="line-height: 1.15; font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Уникальный внешний вид конструкции</td>
+                                                                                                <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Уникальный внешний вид конструкции</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
                                                                                     <td></td>
                                                                                     <td valign="top" width="126">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="70%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="70%" role="presentation">
                                                                                             <tr>
                                                                                                 <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-icon-5.svg" width="22" alt=""></td>
                                                                                                 <td width="8"></td>
-                                                                                                <td valign="middle" class="fallback-font" style="line-height: 1.15; font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Подходит под запайку</td>
+                                                                                                <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Подходит под запайку</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
                                                                                 </tr>
-                                                                                <!-- Вертикальный отступ между рядами -->
-                                                                                <tr><td colspan="3" height="12" style="font-size: 12px; line-height: 12px;">&nbsp;</td></tr>
-                                                                                <!-- Ряд 3: Преимущества -->
+                                                                                <!-- Отступ -->
+                                                                                <tr><td colspan="3" height="12" style="font-size:12px; line-height:12px;">&nbsp;</td></tr>
+                                                                                <!-- Ряд 3 -->
                                                                                 <tr>
                                                                                     <td valign="top" width="140">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                                                             <tr>
                                                                                                 <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-icon-3.svg" width="22" alt=""></td>
                                                                                                 <td width="8"></td>
-                                                                                                <td valign="middle" class="fallback-font" style="line-height: 1.15; font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Соответствует тренду устойчивого развития</td>
+                                                                                                <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Соответствует тренду устойчивого развития</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
                                                                                     <td></td>
                                                                                     <td valign="top" width="126">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="80%">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="80%" role="presentation">
                                                                                             <tr>
                                                                                                 <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/01-icon-6.svg" width="22" alt=""></td>
                                                                                                 <td width="8"></td>
-                                                                                                <td valign="middle" class="fallback-font" style="line-height: 1.15; font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Жесткий борт без деформации</td>
+                                                                                                <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Жесткий борт без деформации</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
@@ -232,20 +197,20 @@
                                                                             </table>
                                                                         </td>
                                                                     </tr>
-                                                                    <!-- Кнопка "Подробнее" -->
+                                                                    <!-- Кнопка -->
                                                                     <tr>
                                                                         <td align="left">
-                                                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" role="presentation">
                                                                                 <tr>
-                                                                                    <td align="center" style="border-radius: 20px; background-color: #ffffff;">
-                                                                                        <a href="https://osqgroup.ru" target="_blank" style="text-decoration: none; display: block; padding: 5px 10px;">
-                                                                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                                                    <td align="center" style="border-radius:20px; background-color:#ffffff;">
+                                                                                        <a href="https://osqgroup.ru" target="_blank" style="text-decoration:none; display:block; padding:5px 10px;">
+                                                                                            <table border="0" cellpadding="0" cellspacing="0" role="presentation">
                                                                                                 <tr>
-                                                                                                    <td style="font-size: 0px;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/button-web.svg" width="20" alt=""></td>
+                                                                                                    <td style="font-size:0;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/button-web.svg" width="20" alt=""></td>
                                                                                                     <td width="8"></td>
-                                                                                                    <td class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #000000; font-weight: 500;">Подробнее</td>
+                                                                                                    <td class="fallback-font" style="font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#000000; font-weight:500;">Подробнее</td>
                                                                                                     <td width="8"></td>
-                                                                                                    <td style="font-size: 0px;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/open-in-new.svg" width="16" alt=""></td>
+                                                                                                    <td style="font-size:0;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/open-in-new.svg" width="16" alt=""></td>
                                                                                                 </tr>
                                                                                             </table>
                                                                                         </a>
@@ -256,16 +221,15 @@
                                                                     </tr>
                                                                 </table>
                                                             </td>
+                                                            <!-- Правый отступ для симметрии -->
+                                                            <td width="15"></td>
                                                         </tr>
                                                     </table>
                                                 </td>
-                                                
-                                                <!-- ПРАВЫЙ ОТСТУП. Регулируйте width. -->
-                                                <td width="15"></td>
                                             </tr>
+                                            <!-- Нижний спейсер -->
                                             <tr>
-                                                <!-- НИЖНИЙ ОТСТУП. Регулируйте height. -->
-                                                <td height="5" colspan="3" style="font-size: 5px; line-height: 5px;">&nbsp;</td>
+                                                <td height="10" colspan="3" style="font-size:10px; line-height:10px;">&nbsp;</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -274,148 +238,194 @@
                         </td>
                     </tr>
 
-                    <!-- === ВЕРТИКАЛЬНЫЙ ОТСТУП === -->
-                    <!-- Пустая строка-распорка для создания вертикального отступа между секциями. -->
-                    <!-- Регулируйте height, чтобы изменить величину отступа. -->
+                    <!-- Пробел между секциями -->
                     <tr>
-                        <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+                        <td height="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
                     </tr>
 
                     <!-- === СЕКЦИЯ 2: OSQ OCTOBOX BLACK WOOD === -->
                     <tr>
                         <td>
-                            <!-- 
-                                Таблица-контейнер для второй секции. 
-                                Структура: [ЛЕВАЯ КОЛОНКА С ТЕКСТОМ] - [ОТСТУП] - [ПРАВАЯ КОЛОНКА С КАРТИНКОЙ]
-                                !!! ВАЖНО: Сумма ширин всех дочерних ячеек (310 + 10 + 280) должна быть равна 600px. !!!
-                            -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;" role="presentation">
                                 <tr>
-                                    <!-- 
-                                        === Левая колонка Секции 2: Текст === 
-                                        - width="310" - Жестко задает ширину текстового блока. Увеличивайте, чтобы текст занимал больше места по горизонтали.
-                                        - padding-left: 20px; - ОТСТУП СЛЕВА для всего текстового блока. Регулирует расстояние от левого края письма.
-                                        - valign="middle" - Выравнивает весь текстовый блок по вертикали относительно картинки справа.
-                                    -->
-                                    <td width="310" valign="middle" style="padding-left: 20px;">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <!-- Заголовок -->
-                                            <tr><td class="fallback-font" style="font-family: 'Qanelas', Arial, sans-serif; font-size: 20px; font-weight: 800; color: #00A499; line-height: 1.03; padding-bottom: 10px;">OSQ OCTOBOX BLACK<br>WOOD</td></tr>
-                                            <!-- Подзаголовок -->
-                                            <tr><td class="fallback-font" style="font-family: 'Qanelas', Arial, sans-serif; font-size: 14px; color: #000000; line-height: 1.1; padding-bottom: 15px;">Эксклюзивная технология с добавлением пигмента древесного угля</td></tr>
-                                            <!-- Преимущество 1 -->
-                                            <tr><td style="padding-bottom: 10px;"><table border="0" cellpadding="0" cellspacing="0"><tr><td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/02-icon-01.svg" width="22" alt=""></td><td width="8"></td><td valign="middle" class="fallback-font" style="font-family: 'Qanelas', Arial, sans-serif; font-size: 12px; color: #00A499; font-weight: 500;">Премиальное качество<br>инновационной технологии</td></tr></table></td></tr>
-                                            <!-- Преимущество 2 -->
-                                            <tr><td style="padding-bottom: 20px;"><table border="0" cellpadding="0" cellspacing="0"><tr><td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/02-icon-02.svg" width="22" alt=""></td><td width="8"></td><td valign="middle" class="fallback-font" style="font-family: 'Qanelas', Arial, sans-serif; font-size: 12px; color: #00A499; font-weight: 500;">Вариант конструкции<br>с двумя отсеками</td></tr></table></td></tr>
-                                            <!-- Кнопка "Подробнее" -->
+                                    <td style="padding:0;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;" role="presentation">
                                             <tr>
-                                                <td align="left">
-                                                    <table border="0" cellspacing="0" cellpadding="0">
+                                                <!-- Левая текстовая часть -->
+                                                <td width="320" valign="middle" style="padding-left:20px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                        <!-- Заголовок без переноса -->
                                                         <tr>
-                                                            <td align="center" style="border-radius: 20px; background-color: #00A499;">
-                                                                <a href="https://osqgroup.ru" target="_blank" style="text-decoration: none; display: block; padding: 5px 10px;">
-                                                                    <table border="0" cellspacing="0" cellpadding="0">
-                                                                        <tr>
-                                                                            <td style="font-size: 0px;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/button-web-white.svg" width="20" alt=""></td>
-                                                                            <td width="8"></td>
-                                                                            <td class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Подробнее</td>
-                                                                            <td width="8"></td>
-                                                                            <td style="font-size: 0px;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/open-in-new-white.svg" width="16" alt=""></td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </a>
+                                                            <td class="fallback-font" style="font-family:'Qanelas', Arial, sans-serif; font-size:20px; font-weight:800; color:#00A499; line-height:1.03; padding-bottom:10px;">
+                                                                <span class="nowrap">OSQ OCTOBOX BLACK WOOD</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Подзаголовок -->
+                                                        <tr>
+                                                            <td class="fallback-font" style="font-family:'Qanelas', Arial, sans-serif; font-size:14px; color:#000000; line-height:1.1; padding-bottom:15px;">
+                                                                Эксклюзивная технология с добавлением пигмента древесного угля
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Премиальное качество -->
+                                                        <tr>
+                                                            <td style="padding-bottom:10px;">
+                                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                                    <tr>
+                                                                        <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/02-icon-01.svg" width="22" alt=""></td>
+                                                                        <td width="8"></td>
+                                                                        <td valign="middle" class="fallback-font" style="font-family:'Qanelas', Arial, sans-serif; font-size:12px; color:#00A499; font-weight:500; line-height:1.15;">
+                                                                            Премиальное качество инновационной технологии
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Вариант конструкции -->
+                                                        <tr>
+                                                            <td style="padding-bottom:20px;">
+                                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                                    <tr>
+                                                                        <td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/02-icon-02.svg" width="22" alt=""></td>
+                                                                        <td width="8"></td>
+                                                                        <td valign="middle" class="fallback-font" style="font-family:'Qanelas', Arial, sans-serif; font-size:12px; color:#00A499; font-weight:500; line-height:1.15;">
+                                                                            Вариант конструкции с двумя отсеками
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Кнопка -->
+                                                        <tr>
+                                                            <td align="left">
+                                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                                    <tr>
+                                                                        <td align="center" style="border-radius:20px; background-color:#00A499;">
+                                                                            <a href="https://osqgroup.ru" target="_blank" style="text-decoration:none; display:block; padding:5px 10px;">
+                                                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                                                    <tr>
+                                                                                        <td style="font-size:0;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/button-web-white.svg" width="20" alt=""></td>
+                                                                                        <td width="8"></td>
+                                                                                        <td class="fallback-font" style="font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Подробнее</td>
+                                                                                        <td width="8"></td>
+                                                                                        <td style="font-size:0;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/open-in-new-white.svg" width="16" alt=""></td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
                                                             </td>
                                                         </tr>
                                                     </table>
                                                 </td>
+                                                <!-- Картинка (слева-близко к тексту, уменьшен gap) -->
+                                                <td valign="top" align="right" style="font-size:0; padding:0;">
+                                                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/02-image.png?v=2" alt="OSQ OCTOBOX BLACK WOOD" width="280" style="display:block; width:280px; height:auto;">
+                                                </td>
                                             </tr>
                                         </table>
-                                    </td>
-                                    
-                                    <!-- 
-                                        === Горизонтальный отступ между колонками === 
-                                        Пустая ячейка-распорка. Регулируйте width, чтобы изменить расстояние между текстом и картинкой.
-                                    -->
-                                    <td width="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-
-                                    <!-- 
-                                        === Правая колонка Секции 2: Изображение ===
-                                        - width="280" - Жесткая ширина колонки с картинкой.
-                                    -->
-                                    <td width="280" valign="middle" align="right" style="font-size: 0;">
-                                        <!-- 
-                                            !!! КЕШ-БАСТЕР !!!
-                                            Добавлен параметр ?v=2 к URL, чтобы сбросить кеш CDN и загрузить новую версию картинки.
-                                            Если будете менять картинку еще раз, измените на ?v=3 и т.д.
-                                        -->
-                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/02-image.png?v=2" alt="OSQ OCTOBOX BLACK WOOD" width="280" style="display: block; width: 100%; max-width: 280px; height: auto;">
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
-                    
-                    <!-- === ВЕРТИКАЛЬНЫЙ ОТСТУП === -->
-                    <!-- Пустая строка-распорка для создания вертикального отступа между секциями. -->
-                    <!-- Регулируйте height, чтобы изменить величину отступа. -->
+
+                    <!-- Отступ -->
                     <tr>
-                        <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+                        <td height="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
                     </tr>
 
-<!-- === СЕКЦИЯ 3: SEAL PAPER PACK === -->
+                    <!-- === СЕКЦИЯ 3: SEAL PAPER PACK с наложением тренда === -->
                     <tr>
-                        <td align="center">
-                            <!-- 
-                                Таблица-контейнер для всей третьей секции.
-                                Имеет фоновое изображение "ГЛАВНЫЙ ТРЕНД ГОДА".
-                                background - для старых клиентов.
-                                style="background-image" - для современных.
-                            -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" background="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/04-main-trend-bg.svg" style="background-image: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/04-main-trend-bg.svg'); background-position: center top; background-repeat: no-repeat;">
+                        <td>
+                            <!-- Фон с большим заголовком (trend) -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" background="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/04-main-trend-bg.svg" style="background-image:url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/04-main-trend-bg.svg'); background-position:center top; background-repeat:no-repeat;" role="presentation">
                                 <tr>
-                                    <td align="center" style="padding: 0 20px;">
-                                        <!-- Внутренний контейнер с отступами -->
-                                        <table border="0" cellpadding="0" cellspacing="0" width="560" style="max-width: 560px;">
-                                            <!-- Вертикальный отступ сверху, чтобы сдвинуть зеленый блок ниже -->
-                                            <tr><td height="50" style="font-size: 50px; line-height: 50px;">&nbsp;</td></tr>
+                                    <td>
+                                        <!-- Отдельный верхний спейсер, чтобы тренд был выше -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                            <tr><td height="30" style="font-size:30px; line-height:30px;">&nbsp;</td></tr>
+                                            <!-- Следующий ряд: зелёный блок, поднятый поверх маркетингового заголовка -->
                                             <tr>
-                                                <!-- Ячейка с зеленым фоном и скругленными углами -->
-                                                <td bgcolor="#00A499" style="background-color: #00A499; border-radius: 20px;">
-                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <td>
+                                                    <!-- Зеленый блок с отрицательным сдвигом вверх для эффекта перекрытия -->
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius:20px; background-color:#00A499; margin-top:-40px;" role="presentation">
                                                         <tr>
-                                                            <td align="center" style="padding: 20px;">
-                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <td align="center">
+                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                                    <!-- Увеличенные верхний и нижний padding для высоты -->
+                                                                    <tr><td height="15" colspan="4" style="font-size:15px; line-height:15px;">&nbsp;</td></tr>
                                                                     <tr>
-                                                                        <!-- Левая колонка: Изображение -->
-                                                                        <td width="224" valign="top" style="font-size: 0;">
-                                                                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/04-image.png" alt="SEAL PAPER PACK" width="224" style="display: block; width: 100%; max-width: 224px; height: auto;">
+                                                                        <!-- Левая картинка -->
+                                                                        <td width="224" valign="top" style="font-size:0;">
+                                                                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/04-image.png?v=2" alt="SEAL PAPER PACK" width="224" style="display:block; width:100%; max-width:224px; height:auto;">
                                                                         </td>
-                                                                        <!-- Отступ -->
-                                                                        <td width="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
-                                                                        <!-- Правая колонка: Текст -->
+                                                                        <!-- Промежуток -->
+                                                                        <td width="20" style="font-size:20px; line-height:20px;">&nbsp;</td>
+                                                                        <!-- Текстовая часть -->
                                                                         <td valign="top">
-                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                                                 <!-- Заголовок -->
-                                                                                <tr><td class="fallback-font" style="font-family: 'Qanelas', Arial, sans-serif; font-size: 25px; font-weight: 800; color: #ffffff; line-height: 1.1; padding-bottom: 5px;">SEAL PAPER PACK</td></tr>
+                                                                                <tr>
+                                                                                    <td style="padding-top:10px; padding-bottom:5px;">
+                                                                                        <p class="fallback-font" style="margin:0; font-family:'Qanelas', Arial, sans-serif; font-size:25px; font-weight:800; color:#ffffff; line-height:1.1;">SEAL PAPER PACK</p>
+                                                                                    </td>
+                                                                                </tr>
                                                                                 <!-- Подзаголовок -->
-                                                                                <tr><td class="fallback-font" style="font-family: 'Qanelas', Arial, sans-serif; font-size: 14px; color: #ffffff; line-height: 1.1; padding-bottom: 20px;">Уникальная технология запайки картонной пищевой упаковки от OSQ</td></tr>
+                                                                                <tr>
+                                                                                    <td style="padding-bottom:20px;">
+                                                                                        <p class="fallback-font" style="margin:0; font-family:'Qanelas', Arial, sans-serif; font-size:14px; color:#ffffff; line-height:1.1;">Уникальная технология запайки картонной пищевой упаковки от OSQ</p>
+                                                                                    </td>
+                                                                                </tr>
                                                                                 <!-- Преимущества -->
                                                                                 <tr>
-                                                                                    <td style="padding-bottom: 20px;">
-                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                    <td style="padding-bottom:20px;">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
                                                                                             <!-- Ряд 1 -->
                                                                                             <tr>
-                                                                                                <td valign="top" width="140"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="22" alt=""></td><td width="8"></td><td valign="middle" class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Экономия времени и бюджета</td></tr></table></td>
+                                                                                                <td valign="top" width="140">
+                                                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                                                                        <tr>
+                                                                                                            <td width="16" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="16" alt=""></td>
+                                                                                                            <td width="8"></td>
+                                                                                                            <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Экономия времени и бюджета</td>
+                                                                                                        </tr>
+                                                                                                    </table>
+                                                                                                </td>
                                                                                                 <td width="10"></td>
-                                                                                                <td valign="top" width="126"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="22" alt=""></td><td width="8"></td><td valign="middle" class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Идеально для Retail и готовой еды</td></tr></table></td>
+                                                                                                <td valign="top" width="126">
+                                                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                                                                        <tr>
+                                                                                                            <td width="16" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="16" alt=""></td>
+                                                                                                            <td width="8"></td>
+                                                                                                            <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Идеально для Retail и готовой еды</td>
+                                                                                                        </tr>
+                                                                                                    </table>
+                                                                                                </td>
                                                                                             </tr>
                                                                                             <!-- Отступ -->
-                                                                                            <tr><td colspan="3" height="12" style="font-size: 12px; line-height: 12px;">&nbsp;</td></tr>
+                                                                                            <tr><td colspan="3" height="12" style="font-size:12px; line-height:12px;">&nbsp;</td></tr>
                                                                                             <!-- Ряд 2 -->
                                                                                             <tr>
-                                                                                                <td valign="top" width="140"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="22" alt=""></td><td width="8"></td><td valign="middle" class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">Широкие возможности индивидуализации</td></tr></table></td>
-                                                                                                <td width="10"></td>
-                                                                                                <td valign="top" width="126"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="22" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="22" alt=""></td><td width="8"></td><td valign="middle" class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #ffffff; font-weight: 500;">На 80% меньше пластика</td></tr></table></td>
+                                                                                                <td valign="top" width="140">
+                                                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                                                                        <tr>
+                                                                                                            <td width="16" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="16" alt=""></td>
+                                                                                                            <td width="8"></td>
+                                                                                                            <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">Широкие возможности индивидуализации</td>
+                                                                                                        </tr>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                                <td></td>
+                                                                                                <td valign="top" width="126">
+                                                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                                                                                                        <tr>
+                                                                                                            <td width="16" valign="top"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/03-checkmark.svg" width="16" alt=""></td>
+                                                                                                            <td width="8"></td>
+                                                                                                            <td valign="middle" class="fallback-font" style="line-height:1.15; font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#ffffff; font-weight:500;">На 80% меньше пластика</td>
+                                                                                                        </tr>
+                                                                                                    </table>
+                                                                                                </td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
@@ -423,17 +433,17 @@
                                                                                 <!-- Кнопка -->
                                                                                 <tr>
                                                                                     <td align="left">
-                                                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
                                                                                             <tr>
-                                                                                                <td align="center" style="border-radius: 20px; background-color: #ffffff;">
-                                                                                                    <a href="https://osqgroup.ru" target="_blank" style="text-decoration: none; display: block; padding: 5px 10px;">
-                                                                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                                                                <td align="center" style="border-radius:20px; background-color:#ffffff;">
+                                                                                                    <a href="https://osqgroup.ru" target="_blank" style="text-decoration:none; display:block; padding:5px 10px;">
+                                                                                                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
                                                                                                             <tr>
-                                                                                                                <td style="font-size: 0px;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/button-web.svg" width="20" alt=""></td>
+                                                                                                                <td style="font-size:0;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/button-web.svg" width="20" alt=""></td>
                                                                                                                 <td width="8"></td>
-                                                                                                                <td class="fallback-font" style="font-size: 12px; font-family: 'Qanelas', Arial, sans-serif; color: #000000; font-weight: 500;">Подробнее</td>
+                                                                                                                <td class="fallback-font" style="font-size:12px; font-family:'Qanelas', Arial, sans-serif; color:#000000; font-weight:500;">Подробнее</td>
                                                                                                                 <td width="8"></td>
-                                                                                                                <td style="font-size: 0px;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/open-in-new.svg" width="16" alt=""></td>
+                                                                                                                <td style="font-size:0;"><img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/images/open-in-new.svg" width="16" alt=""></td>
                                                                                                             </tr>
                                                                                                         </table>
                                                                                                     </a>
@@ -444,31 +454,34 @@
                                                                                 </tr>
                                                                             </table>
                                                                         </td>
+                                                                        <!-- Правый отступ внутри зелёного блока для «дыхания» -->
+                                                                        <td width="15"></td>
                                                                     </tr>
+                                                                    <!-- Нижний спейсер -->
+                                                                    <tr><td height="15" colspan="4" style="font-size:15px; line-height:15px;">&nbsp;</td></tr>
                                                                 </table>
                                                             </td>
                                                         </tr>
                                                     </table>
                                                 </td>
                                             </tr>
+                                            <!-- Дополнительный нижний отступ под зелёным блоком -->
+                                            <tr><td height="5" style="font-size:5px; line-height:5px;">&nbsp;</td></tr>
                                         </table>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
-                    
-                    <!-- === ВЕРТИКАЛЬНЫЙ ОТСТУП === -->
-                    <!-- Пустая строка-распорка для создания вертикального отступа снизу. -->
-                    <!-- Регулируйте height, чтобы изменить величину отступа. -->
+
+                    <!-- Нижний отступ всего письма -->
                     <tr>
-                        <td height="40" style="font-size: 40px; line-height: 40px;">&nbsp;</td>
+                        <td height="40" style="font-size:40px; line-height:40px;">&nbsp;</td>
                     </tr>
 
                 </table>
-
             </td>
         </tr>
     </table>
 </body>
-</html> 
+</html>
