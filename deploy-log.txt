@@ -7,3 +7,13 @@ CDN VER     : https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@f962d8b/
 Changed files:
   - deploy-changed.txt
   - deploy.bat
+=========================================
+2025-08-04 16:40:08
+Commit FULL : d45a019c12c23dbddd9c2aca2e9d2322134f20f7
+Commit SHORT: d45a019
+CDN MAIN    : https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/
+CDN VER     : https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@d45a019/2025-07-25-osq-email/
+Changed files:
+  - deploy-changed.txt
+  - deploy-log.txt
+  - deploy.bat

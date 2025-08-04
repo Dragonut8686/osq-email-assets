@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM OSQ Email Assets - Auto Deploy (v2.3)
+REM OSQ Email Assets - Auto Deploy (v2.4)
 REM MUST be saved as UTF-8 WITHOUT BOM
 REM ============================================================
 
@@ -127,14 +127,15 @@ if exist "%CHANGED_LIST%" (
 REM HEAD check on fallback file
 set "CHECK_FILE=%PROJECT_DIR%\images\01-icon-2.png"
 if exist "%CHECK_FILE%" (
-    REM get relative path after project dir, convert backslashes to forward slashes
-    for %%I in ("%CHECK_FILE%") do set "REL_PATH=%%~pI%%~nxI"
+    REM compute relative path: strip project prefix
+    set "REL_PATH=%CHECK_FILE:%PROJECT_DIR%\=%"
     REM strip leading backslash if present
-    if "%REL_PATH:~0,1%"=="\" set "REL_PATH=%REL_PATH:~1%"
-    set "REL_PATH=%REL_PATH:\=/%"
+    if "!REL_PATH:~0,1!"=="\" set "REL_PATH=!REL_PATH:~1!"
+    REM convert backslashes to forward slashes
+    set "REL_PATH=!REL_PATH:\=/%!"
 
-    set "URL_MAIN=%CDN_BASE_MAIN%%REL_PATH%"
-    set "URL_VER=%CDN_BASE_VER%%REL_PATH%"
+    set "URL_MAIN=%CDN_BASE_MAIN%!REL_PATH!"
+    set "URL_VER=%CDN_BASE_VER%!REL_PATH!"
 
     echo [check] HEAD %URL_MAIN%
     powershell -NoLogo -NoProfile -Command "try{ $r=Invoke-WebRequest -Method Head -Uri '%URL_MAIN%' -UseBasicParsing; Write-Host '  MAIN STATUS:' $r.StatusCode } catch { Write-Host '  MAIN ERROR:' $_.Exception.Message }"
