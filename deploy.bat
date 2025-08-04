@@ -6,8 +6,9 @@ echo    OSQ Email Assets - Auto Deploy
 echo =========================================
 
 REM Получаем текущую дату и время
-for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
-set "timestamp=%dt:~0,4%-%dt:~4,2%-%dt:~6,2% %dt:~8,2%:%dt:~10,2%:%dt:~12,2%"
+for /f "tokens=1-3 delims=/ " %%a in ('date /t') do set "date=%%a %%b %%c"
+for /f "tokens=1-2 delims=: " %%a in ('time /t') do set "time=%%a:%%b"
+set "timestamp=%date% %time%"
 
 echo Текущее время: %timestamp%
 echo.
