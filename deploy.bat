@@ -17,7 +17,7 @@ set "LOG_FILE=deploy-log.txt"
 set "CHANGED_LIST=deploy-changed.txt"
 
 REM --- TIMESTAMP ---
-for /f "delims=" %%a in ('powershell -NoLogo -NoProfile -Command "Get-Date -Format ''yyyy-MM-dd HH:mm:ss''"') do set "TIMESTAMP=%%a"
+for /f "delims=" %%a in ('powershell -NoLogo -NoProfile -Command "Get-Date -Format 'yyyy-MM-dd HH:mm:ss'"') do set "TIMESTAMP=%%a"
 
 echo =========================================
 echo   OSQ Email Assets - Auto Deploy (v2)
@@ -139,7 +139,7 @@ echo [Log] Writing %LOG_FILE% ...
     echo Commit SHORT: %COMMIT_SHORT%
     echo CDN MAIN: %CDN_BASE_MAIN%
     echo CDN VER : %CDN_BASE_VER%
-    echo Changed files \(staged before commit\):
+    echo Changed files (staged before commit):
     if exist "%CHANGED_LIST%" (
         for /f "usebackq delims=" %%f in ("%CHANGED_LIST%") do echo   - %%f
     ) else (
