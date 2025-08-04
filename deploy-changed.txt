@@ -1,3 +1,0 @@
-deploy-changed.txt
-deploy-log.txt
-deploy.bat
