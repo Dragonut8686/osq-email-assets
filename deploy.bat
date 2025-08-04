@@ -5,7 +5,7 @@ REM ================================
 REM OSQ Email Assets – Auto Deploy
 REM ================================
 
-REM Получаем timestamp
+REM Получаем timestamp для cache-bust и тегов
 for /f "delims=" %%a in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMddHHmmss"') do set "TIMESTAMP=%%a"
 
 echo =========================================
@@ -24,7 +24,7 @@ if not exist ".git" (
     git init
 )
 
-REM Проверяем origin
+REM Проверяем, есть ли origin
 git remote | findstr /i "^origin$" >nul 2>&1
 if errorlevel 1 (
     echo [INFO] Adding origin remote...
@@ -33,7 +33,7 @@ if errorlevel 1 (
     echo [INFO] Origin already exists.
 )
 
-REM Fetch и переключение на main
+REM Получаем изменения и переключаемся на main
 echo [INFO] Fetching origin...
 git fetch origin
 
@@ -66,26 +66,26 @@ git push origin main
 if errorlevel 0 (
     echo [INFO] Push succeeded.
 ) else (
-    echo [WARN] Push may have issues, continuing.
+    echo [WARN] Push may быть некорректным, продолжаем.
 )
 
-REM Tag
+REM Тегируем
 set "TAG=deploy-%TIMESTAMP%"
 echo [INFO] Tagging as %TAG%...
 git tag -f %TAG%
 git push origin %TAG% --force
 
-REM Run patch/build script
+REM Запускаем PowerShell-патч
 if exist "deploy.ps1" (
-    echo [INFO] Running patch and build...
+    echo [INFO] Running patch/build script...
     powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0deploy.ps1" -Timestamp "%TIMESTAMP%"
 ) else (
-    echo [ERROR] deploy.ps1 not found, skipping patch/build.
+    echo [ERROR] deploy.ps1 not found; skipping patch/build.
 )
 
 echo.
 echo ========================================
-echo   Deploy complete
+echo   ✅ Deploy complete
 echo ========================================
 echo Final HTMLs: dist\<email-folder>\email-final.html
 echo.

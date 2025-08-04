@@ -2,8 +2,9 @@ param(
     [string]$Timestamp = ""
 )
 
-# Set working directory to script location
-$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+# Перейти в директорию скрипта
+$scriptPath = $MyInvocation.MyCommand.Path
+$scriptDir = Split-Path -Parent $scriptPath
 Set-Location $scriptDir
 
 if ([string]::IsNullOrEmpty($Timestamp)) {
@@ -12,12 +13,12 @@ if ([string]::IsNullOrEmpty($Timestamp)) {
 
 Write-Host "[INFO] Patch run. Timestamp=$Timestamp"
 
-# Try to get short commit SHA; fallback to "main"
+# Получаем короткий SHA текущего коммита; если не удалось — fallback на main
 $sha = "main"
 try {
-    $got = & git rev-parse --short=7 HEAD 2>$null
-    if ($LASTEXITCODE -eq 0 -and $got) {
-        $sha = $got.Trim()
+    $possible = git rev-parse --short=7 HEAD 2>$null
+    if ($LASTEXITCODE -eq 0 -and $possible) {
+        $sha = $possible.Trim()
     } else {
         Write-Warning "Could not get git SHA, using 'main'."
     }
@@ -27,10 +28,10 @@ try {
 
 Write-Host "[INFO] Using SHA=$sha"
 
-# Regex for images
+# Регекс для изображений (png/jpg/svg) — добавляем ?v=...
 $imgRegex = '(\.(?:png|jpe?g|svg))(?:\?v=\d+)?'
 
-# Patch all .html/.css/.js: add ?v= and replace @main/ with @<sha>/
+# 1. Патчим все .html/.css/.js: добавляем ?v= и подставляем SHA вместо main
 Get-ChildItem -Recurse -Include *.html,*.css,*.js -ErrorAction SilentlyContinue | ForEach-Object {
     $path = $_.FullName
     try {
@@ -51,7 +52,7 @@ Get-ChildItem -Recurse -Include *.html,*.css,*.js -ErrorAction SilentlyContinue 
     }
 }
 
-# Find all email folders containing index.html
+# 2. Ищем подпапки с письмами (index.html)
 $emailFolders = Get-ChildItem -Directory | Where-Object {
     Test-Path (Join-Path $_.FullName "index.html")
 }
@@ -64,7 +65,7 @@ if (-not $emailFolders) {
     }
 }
 
-# Build final HTML per email folder
+# 3. Собираем финальные HTML
 foreach ($folder in $emailFolders) {
     $name = $folder.Name
     $sourceIndex = Join-Path $folder.FullName "index.html"
