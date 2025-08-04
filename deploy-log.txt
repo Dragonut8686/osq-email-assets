@@ -37,3 +37,12 @@ Changed files:
   - deploy-changed.txt
   - deploy-log.txt
   - deploy.bat
+=========================================
+2025-08-04 16:43:07
+Commit FULL : 5882e648fd8df89370cfacb0e601d0583d7a4c03
+Commit SHORT: 5882e64
+CDN MAIN    : https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/
+CDN VER     : https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@5882e64/2025-07-25-osq-email/
+Changed files:
+  - deploy-log.txt
+  - deploy.bat

@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM OSQ Email Assets - Auto Deploy (v2.4)
+REM OSQ Email Assets - Auto Deploy (v2.5)
 REM MUST be saved as UTF-8 WITHOUT BOM
 REM ============================================================
 
@@ -31,7 +31,7 @@ if not exist ".git" (
     git init
 )
 
-REM ensure origin
+REM ensure origin remote
 for /f "delims=" %%r in ('git remote') do set "HAS_REMOTE=%%r"
 if not defined HAS_REMOTE (
     git remote add origin "%REPO_URL%"
@@ -60,7 +60,7 @@ REM stage changes
 echo [stage] adding all changes...
 git add -A
 
-REM record staged
+REM record staged files
 git diff --name-only --cached > "%CHANGED_LIST%"
 
 REM commit if any
@@ -79,8 +79,7 @@ echo [push] pushing to origin main...
 git push -u origin main
 if errorlevel 1 (
     echo [error] push failed
-    pause
-    goto :end
+    goto :push_fail
 )
 
 REM commit info
@@ -124,38 +123,36 @@ if exist "%CHANGED_LIST%" (
     echo   - none>> "%LOG_FILE%"
 )
 
-REM HEAD check on fallback file
-set "CHECK_FILE=%PROJECT_DIR%\images\01-icon-2.png"
+:: ---------- Быстрый HEAD-чек ----------
+set "CHECK_FILE=%PROJECT_DIR%/images/01-icon-2.png"
 if exist "%CHECK_FILE%" (
-    REM compute relative path: strip project prefix
-    set "REL_PATH=%CHECK_FILE:%PROJECT_DIR%\=%"
-    REM strip leading backslash if present
-    if "!REL_PATH:~0,1!"=="\" set "REL_PATH=!REL_PATH:~1!"
-    REM convert backslashes to forward slashes
-    set "REL_PATH=!REL_PATH:\=/%!"
-
-    set "URL_MAIN=%CDN_BASE_MAIN%!REL_PATH!"
-    set "URL_VER=%CDN_BASE_VER%!REL_PATH!"
-
-    echo [check] HEAD %URL_MAIN%
-    powershell -NoLogo -NoProfile -Command "try{ $r=Invoke-WebRequest -Method Head -Uri '%URL_MAIN%' -UseBasicParsing; Write-Host '  MAIN STATUS:' $r.StatusCode } catch { Write-Host '  MAIN ERROR:' $_.Exception.Message }"
-
-    echo [check] HEAD %URL_VER%
-    powershell -NoLogo -NoProfile -Command "try{ $r=Invoke-WebRequest -Method Head -Uri '%URL_VER%' -UseBasicParsing; Write-Host '  VER STATUS:' $r.StatusCode } catch { Write-Host '  VER ERROR:' $_.Exception.Message }"
-) else (
-    echo [check] fallback file not found: %CHECK_FILE%
+    rem Удаляем %PROJECT_DIR%/ из пути и заменяем обратные слэши на прямые
+    set "_TMP_PATH=%CHECK_FILE:/=\%"
+    setlocal enabledelayedexpansion
+    set "_TMP_PATH=!_TMP_PATH:%PROJECT_DIR%\=!"
+    set "_TMP_PATH=!_TMP_PATH:\=/!"
+    endlocal & set "CDN_PATH=%_TMP_PATH%"
+    set "URL_MAIN=%CDN_BASE_MAIN%%CDN_PATH%"
+    set "URL_VER=%CDN_BASE_VER%%CDN_PATH%"
+    echo [HEAD] Проверка CDN (MAIN)...
+    echo   MAIN: %URL_MAIN%
+    powershell -NoLogo -NoProfile -Command ^
+      "Invoke-WebRequest -Method Head -Uri '%URL_MAIN%' -UseBasicParsing | ForEach-Object {Write-Host ('  STATUS: ' + $_.StatusCode)}"
+    echo [HEAD] Проверка CDN (VER)...
+    echo   VER : %URL_VER%
+    powershell -NoLogo -NoProfile -Command ^
+      "Invoke-WebRequest -Method Head -Uri '%URL_VER%' -UseBasicParsing | ForEach-Object {Write-Host ('  STATUS: ' + $_.StatusCode)}"
 )
 
 del "%CHANGED_LIST%" >nul 2>&1
+goto :eof
 
+:push_fail
 echo.
-echo =========================================
-echo Deploy complete. Log appended to %LOG_FILE%
-echo =========================================
+echo ========= ОШИБКА PUSH =========
+echo Проверьте соединение или токен доступа.
+echo =================================
 pause
 
 :end
 endlocal
-
-
-
