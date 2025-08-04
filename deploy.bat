@@ -5,7 +5,10 @@ REM ================================
 REM OSQ Email Assets - Auto Deploy
 REM ================================
 
-:: Получаем timestamp для cache-bust и коммита
+REM РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј UTF-8 РІС‹РІРѕРґ (РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ, С‡С‚РѕР±С‹ РјРёРЅРёРјРёР·РёСЂРѕРІР°С‚СЊ РєСЂР°РєРѕР·СЏР±СЂС‹)
+chcp 65001 >nul
+
+REM РџРѕР»СѓС‡Р°РµРј timestamp РІРёРґР° 20250804133243
 for /f "delims=" %%a in ('powershell -NoProfile -Command "Get-Date -Format yyyyMMddHHmmss"') do set "TIMESTAMP=%%a"
 
 echo =========================================
@@ -14,98 +17,95 @@ echo   Timestamp: %TIMESTAMP%
 echo =========================================
 echo.
 
-:: Проверяем, есть ли git-репозиторий
+REM РџРѕРґРЅРёРјР°РµРјСЃСЏ РІ РґРёСЂРµРєС‚РѕСЂРёСЋ СЃРєСЂРёРїС‚Р°
+pushd "%~dp0"
+
+REM РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј URL СЂРµРїРѕР·РёС‚РѕСЂРёСЏ
+set "REPO_URL=https://github.com/Dragonut8686/osq-email-assets.git"
+
+REM РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј git, РµСЃР»Рё РЅСѓР¶РЅРѕ
 if not exist ".git" (
-    echo [INFO] .git не найден. Инициализируем репозиторий...
+    echo [INFO] Git repo not found. Initializing...
     git init
 )
 
-:: Проверяем, задан ли origin
+REM Р”РѕР±Р°РІР»СЏРµРј remote origin, РµСЃР»Рё РЅРµС‚
 git remote | findstr /i "^origin$" >nul 2>&1
 if errorlevel 1 (
-    echo [INFO] Добавляем remote origin...
-    git remote add origin https://github.com/Dragonut8686/osq-email-assets.git
+    echo [INFO] Adding origin remote...
+    git remote add origin %REPO_URL%
 ) else (
-    echo [INFO] Remote origin уже существует.
+    echo [INFO] Origin remote already exists.
 )
 
-:: Обновляем информацию с удалённого
-echo [INFO] Получаем обновления из origin...
+REM РџРѕРґС‚СЏРіРёРІР°РµРј Рё РїРµСЂРµРєР»СЋС‡Р°РµРјСЃСЏ РЅР° main
+echo [INFO] Fetching origin...
 git fetch origin
 
-:: Переключаемся на main (создаём и привязываем если нужно)
 git rev-parse --verify main >nul 2>&1
 if errorlevel 1 (
-    echo [INFO] Ветка main отсутствует локально, создаём отслеживаемую из origin/main...
+    echo [INFO] Creating local main tracking origin/main...
     git switch -c main origin/main 2>nul || git switch -c main
 ) else (
     git switch main
-    echo [INFO] Обновляем локальную main из origin/main...
+    echo [INFO] Fast-forward pulling origin/main...
     git pull --ff-only origin main 2>nul
 )
 
-:: Добавляем все изменения
-echo [INFO] Стадируем файлы...
+REM РЎС‚Р°РґРёСЂСѓРµРј РІСЃРµ РёР·РјРµРЅРµРЅРёСЏ
+echo [INFO] Staging all changes...
 git add -A
 
-:: Проверяем, есть ли что коммитить
+REM РљРѕРјРјРёС‚РёРј, РµСЃР»Рё РµСЃС‚СЊ РёР·РјРµРЅРµРЅРёСЏ
 git diff --cached --quiet
-if %errorlevel% equ 0 (
-    echo [INFO] Нет изменений для коммита.
-) else (
-    echo [INFO] Коммитим изменения...
+if errorlevel 1 (
+    echo [INFO] Committing changes...
     git commit -m "Assets update %TIMESTAMP%"
+) else (
+    echo [INFO] No changes to commit.
 )
 
-:: Пушим ветку main
-echo [INFO] Пушим на GitHub...
+REM РџСѓС€РёРј main
+echo [INFO] Pushing main branch...
 git branch -M main
 git push -u origin main
 
 if errorlevel 0 (
-    echo [INFO] Успешно запушено.
+    echo [INFO] Push succeeded.
 ) else (
-    echo [ERROR] Ошибка при пуше. Проверьте доступ/аутентификацию.
+    echo [ERROR] Push failed.
 )
 
-:: Получаем короткий SHA текущего HEAD
+REM Р‘РµСЂС‘Рј РєРѕСЂРѕС‚РєРёР№ SHA С‚РµРєСѓС‰РµРіРѕ HEAD
 for /f "delims=" %%h in ('git rev-parse --short=7 HEAD') do set "SHA=%%h"
+if not defined SHA set "SHA=main"
 
-echo [INFO] Текущий SHA: %SHA%
+echo [INFO] Current commit SHA: %SHA%
 
-:: Тегируем деплой
+REM РўРµРіРёСЂСѓРµРј РґРµРїР»РѕР№
 set "TAG=deploy-%TIMESTAMP%"
-echo [INFO] Тегируем как %TAG%...
+echo [INFO] Tagging as %TAG%...
 git tag -f %TAG%
 git push origin %TAG% --force
 
-:: ================================
-:: Cache-bust patch: заменяем @main/ на @<SHA>/ и добавляем ?v=<TIMESTAMP> к картинкам
-:: ================================
-echo.
-echo [INFO] Применяем cache-bust к HTML/CSS/JS (замена @main/ и добавление ?v=)...
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-    "$sha='%SHA%'; $ts='%TIMESTAMP%'; ^
-    $regexImg='(\.(?:png|jpe?g|svg))(?:\?v=\d+)?'; ^
-    Get-ChildItem -Recurse -Include *.html,*.css,*.js -ErrorAction SilentlyContinue | ForEach-Object { ^
-        $path=$_.FullName; ^
-        try { $text=Get-Content -Raw -ErrorAction Stop $path } catch { return }; ^
-        $updated=[regex]::Replace($text,$regexImg,{ param($m) \"$($m.Groups[1].Value)?v=$ts\" }); ^
-        if ($sha -ne 'main') { $updated=$updated -replace '@main/','@$sha/' }; ^
-        if ($updated -ne $text) { Set-Content -LiteralPath $path -Encoding UTF8 $updated; Write-Host '[PATCHED]' $path } ^
-    }"
+REM Р—Р°РїСѓСЃРєР°РµРј PowerShell-СЃРєСЂРёРїС‚ РґР»СЏ cache-bust Рё С„РёРЅР°Р»СЊРЅРѕРіРѕ HTML
+if exist "deploy.ps1" (
+    echo [INFO] Running patch script (cache-bust)...
+    powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0deploy.ps1" -Sha %SHA% -Timestamp %TIMESTAMP%
+) else (
+    echo [WARN] deploy.ps1 not found, skipping cache-bust step.
+)
 
 echo.
 echo ========================================
-echo   ? Деплой завершён
+echo   вњ… Deploy complete
 echo ========================================
-echo SHA для использования: %SHA%
-echo Используй конкретный SHA в jsDelivr URL, чтобы сбросить CDN-кеш:
-echo ?? Шрифты: https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@%SHA%/2025-07-25-osq-email/fonts/
-echo ??? Изображения: https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@%SHA%/2025-07-25-osq-email/images/
-echo.
-echo Альтернативно, если URL уже в письме с @main/, после успешного пуша обнови ссылку на @%SHA%/ или добавь параметр ?v=%TIMESTAMP% к файлам, чтобы точно сбросить кэш.
+echo SHA: %SHA%
+echo jsDelivr fonts: https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@%SHA%/2025-07-25-osq-email/fonts/
+echo jsDelivr images: https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@%SHA%/2025-07-25-osq-email/images/
+echo Final HTML: dist\email-final.html
 echo.
 
 pause
+popd
 endlocal
