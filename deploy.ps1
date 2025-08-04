@@ -20,7 +20,7 @@ Write-Host "[INFO] Patch run with SHA=$Sha, Timestamp=$Timestamp"
 # Регекс для изображений
 $imgRegex = '(\.(?:png|jpe?g|svg))(?:\?v=\d+)?'
 
-# Обновляем все HTML/CSS/JS: ?v=timestamp и @main/ -> @<sha>/
+# Обновляем все HTML/CSS/JS: добавляем ?v=timestamp и подменяем @main/ на @<Sha>/
 Get-ChildItem -Recurse -Include *.html,*.css,*.js -ErrorAction SilentlyContinue | ForEach-Object {
     $path = $_.FullName
     try {
@@ -70,5 +70,5 @@ if (Test-Path $sourceIndex) {
         Write-Warning "Failed to build final HTML: $_"
     }
 } else {
-    Write-Warning "index.html not found; skipping final HTML build."
+    Write-Warning "index.html not found; skipping final HTML."
 }
