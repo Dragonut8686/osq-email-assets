@@ -145,14 +145,17 @@ if exist "%CHECK_FILE%" (
 )
 
 del "%CHANGED_LIST%" >nul 2>&1
+
 goto :eof
 
 :push_fail
-echo.
-echo ========= ОШИБКА PUSH =========
-echo Проверьте соединение или токен доступа.
-echo =================================
-pause
+    echo.
+    echo ========= ОШИБКА PUSH =========
+    echo Проверьте соединение или токен доступа.
+    echo =================================
+    goto :end
 
 :end
-endlocal
+    pause
+    exit /b 0
+
