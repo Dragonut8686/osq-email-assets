@@ -4,10 +4,10 @@ param(
 )
 
 # ------------------------------------------------------------------
-# Cache-bust & final HTML builder для каждой папки с index.html
+# Cache-bust & final HTML builder for each email folder
 # ------------------------------------------------------------------
 
-# Устанавливаем рабочую директорию на расположение скрипта
+# Ensure working dir is script location
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Set-Location $scriptDir
 
@@ -17,10 +17,10 @@ if ([string]::IsNullOrEmpty($Timestamp)) {
 
 Write-Host "[INFO] Patch run with SHA=$Sha, Timestamp=$Timestamp"
 
-# Регекс для картинок
+# Regex for image extensions
 $imgRegex = '(\.(?:png|jpe?g|svg))(?:\?v=\d+)?'
 
-# 1. Патчим все .html/.css/.js в репо: добавляем ?v= и заменяем @main/ на @<Sha>/
+# 1. Patch all source .html/.css/.js globally: add ?v= and replace @main/ with @<Sha>/
 Get-ChildItem -Recurse -Include *.html,*.css,*.js -ErrorAction SilentlyContinue | ForEach-Object {
     $path = $_.FullName
     try {
@@ -41,25 +41,25 @@ Get-ChildItem -Recurse -Include *.html,*.css,*.js -ErrorAction SilentlyContinue 
     }
 }
 
-# 2. Находим все подпапки, которые содержат index.html (email-письма)
+# 2. Find all email folders containing index.html
 $emailFolders = Get-ChildItem -Directory | Where-Object {
     Test-Path (Join-Path $_.FullName "index.html")
 }
 
 if (-not $emailFolders) {
-    Write-Warning "Не найдены подпапки с index.html. Пытаемся найти любой index.html в дереве."
+    Write-Warning "No subfolders with index.html found; searching fallback."
     $fallback = Get-ChildItem -Recurse -Filter index.html | Select-Object -First 1
     if ($fallback) {
         $emailFolders = @((Get-Item $fallback.DirectoryName))
     }
 }
 
-# 3. Собираем финальные HTML для каждой папки
+# 3. Build final HTML per folder
 foreach ($folder in $emailFolders) {
     $name = $folder.Name
     $sourceIndex = Join-Path $folder.FullName "index.html"
     if (-not (Test-Path $sourceIndex)) {
-        Write-Warning "Пропускаю $name — index.html не найден."
+        Write-Warning ("Skipping '{0}' – index.html not found." -f $name)
         continue
     }
 
@@ -77,8 +77,8 @@ foreach ($folder in $emailFolders) {
             $finalUpdated = $finalUpdated -replace '@main/', "@$Sha/"
         }
         Set-Content -LiteralPath $finalPath -Encoding UTF8 $finalUpdated
-        Write-Host "[INFO] Built final HTML for '$name' at $finalPath"
+        Write-Host ("[INFO] Built final HTML for '{0}' at {1}" -f $name, $finalPath)
     } catch {
-        Write-Warning ("Не удалось собрать финальный HTML для {0}: {1}" -f $name, $_)
+        Write-Warning ("Failed to build final HTML for {0}: {1}" -f $name, $_)
     }
 }
