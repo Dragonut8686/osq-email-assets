@@ -1,7 +1,7 @@
-﻿@echo off
+@echo off
 REM ============================================================
-REM OSQ Email Assets - Auto Deploy (v2.2)
-REM Needs to be saved as UTF-8 WITHOUT BOM
+REM OSQ Email Assets - Auto Deploy (v2.3)
+REM MUST be saved as UTF-8 WITHOUT BOM
 REM ============================================================
 
 chcp 65001 >nul
@@ -15,7 +15,7 @@ set "LOG_FILE=deploy-log.txt"
 set "CHANGED_LIST=deploy-changed.txt"
 REM -----------------
 
-REM get timestamp
+REM timestamp
 for /f "delims=" %%a in ('
   powershell -NoLogo -NoProfile -Command "Get-Date -Format \"yyyy-MM-dd HH:mm:ss\""
 ') do set "TIMESTAMP=%%a"
@@ -25,13 +25,13 @@ echo   Deploy start: %TIMESTAMP%
 echo =========================================
 echo.
 
-REM init repo if needed
+REM init if needed
 if not exist ".git" (
     echo [init] initializing git repository...
     git init
 )
 
-REM ensure remote origin
+REM ensure origin
 for /f "delims=" %%r in ('git remote') do set "HAS_REMOTE=%%r"
 if not defined HAS_REMOTE (
     git remote add origin "%REPO_URL%"
@@ -43,10 +43,10 @@ if not defined HAS_REMOTE (
     )
 )
 
-REM safe settings
+REM safety
 git config core.ignorecase false
 
-REM ensure user identity
+REM identity
 for /f "delims=" %%n in ('git config user.name 2^>nul') do set "GIT_USER=%%n"
 for /f "delims=" %%m in ('git config user.email 2^>nul') do set "GIT_EMAIL=%%m"
 if not defined GIT_USER (
@@ -56,14 +56,14 @@ if not defined GIT_EMAIL (
     git config user.email "deploy@osqgroup.ru"
 )
 
-REM stage
+REM stage changes
 echo [stage] adding all changes...
 git add -A
 
-REM save list of staged files
+REM record staged
 git diff --name-only --cached > "%CHANGED_LIST%"
 
-REM commit if there is anything
+REM commit if any
 git diff --cached --quiet
 if errorlevel 1 (
     echo [commit] creating commit...
@@ -72,7 +72,6 @@ if errorlevel 1 (
     echo [commit] no changes to commit
 )
 
-REM ensure main branch
 git branch -M main
 
 REM push
@@ -84,7 +83,7 @@ if errorlevel 1 (
     goto :end
 )
 
-REM get commit hashes
+REM commit info
 for /f "delims=" %%h in ('git rev-parse HEAD') do set "COMMIT_FULL=%%h"
 for /f "delims=" %%h in ('git rev-parse --short HEAD') do set "COMMIT_SHORT=%%h"
 
@@ -106,7 +105,7 @@ echo   MAIN: %CDN_BASE_MAIN%images/
 echo   VER : %CDN_BASE_VER%images/
 echo.
 
-REM write to log
+REM append to log
 (
     echo =========================================
     echo %TIMESTAMP%
@@ -128,7 +127,12 @@ if exist "%CHANGED_LIST%" (
 REM HEAD check on fallback file
 set "CHECK_FILE=%PROJECT_DIR%\images\01-icon-2.png"
 if exist "%CHECK_FILE%" (
-    set "REL_PATH=%CHECK_FILE:*%PROJECT_DIR%\=%"
+    REM get relative path after project dir, convert backslashes to forward slashes
+    for %%I in ("%CHECK_FILE%") do set "REL_PATH=%%~pI%%~nxI"
+    REM strip leading backslash if present
+    if "%REL_PATH:~0,1%"=="\" set "REL_PATH=%REL_PATH:~1%"
+    set "REL_PATH=%REL_PATH:\=/%"
+
     set "URL_MAIN=%CDN_BASE_MAIN%%REL_PATH%"
     set "URL_VER=%CDN_BASE_VER%%REL_PATH%"
 
@@ -151,3 +155,4 @@ pause
 
 :end
 endlocal
+
