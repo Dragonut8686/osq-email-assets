@@ -1,2 +1,2 @@
-2025-07-25-osq-email/index.html
 deploy-changed.txt
+deploy.bat
