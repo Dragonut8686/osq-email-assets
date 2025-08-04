@@ -6,7 +6,16 @@ echo =========================================
 :: Получаем текущую дату и время
 for /f "delims=" %%a in ('powershell -Command "Get-Date -Format 'dd.MM.yyyy HH:mm:ss'"') do set "timestamp=%%a"
 
+:: Получаем версию для изображений (timestamp)
+for /f "delims=" %%a in ('powershell -Command "Get-Date -Format 'yyyyMMddHHmmss'"') do set "version=%%a"
+
 echo Текущее время: %timestamp%
+echo Версия изображений: %version%
+echo.
+
+:: Обновляем версии всех изображений в HTML файле
+echo 🔄 Обновление версий изображений...
+powershell -ExecutionPolicy Bypass -File update-images.ps1 -version %version%
 echo.
 
 :: Проверяем, инициализирован ли git
@@ -43,6 +52,9 @@ if %errorlevel% equ 0 (
     echo ========================================
     echo   ✅ Успешно загружено на GitHub!
     echo ========================================
+    echo.
+    echo 🎯 Все изображения обновлены с версией: %version%
+    echo 🔄 Кеш изображений сброшен - новые версии будут загружены
     echo.
     echo Ваши ссылки для текущего проекта 2025-07-25-osq-email:
     echo 📁 Шрифты: https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-07-25-osq-email/fonts/
