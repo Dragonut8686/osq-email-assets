@@ -85,8 +85,8 @@ echo 📁 Шрифты: %BASE_URL%/fonts/
 echo 🖼️ Изображения: %BASE_URL%/images/
 
 if not "%REL_FILE%"=="" (
-    echo 🔗 Прямая ссылка (CDN) на файл: %BASE_URL%/%REL_FILE%
-    echo 🔗 Альтернативная (raw.githubusercontent): %RAW_BASE%/%REL_FILE%
+    echo 🔗 Прямая ссылка ^(CDN^) на файл: %BASE_URL%/%REL_FILE%
+    echo 🔗 Альтернативная ^(raw.githubusercontent^) : %RAW_BASE%/%REL_FILE%
 )
 
 echo.
