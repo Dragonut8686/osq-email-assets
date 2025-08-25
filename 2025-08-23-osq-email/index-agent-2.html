@@ -25,6 +25,7 @@
     @font-face { font-family: 'Qanelas'; font-style: normal; font-weight: 500; src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Medium.woff2') format('woff2'); }
     @font-face { font-family: 'Qanelas'; font-style: normal; font-weight: 700; src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Bold.woff2') format('woff2'); }
     @font-face { font-family: 'Qanelas'; font-style: normal; font-weight: 800; src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-ExtraBold.woff2') format('woff2'); }
+
     /* Reset styles */
     html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
     table { border-collapse: collapse; }
@@ -36,11 +37,6 @@
     @media only screen and (max-width: 600px) {
       .container { width: 100% !important; }
       .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; }
-      /* Keep header cells side-by-side on mobile */
-      .no-stack { display: table-cell !important; width: auto !important; }
-      /* Smaller images on mobile */
-      .size-img { max-width: 90px !important; }
-      .color-img { max-width: 86px !important; }
       .hero-title { font-size: 24px !important; line-height: 30px !important; }
       .section-title { font-size: 22px !important; line-height: 28px !important; }
       .btn { padding: 14px 24px !important; font-size: 14px !important; }
@@ -52,43 +48,54 @@
   <div style="display:none; visibility:hidden; overflow:hidden; max-height:0; max-width:0; opacity:0; mso-hide:all;">
     Самые свежие форматы и технологии для HoReCa и RETAIL от OSQ GROUP
   </div>
+
   <!-- Outer wrapper table -->
   <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" role="presentation">
-    <tr em="group">
+    <tr>
       <td align="center" style="padding: 20px;">
         <!-- Main container -->
         <table class="container" width="600" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#F0F0F0; border-radius:12px; overflow:hidden;">
-          <!-- Block 0: Top bar with browser link, logo left, catalog button right -->
-          <tr em="block">
-            <td style="padding:16px 20px 8px; background-color:#F0F0F0;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <!-- Header section (Block 0) -->
+          <tr>
+            <td style="padding: 16px 20px 8px;">
+              <!-- "Открыть в браузере" link (link to be inserted later) -->
+              <a href="#" style="color:#53565A; font-size:14px; line-height:20px; text-decoration:none;">Открыть в&nbsp;браузере</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 20px 24px;">
+              <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                 <tr>
-                  <td align="left" valign="top" class="no-stack" style="width:60%;">
-                    <a href="#" style="display:inline-block; font-size:12px; line-height:18px; color:#53565A; text-decoration:underline;">Открыть письмо в&nbsp;браузере</a>
-                    <div style="height:8px; line-height:8px; font-size:8px;">&nbsp;</div>
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-00-logo-grey.png" alt="OSQ Group" width="160" style="display:block; height:auto;">
+                  <!-- Logo on the left -->
+                  <td align="left" style="width:50%;">
+                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-00-logo-grey.png" alt="OSQ Group" width="120" style="display:block; height:auto;">
                   </td>
-                  <td align="right" valign="top" class="no-stack" style="width:40%; white-space:nowrap; padding-top:12px;">
-                    <a href="https://osqgroup.ru/catalog/" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:14px; font-weight:700; line-height:20px; padding:10px 18px; border-radius:6px;">Каталог</a>
+                  <!-- Catalog button on the right -->
+                  <td align="right" style="width:50%;">
+                    <a href="https://osqgroup.ru/catalog/" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:14px; font-weight:600; line-height:22px; padding:12px 24px; border-radius:6px;">Каталог</a>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+
           <!-- Hero section -->
-          <tr em="block">
-            <td align="left" style="padding: 14px 20px;">
+          <tr>
+            <td style="padding:0;">
+              <!-- Hero banner image -->
+              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-01-banner.png" alt="OSQ ROUND BOWL — современные контейнеры для HoReCa и ритейла" width="600" style="width:100%; display:block; height:auto;">
+            </td>
+          </tr>
+          <tr>
+            <!-- Hero headline aligned left -->
+            <td align="left" style="padding: 24px 20px 24px;">
               <h1 class="hero-title" style="margin:0; font-size:32px; line-height:38px; color:#0F0F0F; font-weight:700;">Самые свежие форматы и&nbsp;технологии для HoReCa и&nbsp;RETAIL от&nbsp;OSQ&nbsp;GROUP</h1>
             </td>
           </tr>
-          <tr em="block">
-            <td style="padding: 0px 0px 20px;">
-              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-01-banner.png" alt="OSQ ROUND BOWL — современные контейнеры для HoReCa и ритейла" width="560" style="display:block; width:100%; max-width:560px; height:auto; border-radius:12px; margin:0 auto; box-sizing:border-box; padding:0 10px;">
-            </td>
-          </tr>
           <!-- End Hero section -->
+
           <!-- Section: New product 620 -->
-          <tr em="block">
+          <tr>
             <td style="padding: 0 20px 20px;">
               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
                 <tr>
@@ -106,37 +113,37 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="margin-top:16px;">
                             <tr>
                               <td valign="top" width="24" style="padding-top:4px;">
-                                <span style="color: #00A499; font-weight: 600;">✓</span>
+                                <span style="font-size:16px; color:#00A499;">•</span>
                               </td>
                               <td style="font-size:16px; line-height:24px; color:#53565A;">Объём 620&nbsp;мл&nbsp;— оптимален для подачи</td>
                             </tr>
                             <tr>
                               <td valign="top" width="24" style="padding-top:4px;">
-                                <span style="color: #00A499; font-weight: 600;">✓</span>
+                                <span style="font-size:16px; color:#00A499;">•</span>
                               </td>
                               <td style="font-size:16px; line-height:24px; color:#53565A;">Компактный, но&nbsp;выглядит объёмным</td>
                             </tr>
                             <tr>
                               <td valign="top" width="24" style="padding-top:4px;">
-                                <span style="color: #00A499; font-weight: 600;">✓</span>
+                                <span style="font-size:16px; color:#00A499;">•</span>
                               </td>
                               <td style="font-size:16px; line-height:24px; color:#53565A;">Подходит для горячих и&nbsp;холодных блюд</td>
                             </tr>
                             <tr>
                               <td valign="top" width="24" style="padding-top:4px;">
-                                <span style="color: #00A499; font-weight: 600;">✓</span>
+                                <span style="font-size:16px; color:#00A499;">•</span>
                               </td>
                               <td style="font-size:16px; line-height:24px; color:#53565A;">Влагостойкий и&nbsp;герметичный</td>
                             </tr>
                             <tr>
                               <td valign="top" width="24" style="padding-top:4px;">
-                                <span style="color: #00A499; font-weight: 600;">✓</span>
+                                <span style="font-size:16px; color:#00A499;">•</span>
                               </td>
                               <td style="font-size:16px; line-height:24px; color:#53565A;">Из&nbsp;перерабатываемых материалов</td>
                             </tr>
                           </table>
                           <div style="margin-top:20px;">
-                            <a href="https://osqgroup.ru/catalog/kruglye-konteynery/" class="btn" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:16px; font-weight:600; line-height:24px; padding:14px 28px; border-radius:6px;">Подробнее на сайте</a>
+                            <a href="https://osqgroup.ru/catalog/kruglye-konteynery/" class="btn" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:16px; font-weight:600; line-height:24px; padding:14px 28px; border-radius:6px;">Заказать</a>
                           </div>
                         </td>
                       </tr>
@@ -147,13 +154,15 @@
             </td>
           </tr>
           <!-- End Section: New product 620 -->
+
           <!-- Section: Size line -->
-          <tr em="block">
+          <tr>
             <td style="padding: 0 20px 20px;">
               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
                 <tr>
                   <td style="padding:24px;">
-                    <h2 class="section-title" style="margin:0 0 12px 0; font-size:26px; line-height:32px; color:#0F0F0F; font-weight:700;">Самая широкая линейка размеров для любых задач</h2>
+                    <h2 class="section-title" style="margin:0 0 12px 0; font-size:26px; line-height:32px; color:#0F0F0F; font-weight:700;">Самая широкая линейка размеров</h2>
+                    <p style="margin:0 0 20px 0; font-size:16px; line-height:24px; color:#53565A;">620, 750, 1000 и&nbsp;1300&nbsp;мл&nbsp;— для любых задач.</p>
                     <!-- 2x2 grid for four sizes -->
                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                       <tr>
@@ -162,7 +171,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-620-2.png" alt="OSQ ROUND BOWL 620 мл — контейнер для подачи и доставки" width="100%" style="display:block; width:100%; max-width:130px; height:auto; margin:0 auto; border-radius:8px;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-620.png" alt="OSQ ROUND BOWL 620 мл — контейнер для подачи и доставки" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -175,7 +184,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-750-2.png" alt="OSQ ROUND BOWL 750 мл — контейнер для подачи и доставки" width="100%" style="display:block; width:100%; max-width:130px; height:auto; margin:0 auto; border-radius:8px;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-750.png" alt="OSQ ROUND BOWL 750 мл — контейнер для подачи и доставки" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -190,7 +199,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-1000-2.png" alt="OSQ ROUND BOWL 1000 мл — контейнер для подачи и доставки" width="100%" style="display:block; width:100%; max-width:130px; height:auto; margin:0 auto; border-radius:8px;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-1000.png" alt="OSQ ROUND BOWL 1000 мл — контейнер для подачи и доставки" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -203,7 +212,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-1300-2.png" alt="OSQ ROUND BOWL 1300 мл — контейнер для подачи и доставки" width="100%" style="display:block; width:100%; max-width:130px; height:auto; margin:0 auto; border-radius:8px;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-03-1300.png" alt="OSQ ROUND BOWL 1300 мл — контейнер для подачи и доставки" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -219,13 +228,15 @@
             </td>
           </tr>
           <!-- End Section: Size line -->
+
           <!-- Section: Color solutions -->
-          <tr em="block">
+          <tr>
             <td style="padding: 0 20px 20px;">
               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
                 <tr>
                   <td style="padding:24px;">
                     <h2 class="section-title" style="margin:0 0 12px 0; font-size:26px; line-height:32px; color:#0F0F0F; font-weight:700;">Цветовые решения</h2>
+                    <p style="margin:0 0 20px 0; font-size:16px; line-height:24px; color:#53565A;">Три цвета: Крафт\белый, Крафт\чёрный —&nbsp;BLACK&nbsp;WOOD, Белый —&nbsp;WHITE&nbsp;EDITION.</p>
                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                       <tr>
                         <!-- Color variant 1 -->
@@ -233,7 +244,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="color-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-04-Craft.png" alt="OSQ ROUND BOWL — вариант цвета: крафт/белый" width="100%" style="display:block; max-width:100%; height:auto;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-04-Craft.png" alt="OSQ ROUND BOWL — вариант цвета: крафт/белый" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -246,7 +257,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="color-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-04-Black.png" alt="OSQ ROUND BOWL — вариант цвета: black wood" width="100%" style="display:block; max-width:100%; height:auto;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-04-Black.png" alt="OSQ ROUND BOWL — вариант цвета: black wood" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -259,7 +270,7 @@
                           <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                             <tr>
                               <td style="border-radius:8px; overflow:hidden;">
-                                <img class="color-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-04-White.png" alt="OSQ ROUND BOWL — вариант цвета: white" width="100%" style="display:block; max-width:100%; height:auto;">
+                                <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-04-White.png" alt="OSQ ROUND BOWL — вариант цвета: white" width="100%" style="display:block; max-width:100%; height:auto;">
                               </td>
                             </tr>
                             <tr>
@@ -275,15 +286,16 @@
             </td>
           </tr>
           <!-- End Section: Color solutions -->
+
           <!-- Section: Trend of the year (Sealing) -->
-          <tr em="block">
+          <tr>
             <td style="padding: 0 20px 20px;">
               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
                 <tr>
                   <td style="padding:24px;">
                     <h2 class="section-title" style="margin:0 0 12px 0; font-size:26px; line-height:32px; color:#0F0F0F; font-weight:700;">Главный тренд года — запайка</h2>
                     <p style="margin:0 0 16px 0; font-size:16px; line-height:24px; color:#53565A;">Вся линейка&nbsp;BOWL&nbsp;LINE подходит под запайку бумагой, платинкой или плёнкой, обеспечивая герметичность и&nbsp;сохранность блюда.</p>
-                    <!-- Без изображений в этом блоке -->
+                    <!-- Изображения убраны в соответствии с пожеланиями. -->
                     <div style="margin-top:20px;">
                       <a href="https://osqgroup.ru/catalog/kraftovye-konteynery-pod-zapayku/" class="btn" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:16px; font-weight:600; line-height:24px; padding:14px 28px; border-radius:6px;">Попробовать</a>
                     </div>
@@ -293,8 +305,9 @@
             </td>
           </tr>
           <!-- End Section: Trend of the year (Sealing) -->
+
           <!-- Section: Lids variants -->
-          <tr em="block">
+          <tr>
             <td style="padding: 0 20px 20px;">
               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
                 <tr>
@@ -318,7 +331,7 @@
                         <td valign="top" width="24" style="padding-top:4px;">
                           <span style="font-size:16px; color:#00A499;">•</span>
                         </td>
-                        <td style="font-size:16px; line-height:24px; color:#53565A;"><span style="color:#00A499; font-weight:600;">Новинка!</span> <span style="color:#00A499; font-weight:600;">Плоская PP ANTIFOG</span>&nbsp;— без испарины, для горячих/холодных блюд</td>
+                        <td style="font-size:16px; line-height:24px; color:#53565A;">Новинка! Плоская PP ANTIFOG&nbsp;— без испарины, для горячих/холодных блюд</td>
                       </tr>
                     </table>
                     <!-- Micro-gallery of lids -->
@@ -359,17 +372,14 @@
                               </td>
                             </tr>
                             <tr>
-                              <td align="center" style="padding-top:8px; font-size:16px; line-height:22px; color:#0F0F0F; font-weight:600;">
-                                <span style="background-color: #00A499; color: #F0F0F0; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-right: 4px;">НОВИНКА</span>
-                                Плоская<br>PP&nbsp;ANTIFOG
-                              </td>
+                              <td align="center" style="padding-top:8px; font-size:16px; line-height:22px; color:#0F0F0F; font-weight:600;">Плоская<br>PP&nbsp;ANTIFOG</td>
                             </tr>
                           </table>
                         </td>
                       </tr>
                     </table>
                     <div style="margin-top:20px;">
-                      <a href="https://osqgroup.ru/catalog/kruglye-konteynery/" class="btn" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:16px; font-weight:600; line-height:24px; padding:14px 28px; border-radius:6px;">Записать</a>
+                      <a href="https://osqgroup.ru/catalog/kruglye-konteynery/" class="btn" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:16px; font-weight:600; line-height:24px; padding:14px 28px; border-radius:6px;">Заказать</a>
                     </div>
                   </td>
                 </tr>
@@ -377,73 +387,72 @@
             </td>
           </tr>
           <!-- End Section: Lids variants -->
-          <!-- Footer with social links and legal -->
-          <tr em="block">
+
+          <!-- Footer section with logo, social icons and legal information -->
+          <tr>
             <td style="padding: 0 20px 40px;">
               <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius:12px; overflow:hidden;">
                 <tr>
                   <td style="padding:24px;">
+                    <!-- Logo and social icons row -->
                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
                       <tr>
-                        <td align="left" valign="middle" class="stack-column" style="width:50%; padding-bottom:12px;">
-                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-00-logo-grey.png" alt="OSQ Group" width="160" style="display:block; height:auto;">
+                        <!-- Left: logo -->
+                        <td align="left" style="vertical-align:middle;">
+                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-02-00-logo-grey.png" alt="OSQ Group" width="120" style="display:block; height:auto;">
                         </td>
-                        <td align="right" valign="middle" class="stack-column" style="width:50%;">
-                          <table align="right" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                        <!-- Right: social icons -->
+                        <td align="right" style="vertical-align:middle;">
+                          <table cellspacing="0" cellpadding="0" border="0" role="presentation" style="text-align:right;">
                             <tr>
-                              <td style="padding:0 8px;">
-                                <a href="https://t.me/osqpack" target="_blank" style="display:inline-block;">
-                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-telegram.png" alt="Telegram" width="36" height="36" style="display:block;">
+                              <td style="padding:0 6px;">
+                                <a href="https://t.me/osqpack" style="display:inline-block;">
+                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-telegram.png" alt="Telegram" width="32" height="32" style="display:block;">
                                 </a>
                               </td>
-                              <td style="padding:0 8px;">
-                                <a href="https://vk.com/osqgroup" target="_blank" style="display:inline-block;">
-                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-vk.png" alt="VK" width="36" height="36" style="display:block;">
+                              <td style="padding:0 6px;">
+                                <a href="https://vk.com/osqgroup" style="display:inline-block;">
+                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-vk.png" alt="VK" width="32" height="32" style="display:block;">
                                 </a>
                               </td>
-                              <td style="padding:0 8px;">
-                                <a href="https://dzen.ru/osqgroup" target="_blank" style="display:inline-block;">
-                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-dzen.png" alt="Dzen" width="36" height="36" style="display:block;">
+                              <td style="padding:0 6px;">
+                                <a href="https://dzen.ru/osqgroup" style="display:inline-block;">
+                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-dzen.png" alt="Дзен" width="32" height="32" style="display:block;">
                                 </a>
                               </td>
-                              <td style="padding:0 8px;">
-                                <a href="https://osqgroup.ru/" target="_blank" style="display:inline-block;">
-                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-web.png" alt="Web" width="36" height="36" style="display:block;">
+                              <td style="padding:0 6px;">
+                                <a href="https://osqgroup.ru/" style="display:inline-block;">
+                                  <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-08-23-osq-email/images/august-2-06-web.png" alt="OSQ Group web" width="32" height="32" style="display:block;">
                                 </a>
                               </td>
                             </tr>
                           </table>
                         </td>
                       </tr>
-                      <tr>
-                        <td colspan="2" style="padding-top:16px;">
-                          <p style="margin:0; font-size:12px; line-height:18px; color:#53565A;">
-                            ООО «ОЭСКЬЮ ТРЕЙДИНГ»<br>
-                            ОГРН 1197746065472, ИНН 7734420298, КПП 772501001<br>
-                            Юридический адрес: 115432, г. Москва, вн.тер.г. муниципальный округ Даниловский, проезд Проектируемый 4062-й, д.6, стр.16, помещение 4837/1<br>
-                            Телефон: +7 (495) 773-87-18 | E-mail: clients@osqgroup.ru<br>
-                            Политика конфиденциальности: <a href="https://osqgroup.ru/privacy-policy/" target="_blank" style="color:#0F0F0F; text-decoration:underline;">https://osqgroup.ru/privacy-policy/</a>
-                          </p>
-                        </td>
-                      </tr>
                     </table>
+                    <!-- Legal information -->
+                    <p style="margin:20px 0 8px 0; font-size:12px; line-height:18px; color:#53565A;">
+                      ООО&nbsp;«ОЭСКЬЮ&nbsp;ТРЕЙДИНГ»<br>
+                      ОГРН&nbsp;1197746065472, ИНН&nbsp;7734420298, КПП&nbsp;772501001<br>
+                      Юридический&nbsp;адрес: 115432, г.&nbsp;Москва, вн.тер.г.&nbsp;муниципальный округ
+                      Даниловский, проезд&nbsp;Проектируемый&nbsp;4062-й, д.6, стр.16, помещение&nbsp;4837/1
+                    </p>
+                    <p style="margin:0 0 8px 0; font-size:12px; line-height:18px; color:#53565A;">
+                      Телефон: +7&nbsp;(495)&nbsp;773-87-18&nbsp;|&nbsp;E-mail: <a href="mailto:clients@osqgroup.ru" style="color:#00A499; text-decoration:none;">clients@osqgroup.ru</a>
+                    </p>
+                    <p style="margin:0; font-size:12px; line-height:18px; color:#53565A;">
+                      <a href="https://osqgroup.ru/privacy-policy/" style="color:#00A499; text-decoration:underline;">Политика конфиденциальности</a>
+                    </p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
-          <!-- End Footer -->
+          <!-- End Footer section -->
+
         </table>
       </td>
     </tr>
   </table>
-<!-- Bottom unsubscribe button -->
-<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" role="presentation" style="background:#00A499;">
-  <tr>
-    <td align="center" style="padding:16px 12px 24px;">
-      <a href="@@unsubscribe_link@@" target="_blank" style="display:inline-block; background:#FFFFFF; color:#0F0F0F; font-family:Arial, Helvetica, sans-serif; font-weight:700; font-size:12px; line-height:18px; padding:10px 16px; border-radius:8px; text-decoration:none;">Отписаться</a>
-    </td>
-  </tr>
-</table>
 </body>
 </html>
