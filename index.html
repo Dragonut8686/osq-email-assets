@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSQ HTML Preview</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OSQ HTML Email Preview</h1>
+            <p>Создавайте и просматривайте HTML-письма</p>
+        </header>
+
+        <main>
+            <section class="create-section">
+                <h2>Создать новое HTML-письмо</h2>
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="emailTitle">Название письма:</label>
+                        <input type="text" id="emailTitle" name="title" required placeholder="Введите название письма">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="htmlCode">HTML-код письма:</label>
+                        <textarea id="htmlCode" name="html" required placeholder="Вставьте ваш HTML-код здесь"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Опубликовать</button>
+                </form>
+            </section>
+
+            <section class="emails-list" id="emailsList">
+                <h2>Созданные письма</h2>
+                <div id="emailsContainer">
+                    <p class="no-emails">Пока нет созданных писем</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
