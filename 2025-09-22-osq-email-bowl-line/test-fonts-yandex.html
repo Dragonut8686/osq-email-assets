@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍜 TEST: Шрифты в Яндекс Почте</title>
+    <style type="text/css">
+        /* Pure Qanelas test - NO fallbacks */
+        @font-face {
+            font-family: 'Qanelas';
+            src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Qanelas';
+            src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Qanelas';
+            src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body { font-family: 'Qanelas'; }
+        .qanelas-pure { font-family: 'Qanelas'; }
+        .qanelas-bold { font-family: 'Qanelas'; font-weight: 700; }
+        .qanelas-medium { font-family: 'Qanelas'; font-weight: 500; }
+    </style>
+</head>
+<body style="background-color: #f0f0f0; padding: 20px; font-family: 'Qanelas';">
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px;">
+
+        <h1 style="color: #333; margin-bottom: 30px;">🧪 Тест шрифтов для Яндекс Почты</h1>
+
+        <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff;">
+            <h3 class="qanelas-pure">📋 Инструкция по тестированию:</h3>
+            <ol style="font-family: 'Qanelas';">
+                <li>Сохраните это письмо в черновиках Яндекс Почты</li>
+                <li>Отправьте его на свой же адрес</li>
+                <li>Проверьте, какой шрифт отображается в каждом блоке</li>
+                <li>Запишите результаты для анализа</li>
+            </ol>
+        </div>
+
+        <h2>🎨 Тестовые блоки:</h2>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #28a745; border-radius: 5px;">
+            <h3 class="qanelas-pure" style="margin-top: 0; color: #28a745;">✅ Блок 1: ЧИСТЫЙ Qanelas Regular (400)</h3>
+            <p class="qanelas-pure">Этот текст использует ЧИСТЫЙ Qanelas Regular: <code>font-family: 'Qanelas'; font-weight: 400;</code></p>
+            <p class="qanelas-pure"><strong>Обычный текст Qanelas</strong></p>
+            <p class="qanelas-pure"><em>Курсивный текст Qanelas</em></p>
+            <p class="qanelas-pure" style="font-weight: bold;">Полужирный текст Qanelas</p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #ffc107; border-radius: 5px;">
+            <h3 class="qanelas-medium" style="margin-top: 0; color: #856404;">⚠️ Блок 2: ЧИСТЫЙ Qanelas Medium (500)</h3>
+            <p class="qanelas-medium">Этот текст использует ЧИСТЫЙ Qanelas Medium: <code>font-family: 'Qanelas'; font-weight: 500;</code></p>
+            <p class="qanelas-medium"><strong>Обычный текст Qanelas Medium</strong></p>
+            <p class="qanelas-medium"><em>Курсивный текст Qanelas Medium</em></p>
+            <p class="qanelas-medium" style="font-weight: bold;">Полужирный текст Qanelas Medium</p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #17a2b8; border-radius: 5px;">
+            <h3 class="qanelas-bold" style="margin-top: 0; color: #17a2b8;">🔵 Блок 3: ЧИСТЫЙ Qanelas Bold (700)</h3>
+            <p class="qanelas-bold">Этот текст использует ЧИСТЫЙ Qanelas Bold: <code>font-family: 'Qanelas'; font-weight: 700;</code></p>
+            <p class="qanelas-bold"><strong>Обычный текст Qanelas Bold</strong></p>
+            <p class="qanelas-bold"><em>Курсивный текст Qanelas Bold</em></p>
+            <p class="qanelas-bold" style="font-weight: bold;">Полужирный текст Qanelas Bold</p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #dc3545; border-radius: 5px;">
+            <h3 class="qanelas-pure" style="margin-top: 0; color: #dc3545;">❌ Блок 4: Контроль - Arial (fallback)</h3>
+            <p style="font-family: Arial, sans-serif;">Этот текст использует Arial как fallback: <code>font-family: Arial, sans-serif;</code></p>
+            <p style="font-family: Arial, sans-serif;"><strong>Обычный текст Arial</strong></p>
+            <p style="font-family: Arial, sans-serif;"><em>Курсивный текст Arial</em></p>
+            <p style="font-family: Arial, sans-serif; font-weight: bold;">Полужирный текст Arial</p>
+        </div>
+
+        <div style="margin: 20px 0; padding: 15px; background: #e9ecef; border-radius: 5px;">
+            <h3 class="qanelas-pure">📊 Результаты тестирования ЧИСТОГО Qanelas:</h3>
+            <table style="width: 100%; border-collapse: collapse; font-family: 'Qanelas';">
+                <tr style="background: #dee2e6;">
+                    <th class="qanelas-pure" style="padding: 8px; text-align: left; border: 1px solid #ccc;">Блок</th>
+                    <th class="qanelas-pure" style="padding: 8px; text-align: left; border: 1px solid #ccc;">Шрифт и вес</th>
+                    <th class="qanelas-pure" style="padding: 8px; text-align: left; border: 1px solid #ccc;">Результат в Яндекс Почте</th>
+                </tr>
+                <tr>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Блок 1</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Qanelas Regular (400)</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">☐ Загружается как Qanelas / ☐ Показывает Arial</td>
+                </tr>
+                <tr>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Блок 2</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Qanelas Medium (500)</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">☐ Загружается как Qanelas / ☐ Показывает Arial</td>
+                </tr>
+                <tr>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Блок 3</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Qanelas Bold (700)</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">☐ Загружается как Qanelas / ☐ Показывает Arial</td>
+                </tr>
+                <tr>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Блок 4</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">Arial (контроль)</td>
+                    <td class="qanelas-pure" style="padding: 8px; border: 1px solid #ccc;">☐ Всегда Arial (ожидаемо)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 5px; border-left: 4px solid #28a745;">
+            <h3 class="qanelas-pure">💡 Выводы по чистому Qanelas:</h3>
+            <ul class="qanelas-pure">
+                <li>Если <strong>ВСЕ блоки 1-3</strong> показывают Qanelas → Qanelas работает отлично в Яндекс Почте</li>
+                <li>Если <strong>только блоки 1-3</strong> показывают Arial → Qanelas не загружается в Яндекс Почте</li>
+                <li>Если <strong>только блок 3 (Bold)</strong> не работает → Проблема с загрузкой Bold веса</li>
+                <li>Если <strong>все блоки 1-3</strong> работают кроме блока 4 → Qanelas полностью поддерживается</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

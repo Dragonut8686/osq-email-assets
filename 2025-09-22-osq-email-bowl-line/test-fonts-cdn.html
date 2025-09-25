@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍜 TEST: CDN шрифты для email</title>
+    <style type="text/css">
+        /* PURE Qanelas test from different CDN sources - NO fallbacks */
+        @font-face {
+            font-family: 'Qanelas-CDN1';
+            src: url('https://fonts.gstatic.com/s/qanelas/v1/Qanelas-Regular.woff2') format('woff2'), url('https://fonts.gstatic.com/s/qanelas/v1/Qanelas-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Qanelas-CDN2';
+            src: url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Regular.woff2') format('woff2'), url('https://cdn.jsdelivr.net/gh/Dragonut8686/osq-eemail-assets@main/2025-07-25-osq-email/fonts/Qanelas-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Qanelas-CDN3';
+            src: url('https://raw.githubusercontent.com/Dragonut8686/osq-eemail-assets/main/2025-07-25-osq-email/fonts/Qanelas-Regular.woff2') format('woff2'), url('https://raw.githubusercontent.com/Dragonut8686/osq-eemail-assets/main/2025-07-25-osq-email/fonts/Qanelas-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .cdn1 { font-family: 'Qanelas-CDN1'; }
+        .cdn2 { font-family: 'Qanelas-CDN2'; }
+        .cdn3 { font-family: 'Qanelas-CDN3'; }
+
+        /* Google Fonts test - pure, no fallbacks */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        .google-roboto { font-family: 'Roboto'; }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        .google-inter { font-family: 'Inter'; }
+    </style>
+</head>
+<body style="background-color: #f0f0f0; padding: 20px; font-family: 'Qanelas';">
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px;">
+
+        <h1 class="cdn1" style="color: #333; margin-bottom: 30px;">🔗 ЧИСТЫЙ тест CDN источников Qanelas</h1>
+
+        <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff;">
+            <h3 class="cdn1">📋 Тестируемые источники ЧИСТОГО Qanelas:</h3>
+            <ul class="cdn1">
+                <li><strong>CDN1:</strong> fonts.gstatic.com (Google Fonts CDN) - ЧИСТЫЙ Qanelas</li>
+                <li><strong>CDN2:</strong> cdn.jsdelivr.net (JSDelivr CDN) - ЧИСТЫЙ Qanelas</li>
+                <li><strong>CDN3:</strong> raw.githubusercontent.com (GitHub Raw) - ЧИСТЫЙ Qanelas</li>
+                <li><strong>Google Fonts:</strong> fonts.googleapis.com - ЧИСТЫЙ Roboto и Inter</li>
+            </ul>
+        </div>
+
+        <h2 class="cdn1">🎨 Тестовые блоки ЧИСТЫХ шрифтов:</h2>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #28a745; border-radius: 5px;">
+            <h3 class="cdn1" style="margin-top: 0; color: #28a745;">✅ CDN1: ЧИСТЫЙ Qanelas с fonts.gstatic.com</h3>
+            <p class="cdn1">Этот текст загружается ЧИСТЫМ Qanelas с fonts.gstatic.com (БЕЗ fallback)</p>
+            <p class="cdn1"><strong>Жирный текст Qanelas CDN1</strong></p>
+            <p class="cdn1"><em>Курсив с Qanelas CDN1</em></p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #ffc107; border-radius: 5px;">
+            <h3 class="cdn2" style="margin-top: 0; color: #856404;">⚠️ CDN2: ЧИСТЫЙ Qanelas с cdn.jsdelivr.net</h3>
+            <p class="cdn2">Этот текст загружается ЧИСТЫМ Qanelas с cdn.jsdelivr.net (БЕЗ fallback)</p>
+            <p class="cdn2"><strong>Жирный текст Qanelas CDN2</strong></p>
+            <p class="cdn2"><em>Курсив с Qanelas CDN2</em></p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #17a2b8; border-radius: 5px;">
+            <h3 class="cdn3" style="margin-top: 0; color: #17a2b8;">🔵 CDN3: ЧИСТЫЙ Qanelas с raw.githubusercontent.com</h3>
+            <p class="cdn3">Этот текст загружается ЧИСТЫМ Qanelas с raw.githubusercontent.com (БЕЗ fallback)</p>
+            <p class="cdn3"><strong>Жирный текст Qanelas CDN3</strong></p>
+            <p class="cdn3"><em>Курсив с Qanelas CDN3</em></p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #6f42c1; border-radius: 5px;">
+            <h3 class="google-roboto" style="margin-top: 0; color: #6f42c1;">🟣 Google Fonts: ЧИСТЫЙ Roboto</h3>
+            <p class="google-roboto">Этот текст использует ЧИСТЫЙ Roboto с fonts.googleapis.com (БЕЗ fallback)</p>
+            <p class="google-roboto"><strong>Жирный Roboto</strong></p>
+            <p class="google-roboto"><em>Курсив Roboto</em></p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #e83e8c; border-radius: 5px;">
+            <h3 class="google-inter" style="margin-top: 0; color: #e83e8c;">🩷 Google Fonts: ЧИСТЫЙ Inter</h3>
+            <p class="google-inter">Этот текст использует ЧИСТЫЙ Inter с fonts.googleapis.com (БЕЗ fallback)</p>
+            <p class="google-inter"><strong>Жирный Inter</strong></p>
+            <p class="google-inter"><em>Курсив Inter</em></p>
+        </div>
+
+        <div style="margin: 15px 0; padding: 15px; border: 2px solid #dc3545; border-radius: 5px;">
+            <h3 class="cdn1" style="margin-top: 0; color: #dc3545;">❌ Контроль: Arial (системный)</h3>
+            <p style="font-family: Arial, sans-serif;">Этот текст использует только Arial (БЕЗ внешних шрифтов)</p>
+            <p style="font-family: Arial, sans-serif;"><strong>Жирный Arial</strong></p>
+            <p style="font-family: Arial, sans-serif;"><em>Курсив Arial</em></p>
+        </div>
+
+        <div style="margin: 20px 0; padding: 15px; background: #e9ecef; border-radius: 5px;">
+            <h3 class="cdn1">📊 Результаты тестирования ЧИСТЫХ шрифтов в Яндекс Почте:</h3>
+            <p class="cdn1"><strong>Отметьте, какой шрифт отображается в каждом блоке:</strong></p>
+            <ul class="cdn1">
+                <li>☐ CDN1 (fonts.gstatic.com) - показывает Qanelas / показывает Arial</li>
+                <li>☐ CDN2 (cdn.jsdelivr.net) - показывает Qanelas / показывает Arial</li>
+                <li>☐ CDN3 (raw.githubusercontent.com) - показывает Qanelas / показывает Arial</li>
+                <li>☐ Google Roboto - показывает Roboto / показывает Arial</li>
+                <li>☐ Google Inter - показывает Inter / показывает Arial</li>
+                <li>☐ Arial (контроль) - показывает Arial (ожидаемо)</li>
+            </ul>
+        </div>
+
+        <div style="margin: 20px 0; padding: 15px; background: #d4edda; border-radius: 5px; border-left: 4px solid #28a745;">
+            <h3 class="cdn1">💡 Выводы по чистым шрифтам:</h3>
+            <ul class="cdn1">
+                <li>Если <strong>ВСЕ CDN блоки (1-3)</strong> показывают Qanelas → Qanelas работает отлично в Яндекс Почте</li>
+                <li>Если <strong>только CDN1</strong> работает → Использовать fonts.gstatic.com</li>
+                <li>Если <strong>только Google Fonts</strong> работают → Использовать fonts.googleapis.com</li>
+                <li>Если <strong>ничего не работает кроме Arial</strong> → Qanelas не поддерживается в Яндекс Почте</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
