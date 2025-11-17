@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>OSQ CASE BOWL — новая линейка контейнеров 🥣</title>
+  <title>🥣OSQ CASE BOWL — новая линейка контейнеров</title>
   <!--[if mso]>
     <style type="text/css">
       body, table, td {font-family: Qanelas, 'Qanelas-Fallback', Arial, Helvetica, sans-serif !important;}
@@ -88,46 +88,52 @@
       .footer-logo { text-align: center !important; }
       .footer-social { text-align: center !important; padding-top: 12px !important; }
       .footer-social table { margin: 0 auto !important; }
+
+      /* --- FIX #2: sizes block stacked vertically on mobile --- */
       .size-box-img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0 12px 0 !important;
         vertical-align: top !important;
-        display: inline-block !important;
-        width: 48% !important;
-        max-width: 48% !important;
-        padding: 0 1% 12px 1% !important;
       }
       .size-box-img img { max-width: 100% !important; margin: 0 auto !important; }
+
       .stack-column { padding-left: 0 !important; padding-right: 0 !important; }
       .desktop-br { display: none !important; }
-      .color-variant { width: 33.33% !important; }
+
+      /* --- FIX #3: color variants centered and larger on mobile --- */
+      .color-variant {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0 16px 0 !important;
+        text-align: center !important;
+      }
+      .color-variant img {
+        width: 100% !important;
+        max-width: 360px !important;
+        height: auto !important;
+        margin: 0 auto 8px !important;
+        display: block !important;
+      }
+
+      /* --- FIX #1: even vertical spacing between advantages 4, 5, 6 --- */
+      .adv-mob-gap { padding-bottom: 12px !important; }
+
       .adv-text { height: auto !important; }
     }
   </style>
 
   <style em="styles">
 @media only screen and (max-width:600px) {
-    .em-mob-padding_top-10 {
-        padding-top: 10px!important;
-    }
-    .em-mob-padding_top-15 {
-        padding-top: 15px!important;
-    }
-    .em-mob-padding_right-0 {
-        padding-right: 0!important;
-    }
-    .em-mob-padding_bottom-0 {
-        padding-bottom: 0!important;
-    }
-    .em-mob-padding_left-10 {
-        padding-left: 10px!important;
-    }
-    .em-mob-width-100perc {
-        width: 100%!important;
-        max-width: 100%!important;
-        min-width: 100%!important;
-    }
-    .em-mob-padding_bottom-20 {
-        padding-bottom: 20px!important;
-    }
+    .em-mob-padding_top-10 { padding-top: 10px!important; }
+    .em-mob-padding_top-15 { padding-top: 15px!important; }
+    .em-mob-padding_right-0 { padding-right: 0!important; }
+    .em-mob-padding_bottom-0 { padding-bottom: 0!important; }
+    .em-mob-padding_left-10 { padding-left: 10px!important; }
+    .em-mob-width-100perc { width: 100%!important; max-width: 100%!important; min-width: 100%!important; }
+    .em-mob-padding_bottom-20 { padding-bottom: 20px!important; }
 }
   </style>
 </head>
@@ -147,9 +153,10 @@
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td align="left" valign="top" class="no-stack" style="width:60%;">
-                    <a href="https://osq-mail-url.lovable.app/email/placeholder?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-05_case_bowl_launch&utm_content=browser_link" style="display:inline-block; font-size:12px; line-height:18px; color:#53565A; text-decoration:underline;">Открыть письмо в&nbsp;браузере</a>
+                    <a href="https://osq-mail-url.lovable.app/email/a8103f66-67c5-48ba-834f-c7d1b283c789" style="display:inline-block; font-size:12px; line-height:18px; color:#53565A; text-decoration:underline;">Открыть письмо в&nbsp;браузере</a>
                     <div style="height:8px; line-height:8px; font-size:8px;">&nbsp;</div>
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-09-22-osq-email-bowl-line/images/september-02-00-logo-grey.png" alt="OSQ Group" width="160" style="display:block; height:auto;">
+                    <!-- Логотип: замена по заданной ссылке -->
+                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-09-22-osq-email-bowl-line/images/september-02-00-logo-grey.png.png" alt="OSQ Group" width="160" style="display:block; height:auto;">
                   </td>
                   <td align="right" valign="top" class="no-stack header-btn-cell" style="width:40%; white-space:nowrap; padding-top: 12px;">
                     <!-- Bulletproof button: Catalog -->
@@ -181,7 +188,8 @@
 
           <tr em="block">
             <td align="center" class="hero-img-cell" style="padding: 0 0 20px;">
-              <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-hero.jpg" alt="OSQ CASE BOWL — новая линейка контейнеров" width="560" style="width:100%; max-width:560px; height:auto; border-radius: 20px; margin: 0 auto; background-color:#e0e0e0;">
+              <!-- Баннер: уменьшено скругление на ПК и моб. -->
+              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-01-banner-01.jpg" alt="OSQ CASE BOWL — новая линейка контейнеров" width="560" style="display:block; width:100%; max-width:560px; height:auto; border-radius:12px; margin:0 auto;">
             </td>
           </tr>
 
@@ -195,7 +203,7 @@
                       OSQ CASE BOWL — развитие нашей легендарной линейки BOWL LINE. Инновационная форма, которой ещё никогда не было на&nbsp;российском рынке упаковки.
                     </p>
 
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-about.jpg" alt="OSQ CASE BOWL — универсальный контейнер" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 24px; background-color:#e0e0e0;">
+                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-02-horizontal-01.jpg" alt="OSQ CASE BOWL — универсальный контейнер" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 24px; background-color:#e0e0e0;">
 
                     <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 24px; color:#53565A;">
                       OSQ Group — первый и&nbsp;единственный производитель контейнеров CASE BOWL в&nbsp;России и&nbsp;СНГ. Универсальная конструкция из&nbsp;целлюлозного картона с&nbsp;барьерным покрытием подходит для холодных и&nbsp;горячих блюд, а&nbsp;также жирных и&nbsp;жидких продуктов.
@@ -215,15 +223,18 @@
                         <td class="stack-column" style="width:33.33%; padding:0 6px 12px 0; vertical-align:top;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
                             <tr>
-                              <td style="padding-top:12px;" align="center">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="40" height="40" style="width:40px; height:40px; background-color:#00A499; border-radius:50%;">
-                                  <tr><td align="center" valign="middle" style="color:#FFFFFF; font-size:20px; font-weight:700;">1</td></tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="adv-text" style="padding:8px 12px 12px; text-align:center; height:72px; vertical-align:top;">
-                                <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Штабелируется, выдерживая нагрузку до 4&nbsp;кг</p>
+                              <td style="padding:16px; vertical-align:middle;">
+                                <div style="text-align:center; margin-bottom:12px;">
+                                  <!-- Зелёный кружок 56x56 с иконкой внутри -->
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:56px; height:56px; background-color:#00A499; border-radius:50%; margin:0 auto;">
+                                    <tr>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-03-icon-01.png" alt="" width="28" height="28" style="display:block; margin:0 auto;">
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p class="adv-text" style="margin:0; font-size:14px; line-height:20px; color:#53565A; text-align:center; height:72px;">Штабелируется, выдерживая нагрузку до 4&nbsp;кг</p>
                               </td>
                             </tr>
                           </table>
@@ -233,15 +244,17 @@
                         <td class="stack-column" style="width:33.33%; padding:0 3px 12px 3px; vertical-align:top;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
                             <tr>
-                              <td style="padding-top:12px;" align="center">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="40" height="40" style="width:40px; height:40px; background-color:#00A499; border-radius:50%;">
-                                  <tr><td align="center" valign="middle" style="color:#FFFFFF; font-size:20px; font-weight:700;">2</td></tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="adv-text" style="padding:8px 12px 12px; text-align:center; height:72px; vertical-align:top;">
-                                <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Подходит под запайку плёнкой, платинкой и&nbsp;бумагой</p>
+                              <td style="padding:16px; vertical-align:middle;">
+                                <div style="text-align:center; margin-bottom:12px;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:56px; height:56px; background-color:#00A499; border-radius:50%; margin:0 auto;">
+                                    <tr>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-03-icon-02.png" alt="" width="28" height="28" style="display:block; margin:0 auto;">
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p class="adv-text" style="margin:0; font-size:14px; line-height:20px; color:#53565A; text-align:center; height:72px;">Подходит под запайку плёнкой, платинкой и&nbsp;бумагой</p>
                               </td>
                             </tr>
                           </table>
@@ -251,15 +264,17 @@
                         <td class="stack-column" style="width:33.33%; padding:0 0 12px 6px; vertical-align:top;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
                             <tr>
-                              <td style="padding-top:12px;" align="center">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="40" height="40" style="width:40px; height:40px; background-color:#00A499; border-radius:50%;">
-                                  <tr><td align="center" valign="middle" style="color:#FFFFFF; font-size:20px; font-weight:700;">3</td></tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="adv-text" style="padding:8px 12px 12px; text-align:center; height:72px; vertical-align:top;">
-                                <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Готов к&nbsp;использованию, не&nbsp;требует сборки</p>
+                              <td style="padding:16px; vertical-align:middle;">
+                                <div style="text-align:center; margin-bottom:12px;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:56px; height:56px; background-color:#00A499; border-radius:50%; margin:0 auto;">
+                                    <tr>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-03-icon-03.png" alt="" width="28" height="28" style="display:block; margin:0 auto;">
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p class="adv-text" style="margin:0; font-size:14px; line-height:20px; color:#53565A; text-align:center; height:72px;">Готов к&nbsp;использованию, не&nbsp;требует сборки</p>
                               </td>
                             </tr>
                           </table>
@@ -269,36 +284,40 @@
                       <!-- Row 2: 4-6 -->
                       <tr>
                         <!-- Card 4 -->
-                        <td class="stack-column" style="width:33.33%; padding:0 6px 0 0; vertical-align:top;">
+                        <td class="stack-column adv-mob-gap" style="width:33.33%; padding:0 6px 0 0; vertical-align:top;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
                             <tr>
-                              <td style="padding-top:12px;" align="center">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="40" height="40" style="width:40px; height:40px; background-color:#00A499; border-radius:50%;">
-                                  <tr><td align="center" valign="middle" style="color:#FFFFFF; font-size:20px; font-weight:700;">4</td></tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="adv-text" style="padding:8px 12px 12px; text-align:center; height:72px; vertical-align:top;">
-                                <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">0% клея в&nbsp;составе</p>
+                              <td style="padding:16px; vertical-align:middle;">
+                                <div style="text-align:center; margin-bottom:12px;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:56px; height:56px; background-color:#00A499; border-radius:50%; margin:0 auto;">
+                                    <tr>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-03-icon-04.png" alt="" width="28" height="28" style="display:block; margin:0 auto;">
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p class="adv-text" style="margin:0; font-size:14px; line-height:20px; color:#53565A; text-align:center; height:72px;">0% клея в&nbsp;составе</p>
                               </td>
                             </tr>
                           </table>
                         </td>
 
                         <!-- Card 5 -->
-                        <td class="stack-column" style="width:33.33%; padding:0 3px 0 3px; vertical-align:top;">
+                        <td class="stack-column adv-mob-gap" style="width:33.33%; padding:0 3px 0 3px; vertical-align:top;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
                             <tr>
-                              <td style="padding-top:12px;" align="center">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="40" height="40" style="width:40px; height:40px; background-color:#00A499; border-radius:50%;">
-                                  <tr><td align="center" valign="middle" style="color:#FFFFFF; font-size:20px; font-weight:700;">5</td></tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="adv-text" style="padding:8px 12px 12px; text-align:center; height:72px; vertical-align:top;">
-                                <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Подходит для разогрева в&nbsp;СВЧ-печи</p>
+                              <td style="padding:16px; vertical-align:middle;">
+                                <div style="text-align:center; margin-bottom:12px;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:56px; height:56px; background-color:#00A499; border-radius:50%; margin:0 auto;">
+                                    <tr>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-03-icon-05.png" alt="" width="28" height="28" style="display:block; margin:0 auto;">
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p class="adv-text" style="margin:0; font-size:14px; line-height:20px; color:#53565A; text-align:center; height:72px;">Подходит для разогрева в&nbsp;СВЧ-печи</p>
                               </td>
                             </tr>
                           </table>
@@ -308,15 +327,17 @@
                         <td class="stack-column" style="width:33.33%; padding:0 0 0 6px; vertical-align:top;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
                             <tr>
-                              <td style="padding-top:12px;" align="center">
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="40" height="40" style="width:40px; height:40px; background-color:#00A499; border-radius:50%;">
-                                  <tr><td align="center" valign="middle" style="color:#FFFFFF; font-size:20px; font-weight:700;">6</td></tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="adv-text" style="padding:8px 12px 12px; text-align:center; height:72px; vertical-align:top;">
-                                <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Подходит для заморозки</p>
+                              <td style="padding:16px; vertical-align:middle;">
+                                <div style="text-align:center; margin-bottom:12px;">
+                                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="width:56px; height:56px; background-color:#00A499; border-radius:50%; margin:0 auto;">
+                                    <tr>
+                                      <td style="text-align:center; vertical-align:middle;">
+                                        <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-03-icon-06.png" alt="" width="28" height="28" style="display:block; margin:0 auto;">
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                                <p class="adv-text" style="margin:0; font-size:14px; line-height:20px; color:#53565A; text-align:center; height:72px;">Подходит для заморозки</p>
                               </td>
                             </tr>
                           </table>
@@ -356,14 +377,14 @@
                       <tr>
                         <td class="stack-column size-box-img" style="width:50%; padding: 0 8px 0 0; vertical-align:top;">
                           <div style="background-color:#F0F0F0; border-radius: 12px; padding: 16px; text-align: center;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-660.jpg" alt="OSQ CASE BOWL 660" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 12px; background-color:#d0d0d0;">
+                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-04-01.jpg" alt="OSQ CASE BOWL 660" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 12px; background-color:#d0d0d0;">
                             <h3 style="margin: 0 0 8px 0; font-size: 20px; line-height: 26px; color:#00A499; font-weight: 700;">OSQ CASE BOWL 660</h3>
                             <p style="margin: 0; font-size: 16px; line-height: 22px; color:#53565A;">полезный объём 500&nbsp;мл</p>
                           </div>
                         </td>
                         <td class="stack-column size-box-img" style="width:50%; padding: 0 0 0 8px; vertical-align:top;">
                           <div style="background-color:#F0F0F0; border-radius: 12px; padding: 16px; text-align: center;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-860.jpg" alt="OSQ CASE BOWL 860" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 12px; background-color:#d0d0d0;">
+                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-04-02.jpg" alt="OSQ CASE BOWL 860" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 12px; background-color:#d0d0d0;">
                             <h3 style="margin: 0 0 8px 0; font-size: 20px; line-height: 26px; color:#00A499; font-weight: 700;">OSQ CASE BOWL 860</h3>
                             <p style="margin: 0; font-size: 16px; line-height: 22px; color:#53565A;">полезный объём 700&nbsp;мл</p>
                           </div>
@@ -390,14 +411,12 @@
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:16px; height:100%;">
                             <h4 style="margin:0 0 12px 0; font-size:16px; line-height:22px; color:#00A499; font-weight:700;">Полукупольная крышка PET</h4>
                             <p style="margin:0 0 16px 0; font-size:14px; line-height:20px; color:#53565A;">Контейнер совместим с&nbsp;полукупольной крышкой PET. Крышка закрывается в&nbsp;одно движение.</p>
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-lid-pet.jpg" alt="Полукупольная крышка PET" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; background-color:#d0d0d0;">
                           </div>
                         </td>
                         <td class="stack-column" style="width:50%; padding:0 0 0 8px; vertical-align:top;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:16px; height:100%;">
                             <h4 style="margin:0 0 12px 0; font-size:16px; line-height:22px; color:#00A499; font-weight:700;">Прозрачная крышка</h4>
                             <p style="margin:0 0 16px 0; font-size:14px; line-height:20px; color:#53565A;">Прозрачная крышка визуально добавляет объём контейнеру — удобно для высоких блюд и&nbsp;эффектной подачи.</p>
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-lid-transparent.jpg" alt="Прозрачная крышка" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; background-color:#d0d0d0;">
                           </div>
                         </td>
                       </tr>
@@ -419,15 +438,15 @@
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                       <tr>
                         <td class="stack-column color-variant" style="width:33.33%; padding: 0 6px 0 0; vertical-align: top; text-align:center;">
-                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-original.jpg" alt="ORIGINAL" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 8px; background-color:#d0d0d0;">
+                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-06-01.jpg" alt="ORIGINAL" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 8px; background-color:#d0d0d0;">
                           <p style="margin:0; font-size:16px; line-height:22px; color:#53565A; font-weight:600;">ORIGINAL</p>
                         </td>
                         <td class="stack-column color-variant" style="width:33.33%; padding: 0 3px 0 3px; vertical-align: top; text-align:center;">
-                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-blackwood.jpg" alt="BLACK WOOD" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 8px; background-color:#d0d0d0;">
+                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-06-02.jpg" alt="BLACK WOOD" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 8px; background-color:#d0d0d0;">
                           <p style="margin:0; font-size:16px; line-height:22px; color:#53565A; font-weight:600;">BLACK WOOD</p>
                         </td>
                         <td class="stack-column color-variant" style="width:33.33%; padding: 0 0 0 6px; vertical-align: top; text-align:center;">
-                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-white.jpg" alt="WHITE EDITION" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 8px; background-color:#d0d0d0;">
+                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-06-03.jpg" alt="WHITE EDITION" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px; margin: 0 auto 8px; background-color:#d0d0d0;">
                           <p style="margin:0; font-size:16px; line-height:22px; color:#53565A; font-weight:600;">WHITE EDITION</p>
                         </td>
                       </tr>
@@ -449,20 +468,10 @@
                     <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 24px; color:#53565A;">
                       Идеально для HoReCa, доставки, агропромышленности, ритейла и&nbsp;пищевых производств.
                     </p>
-                    <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/case-bowl-use-cases.jpg" alt="Области применения OSQ CASE BOWL" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 8px; margin: 0 auto; background-color:#e0e0e0;">
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+                    <img class="size-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-05-osq-email-case-bowl/images/november-01-07-horizontal-01.jpg" alt="Области применения OSQ CASE BOWL" width="100%" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 8px; margin: 0 auto; background-color:#e0e0e0;">
 
-          <!-- CTA: Order now -->
-          <tr em="block">
-            <td style="padding: 0 20px 20px;">
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#FFFFFF; border-radius: 12px; overflow: hidden;">
-                <tr>
-                  <td style="padding: 32px 24px; text-align: center;">
-                    <div class="btn" style="mso-line-height-rule: exactly;">
+                    <!-- CTA под фото (исправлено) -->
+                    <div class="btn" style="mso-line-height-rule: exactly; text-align:center; margin-top: 16px;">
                       <!--[if mso]>
                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://b24-0ioyfv.bitrix24.site/crm_form_kf0zv/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-05_case_bowl_launch&utm_content=order_now_cta" style="height:48px;v-text-anchor:middle;width:180px;" arcsize="10%" stroke="f" fillcolor="#00A499">
                           <w:anchorlock/>
@@ -473,6 +482,7 @@
                       <a href="https://b24-0ioyfv.bitrix24.site/crm_form_kf0zv/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-05_case_bowl_launch&utm_content=order_now_cta" target="_blank" style="display:inline-block; background-color:#00A499; color:#FFFFFF; font-size:16px; font-weight:600; line-height:24px; padding:10px 32px; border-radius:6px;">Заказать сейчас</a>
                       <!--<![endif]-->
                     </div>
+
                   </td>
                 </tr>
               </table>
@@ -489,7 +499,8 @@
                       <!-- Logo -->
                       <tr>
                         <td align="center" style="padding-bottom: 12px;">
-                          <img class="footer-logo" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-09-22-osq-email-bowl-line/images/september-02-00-logo-grey.png" alt="OSQ Group" width="160" style="display:block; height:auto; max-width:160px;">
+                          <!-- Логотип в футере: замена по заданной ссылке -->
+                          <img class="footer-logo" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-09-22-osq-email-bowl-line/images/september-02-00-logo-grey.png.png" alt="OSQ Group" width="160" style="display:block; height:auto; max-width:160px;">
                         </td>
                       </tr>
                       <!-- Social Icons -->
