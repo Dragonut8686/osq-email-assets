@@ -68,25 +68,42 @@
 
     /* Desktop only line break */
     .desktop-br { display: inline; }
+    .mobile-br { display: none; }
 
     /* Mobile */
     @media only screen and (max-width: 600px) {
       .container { width: 100% !important; }
-      .stack-column { display: block !important; width: 100% !important; max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
+      .stack-column { 
+        display: block !important; 
+        width: 100% !important; 
+        max-width: 100% !important; 
+        padding-left: 0 !important; 
+        padding-right: 0 !important;
+        padding-bottom: 12px !important;
+      }
+      .benefit-column {
+        display: table-cell !important;
+        width: 33.33% !important;
+        padding-bottom: 0 !important;
+      }
       .hero-title { font-size: 24px !important; line-height: 30px !important; }
       .section-title { font-size: 22px !important; line-height: 28px !important; }
       .header-btn-cell { padding-top: 0 !important; }
       .no-stack { display: table-cell !important; width: auto !important; }
       .hero-img-cell { padding-left: 20px !important; padding-right: 20px !important; }
       .desktop-br { display: none !important; }
+      .mobile-br { display: inline !important; }
       .product-box { 
         display: inline-block !important;
         width: 48% !important;
         max-width: 48% !important;
         padding: 0 1% 12px 1% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
       }
       .benefit-text { height: auto !important; }
-      .stack-column { padding-bottom: 12px !important; }
+      .benefit-icon-wrapper { margin-bottom: 8px !important; }
+      .edition-box { min-height: auto !important; }
     }
   </style>
 
@@ -121,16 +138,18 @@
           </tr>
         </table>
 
-        <!-- Main container -->
-        <table class="container" role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius: 12px;">
-          
-          <!-- Christmas tree decoration top -->
+        <!-- Christmas tree decoration top (outside container to avoid clipping) -->
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:100%; margin:0 auto;">
           <tr>
             <td style="padding:0; line-height:0;">
-              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NYTree-04.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 12px 12px 0 0;">
+              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NewYear-01.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 12px 12px 0 0;">
             </td>
           </tr>
+        </table>
 
+        <!-- Main container -->
+        <table class="container" role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius: 0 0 12px 12px;">
+          
           <!-- Header -->
           <tr em="block">
             <td style="padding: 0 20px 8px; background-color:#F0F0F0;">
@@ -164,7 +183,7 @@
           <tr em="block">
             <td align="center" style="padding: 20px;">
               <h1 class="hero-title" style="margin: 0; font-size: 32px; line-height: 38px; color:#53565A; font-weight: 700; text-align: center;">
-                Стильная упаковка для Новогодних подарков от OSQ Group
+                Стильная упаковка для Новогодних подарков <span style="display:none;" class="mobile-br"><br></span>от OSQ Group
               </h1>
             </td>
           </tr>
@@ -213,8 +232,8 @@
                     <!-- Benefits -->
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                       <tr>
-                        <td class="stack-column" style="width:33.33%; padding:0 6px 12px 0; vertical-align:top;">
-                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
+                        <td class="stack-column benefit-column" style="width:33.33%; padding:0 6px 12px 0; vertical-align:top;">
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden; height:100%;">
                             <tr>
                               <td style="padding:16px; vertical-align:middle;">
                                 <div style="text-align:center; margin-bottom:12px;">
@@ -231,8 +250,8 @@
                             </tr>
                           </table>
                         </td>
-                        <td class="stack-column" style="width:33.33%; padding:0 3px 12px 3px; vertical-align:top;">
-                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
+                        <td class="stack-column benefit-column" style="width:33.33%; padding:0 3px 12px 3px; vertical-align:top;">
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden; height:100%;">
                             <tr>
                               <td style="padding:16px; vertical-align:middle;">
                                 <div style="text-align:center; margin-bottom:12px;">
@@ -249,8 +268,8 @@
                             </tr>
                           </table>
                         </td>
-                        <td class="stack-column" style="width:33.33%; padding:0 0 12px 6px; vertical-align:top;">
-                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden;">
+                        <td class="stack-column benefit-column" style="width:33.33%; padding:0 0 12px 6px; vertical-align:top;">
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#F0F0F0; border-radius:8px; overflow:hidden; height:100%;">
                             <tr>
                               <td style="padding:16px; vertical-align:middle;">
                                 <div style="text-align:center; margin-bottom:12px;">
@@ -301,47 +320,59 @@
                     <h3 style="margin: 0 0 12px 0; font-size: 20px; line-height: 26px; color:#00A499; font-weight: 700;">OSQ MUF</h3>
                     <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 24px; color:#53565A;">Идеальное решение для маффинов и&nbsp;кексов.</p>
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-04-MUF-01.png" alt="OSQ MUF" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 16px;">
+                    <img class="product-img-large" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-04-MUF-01.png" alt="OSQ MUF" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 16px;">
 
                     <!-- MUF sizes grid 2x3 -->
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:24px;">
                       <tr>
                         <td class="product-box" style="width:33.33%; padding:0 6px 12px 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF1-01.png" alt="OSQ MUF 1" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-1/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_1" style="color:#53565A; text-decoration:none;">OSQ MUF 1</a></p>
+                            <a href="https://osqgroup.ru/product/osq-muf-1/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_1" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF1-01.png" alt="OSQ MUF 1" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-1/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_1" style="color:#53565A; text-decoration:underline;">OSQ MUF 1</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:33.33%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF2-01.png" alt="OSQ MUF 2" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-2/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_2" style="color:#53565A; text-decoration:none;">OSQ MUF 2</a></p>
+                            <a href="https://osqgroup.ru/product/osq-muf-2/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_2" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF2-01.png" alt="OSQ MUF 2" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-2/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_2" style="color:#53565A; text-decoration:underline;">OSQ MUF 2</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:33.33%; padding:0 0 12px 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF4-01.png" alt="OSQ MUF 4" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-4/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_4" style="color:#53565A; text-decoration:none;">OSQ MUF 4</a></p>
+                            <a href="https://osqgroup.ru/product/osq-muf-4/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_4" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF4-01.png" alt="OSQ MUF 4" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-4/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_4" style="color:#53565A; text-decoration:underline;">OSQ MUF 4</a></p>
                           </div>
                         </td>
                       </tr>
                       <tr>
                         <td class="product-box" style="width:33.33%; padding:0 6px 0 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF6-01.png" alt="OSQ MUF 6" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-6/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_6" style="color:#53565A; text-decoration:none;">OSQ MUF 6</a></p>
+                            <a href="https://osqgroup.ru/product/osq-muf-6/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_6" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF6-01.png" alt="OSQ MUF 6" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-6/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_6" style="color:#53565A; text-decoration:underline;">OSQ MUF 6</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:33.33%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF9-01.png" alt="OSQ MUF 9" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-9/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_9" style="color:#53565A; text-decoration:none;">OSQ MUF 9</a></p>
+                            <a href="https://osqgroup.ru/product/osq-muf-9/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_9" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF9-01.png" alt="OSQ MUF 9" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-9/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_9" style="color:#53565A; text-decoration:underline;">OSQ MUF 9</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:33.33%; padding:0 0 0 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF12-01.png" alt="OSQ MUF 12" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-12/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_12" style="color:#53565A; text-decoration:none;">OSQ MUF 12</a></p>
+                            <a href="https://osqgroup.ru/product/osq-muf-12/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_12" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-05-MUF12-01.png" alt="OSQ MUF 12" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-muf-12/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=muf_12" style="color:#53565A; text-decoration:underline;">OSQ MUF 12</a></p>
                           </div>
                         </td>
                       </tr>
@@ -351,21 +382,25 @@
                     <h3 style="margin: 0 0 12px 0; font-size: 20px; line-height: 26px; color:#00A499; font-weight: 700;">OSQ MB</h3>
                     <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 24px; color:#53565A;">Создана для макарон и&nbsp;мини-пирожных, с&nbsp;подложкой для удобного извлечения.</p>
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-06-MB-01.png" alt="OSQ MB" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 16px;">
+                    <img class="product-img-large" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-06-MB-01.png" alt="OSQ MB" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 16px;">
 
                     <!-- MB sizes grid -->
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:24px;">
                       <tr>
-                        <td class="stack-column" style="width:50%; padding:0 8px 0 0; vertical-align:top; text-align:center;">
-                          <div style="background-color:#F0F0F0; border-radius:8px; padding:16px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-MB6-01.png" alt="OSQ MB 6" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 12px;">
-                            <p style="margin:0; font-size:16px; line-height:22px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-mb-6/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=mb_6" style="color:#53565A; text-decoration:none;">OSQ MB 6</a></p>
+                        <td class="product-box" style="width:50%; padding:0 6px 0 0; vertical-align:top; text-align:center;">
+                          <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
+                            <a href="https://osqgroup.ru/product/osq-mb-6/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=mb_6" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-MB6-01.png" alt="OSQ MB 6" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-mb-6/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=mb_6" style="color:#53565A; text-decoration:underline;">OSQ MB 6</a></p>
                           </div>
                         </td>
-                        <td class="stack-column" style="width:50%; padding:0 0 0 8px; vertical-align:top; text-align:center;">
-                          <div style="background-color:#F0F0F0; border-radius:8px; padding:16px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-MB12-02.png" alt="OSQ MB 12" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 12px;">
-                            <p style="margin:0; font-size:16px; line-height:22px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-mb-12/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=mb_12" style="color:#53565A; text-decoration:none;">OSQ MB 12</a></p>
+                        <td class="product-box" style="width:50%; padding:0 0 0 6px; vertical-align:top; text-align:center;">
+                          <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
+                            <a href="https://osqgroup.ru/product/osq-mb-12/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=mb_12" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-MB12-02.png" alt="OSQ MB 12" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-mb-12/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=mb_12" style="color:#53565A; text-decoration:underline;">OSQ MB 12</a></p>
                           </div>
                         </td>
                       </tr>
@@ -375,27 +410,33 @@
                     <h3 style="margin: 0 0 12px 0; font-size: 20px; line-height: 26px; color:#00A499; font-weight: 700;">OSQ CAKE</h3>
                     <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 24px; color:#53565A;">Для порционных десертов и&nbsp;пирожных.</p>
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-08-CAKE-01.png" alt="OSQ CAKE" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 16px;">
+                    <img class="product-img-large" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-08-CAKE-01.png" alt="OSQ CAKE" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 16px;">
 
                     <!-- CAKE sizes grid -->
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:24px;">
                       <tr>
                         <td class="product-box" style="width:33.33%; padding:0 6px 0 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-CAKE1200-01.png" alt="OSQ CAKE 1200" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-cake-1200/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_1200" style="color:#53565A; text-decoration:none;">OSQ CAKE 1200</a></p>
+                            <a href="https://osqgroup.ru/product/osq-cake-1200/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_1200" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-CAKE1200-01.png" alt="OSQ CAKE 1200" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-cake-1200/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_1200" style="color:#53565A; text-decoration:underline;">OSQ CAKE 1200</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:33.33%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-CAKE1900-01.png" alt="OSQ CAKE 1900" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-cake-1900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_1900" style="color:#53565A; text-decoration:none;">OSQ CAKE 1900</a></p>
+                            <a href="https://osqgroup.ru/product/osq-cake-1900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_1900" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-CAKE1900-01.png" alt="OSQ CAKE 1900" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-cake-1900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_1900" style="color:#53565A; text-decoration:underline;">OSQ CAKE 1900</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:33.33%; padding:0 0 0 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:12px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-CAKE6000-01.png" alt="OSQ CAKE 6000" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
-                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-cake-6000/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_6000" style="color:#53565A; text-decoration:none;">OSQ CAKE 6000</a></p>
+                            <a href="https://osqgroup.ru/product/osq-cake-6000/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_6000" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-07-CAKE6000-01.png" alt="OSQ CAKE 6000" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 8px;">
+                            </a>
+                            <p style="margin:0; font-size:14px; line-height:20px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-cake-6000/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=cake_6000" style="color:#53565A; text-decoration:underline;">OSQ CAKE 6000</a></p>
                           </div>
                         </td>
                       </tr>
@@ -449,7 +490,7 @@
                       Из линейки SHOWCASE LINE — стильная упаковка с&nbsp;купольной крышкой для бенто-тортов.
                     </p>
 
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-09-SmartPack-01.png" alt="OSQ SMART PACK" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 20px;">
+                    <img class="product-img-large" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-09-SmartPack-01.png" alt="OSQ SMART PACK" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 20px;">
 
                     <h2 class="section-title" style="margin:0 0 20px 0; font-size:26px; line-height:32px; color:#53565A; font-weight:700; text-align:center;"><span style="font-size:20px; color:#00A499;">2 цвета • 4 размера</span></h2>
                     
@@ -457,13 +498,13 @@
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:24px;">
                       <tr>
                         <td class="stack-column" style="width:50%; padding:0 8px 0 0; vertical-align:top;">
-                          <div style="background-color:#F9F5F0; border-radius:8px; padding:16px;">
+                          <div class="edition-box" style="background-color:#F9F5F0; border-radius:8px; padding:16px; min-height:90px; box-sizing:border-box;">
                             <h4 style="margin:0 0 8px 0; font-size:16px; line-height:22px; color:#00A499; font-weight:700;">OSQ Original</h4>
                             <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Классический крафт-картон – надежный и стильный выбор для вашего бизнеса.</p>
                           </div>
                         </td>
                         <td class="stack-column em-mob-padding_top-15" style="width:50%; padding:0 0 0 8px; vertical-align:top;">
-                          <div style="background-color:#F0F0F0; border-radius:8px; padding:16px;">
+                          <div class="edition-box" style="background-color:#F0F0F0; border-radius:8px; padding:16px; min-height:90px; box-sizing:border-box;">
                             <h4 style="margin:0 0 8px 0; font-size:16px; line-height:22px; color:#00A499; font-weight:700;">OSQ White Edition</h4>
                             <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Премиальная белая упаковка для изысканной подачи продукции.</p>
                           </div>
@@ -481,26 +522,34 @@
                       <tr>
                         <td class="product-box" style="width:25%; padding:0 6px 12px 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original300-01.png" alt="SMART PACK 300" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300" style="color:#53565A; text-decoration:none;">300</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original300-01.png" alt="SMART PACK 300" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300" style="color:#53565A; text-decoration:underline;">300</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original550-01.png" alt="SMART PACK 550" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-550/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550" style="color:#53565A; text-decoration:none;">550</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-550/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original550-01.png" alt="SMART PACK 550" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-550/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550" style="color:#53565A; text-decoration:underline;">550</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original800-01.png" alt="SMART PACK 800" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-800/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800" style="color:#53565A; text-decoration:none;">800</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-800/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original800-01.png" alt="SMART PACK 800" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-800/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800" style="color:#53565A; text-decoration:underline;">800</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:25%; padding:0 0 12px 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original900-01.png" alt="SMART PACK 900" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900" style="color:#53565A; text-decoration:none;">900</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original900-01.png" alt="SMART PACK 900" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900" style="color:#53565A; text-decoration:underline;">900</a></p>
                           </div>
                         </td>
                       </tr>
@@ -512,26 +561,34 @@
                       <tr>
                         <td class="product-box" style="width:25%; padding:0 6px 0 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White300-01.png" alt="SMART PACK 300 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300_white" style="color:#53565A; text-decoration:none;">300</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300_white" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White300-01.png" alt="SMART PACK 300 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300_white" style="color:#53565A; text-decoration:underline;">300</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White550-01.png" alt="SMART PACK 550 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-550-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550_white" style="color:#53565A; text-decoration:none;">550</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-550-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550_white" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White550-01.png" alt="SMART PACK 550 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-550-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550_white" style="color:#53565A; text-decoration:underline;">550</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White800-01.png" alt="SMART PACK 800 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-800-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800_white" style="color:#53565A; text-decoration:none;">800</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-800-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800_white" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White800-01.png" alt="SMART PACK 800 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-800-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800_white" style="color:#53565A; text-decoration:underline;">800</a></p>
                           </div>
                         </td>
                         <td class="product-box" style="width:25%; padding:0 0 0 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
-                            <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White900-01.png" alt="SMART PACK 900 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
-                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-900-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900_white" style="color:#53565A; text-decoration:none;">900</a></p>
+                            <a href="https://osqgroup.ru/product/osq-smartpack-900-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900_white" target="_blank" style="display:block; text-decoration:none;">
+                              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White900-01.png" alt="SMART PACK 900 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
+                            </a>
+                            <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-900-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900_white" style="color:#53565A; text-decoration:underline;">900</a></p>
                           </div>
                         </td>
                       </tr>
@@ -585,7 +642,7 @@
                       Из линейки BOX LINE — идеальный выбор для упаковки новогодних подарков: сладостей, украшений и&nbsp;праздничных наборов.
                     </p>
 
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-12-TABOX-01.png" alt="OSQ TABOX PRO" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 20px;">
+                    <img class="product-img-large" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-12-TABOX-01.png" alt="OSQ TABOX PRO" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px; margin-bottom: 20px;">
 
                     <h2 class="section-title" style="margin:0 0 20px 0; font-size:26px; line-height:32px; color:#53565A; font-weight:700; text-align:center;"><span style="font-size:20px; color:#00A499;">2 цвета • 7 размеров</span></h2>
                     
@@ -611,25 +668,25 @@
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                       <!-- Row 1: Original 300, 500, 1000, 1450 -->
                       <tr>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_300" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-300-01.png" alt="OSQ TABOX PRO 300 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>300</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-500/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_500" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-500-01.png" alt="OSQ TABOX PRO 500 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>500</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1000/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1000" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1000-01.png" alt="OSQ TABOX PRO 1000 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1000</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1450/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1450" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1450-01.png" alt="OSQ TABOX PRO 1450 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1450</p>
@@ -638,25 +695,25 @@
                       </tr>
                       <!-- Row 2: Original 1500, 1555, 2500 + White 300 -->
                       <tr>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1500/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1500" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1500-01.png" alt="OSQ TABOX PRO 1500 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1500</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1555/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1555" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1550-01.png" alt="OSQ TABOX PRO 1555 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1555</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-2500/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_2500" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-2500-01.png" alt="OSQ TABOX PRO 2500 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>2500</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img em-mob-padding_bottom-20" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_300we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-300-01.png" alt="OSQ TABOX PRO 300 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>300WE</p>
@@ -665,25 +722,25 @@
                       </tr>
                       <!-- Row 3: White 500, 1000, 1450, 1500 -->
                       <tr>
-                        <td class="stack-column size-box-img" style="width:25%; padding:0 6px 0 0; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 6px 0 0; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-500-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_500we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-500-01.png" alt="OSQ TABOX PRO 500 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>500WE</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1000-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1000we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-1000-01.png" alt="OSQ TABOX PRO 1000 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1000WE</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1000-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1450we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-1450-01.png" alt="OSQ TABOX PRO 1450 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1450WE</p>
                           </a>
                         </td>
-                        <td class="stack-column size-box-img" style="width:25%; padding:0 0 0 6px; vertical-align:top;">
+                        <td class="product-box" style="width:25%; padding:0 0 0 6px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1500-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1500we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-1500-01.png" alt="OSQ TABOX PRO 1500 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1500WE</p>
@@ -792,8 +849,8 @@
 
           <!-- Footer -->
           <tr em="block">
-            <td style="padding: 0 20px 41px;">
-              <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius: 12px; overflow: hidden;">
+            <td style="padding: 0 20px 0;">
+              <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="background-color:#FFFFFF; border-radius: 12px 12px 0 0;">
                 <tr>
                   <td style="padding: 24px;">
                     <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
@@ -841,7 +898,7 @@
                       </tr>
                       <!-- Unsubscribe -->
                       <tr>
-                        <td style="padding-bottom:0;">
+                        <td style="padding-bottom:24px;">
                           <p style="margin: 0 0 0 0; font-size: 12px; line-height: 18px; color:#53565A; text-align: center;">
                             Не хотите больше получать письма от нас? <a href="{{UnsubscribeUrl}}" target="_blank" style="color:#53565A; text-decoration:underline;">Отписаться</a>
                           </p>
@@ -850,11 +907,17 @@
                     </table>
                   </td>
                 </tr>
-                
-                <!-- Christmas tree decoration bottom (flipped) -->
+              </table>
+            </td>
+          </tr>
+
+          <!-- Christmas tree decoration bottom (flipped, outside container to avoid clipping) -->
+          <tr em="block">
+            <td style="padding: 0 20px 41px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="padding:0; line-height:0;">
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NYTree-05.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 0 0 12px 12px; transform:rotate(180deg); -webkit-transform:rotate(180deg); -ms-transform:rotate(180deg);">
+                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NewYear-02.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 0 0 12px 12px; transform:rotate(180deg); -webkit-transform:rotate(180deg); -ms-transform:rotate(180deg);">
                   </td>
                 </tr>
               </table>
