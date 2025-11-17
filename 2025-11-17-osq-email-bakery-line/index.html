@@ -73,6 +73,8 @@
     /* Mobile */
     @media only screen and (max-width: 600px) {
       .container { width: 100% !important; }
+      
+      /* Стандартные stack-column элементы - на всю ширину */
       .stack-column { 
         display: block !important; 
         width: 100% !important; 
@@ -81,29 +83,109 @@
         padding-right: 0 !important;
         padding-bottom: 12px !important;
       }
-      .benefit-column {
+      
+      /* Преимущества - остаются в один ряд, одинаковая высота */
+      td.benefit-column {
         display: table-cell !important;
         width: 33.33% !important;
-        padding-bottom: 0 !important;
+        padding: 0 2px 0 2px !important;
+        vertical-align: top !important;
       }
+      td.benefit-column > table {
+        min-height: 180px !important;
+      }
+      
+      /* Product-box элементы по 3 в ряд (для блоков с 6 элементами) */
+      table tr td.product-box {
+        display: table-cell !important;
+        width: 32.5% !important;
+        max-width: 32.5% !important;
+        padding: 0 0.5% 12px 0.5% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+      }
+      td.product-box {
+        display: table-cell !important;
+        width: 32.5% !important;
+        max-width: 32.5% !important;
+        padding: 0 0.5% 12px 0.5% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+      }
+      .product-box {
+        display: table-cell !important;
+        width: 32.5% !important;
+        max-width: 32.5% !important;
+        padding: 0 0.5% 12px 0.5% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+      }
+      
+      /* Product-box-wide элементы по 2 в ряд (для SMART PACK и TABOX с 4+ элементами) */
+      table tr td.product-box-wide {
+        display: inline-block !important;
+        width: 49% !important;
+        max-width: 49% !important;
+        padding: 0 0.5% 12px 0.5% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+      }
+      td.product-box-wide {
+        display: inline-block !important;
+        width: 49% !important;
+        max-width: 49% !important;
+        padding: 0 0.5% 12px 0.5% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+      }
+      .product-box-wide {
+        display: inline-block !important;
+        width: 49% !important;
+        max-width: 49% !important;
+        padding: 0 0.5% 12px 0.5% !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+      }
+      
+      /* Большие изображения продуктов - с таким же горизонтальным отступом */
+      img.product-img-large {
+        padding-left: 0.5% !important;
+        padding-right: 0.5% !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Изображение сертификата - уменьшаем на мобильных */
+      .certificate-img-cell {
+        text-align: center !important;
+        padding: 0 !important;
+        padding-bottom: 16px !important;
+      }
+      .certificate-img {
+        max-width: 200px !important;
+        width: 200px !important;
+        margin: 0 auto !important;
+      }
+      
+      /* Edition boxes - на мобильных без min-height */
+      .edition-box { 
+        min-height: auto !important; 
+      }
+      
+      /* Текст преимуществ - авто высота на мобильных */
+      .benefit-text { 
+        height: auto !important; 
+      }
+      
+      /* Шрифты и отступы */
       .hero-title { font-size: 24px !important; line-height: 30px !important; }
       .section-title { font-size: 22px !important; line-height: 28px !important; }
       .header-btn-cell { padding-top: 0 !important; }
       .no-stack { display: table-cell !important; width: auto !important; }
       .hero-img-cell { padding-left: 20px !important; padding-right: 20px !important; }
+      
+      /* Переносы строк */
       .desktop-br { display: none !important; }
       .mobile-br { display: inline !important; }
-      .product-box { 
-        display: inline-block !important;
-        width: 48% !important;
-        max-width: 48% !important;
-        padding: 0 1% 12px 1% !important;
-        box-sizing: border-box !important;
-        vertical-align: top !important;
-      }
-      .benefit-text { height: auto !important; }
-      .benefit-icon-wrapper { margin-bottom: 8px !important; }
-      .edition-box { min-height: auto !important; }
     }
   </style>
 
@@ -142,7 +224,7 @@
         <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width:100%; margin:0 auto;">
           <tr>
             <td style="padding:0; line-height:0;">
-              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NewYear-01.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 12px 12px 0 0;">
+              <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NewYear-03.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 12px 12px 0 0;">
             </td>
           </tr>
         </table>
@@ -196,7 +278,7 @@
 
           <!-- Snowflakes divider -->
           <tr>
-            <td style="padding:8px 20px;">
+            <td style="padding:8px 20px 20px 20px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❅</td>
@@ -303,6 +385,24 @@
                       </div>
                     </div>
                   </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Snowflakes divider -->
+          <tr>
+            <td style="padding:8px 20px 20px 20px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❅</td>
+                  <td style="text-align:center; font-size:20px; line-height:1; color:#00a499; opacity:0.8; padding:0 6px;">❄</td>
+                  <td style="text-align:center; font-size:14px; line-height:1; color:#00a499; opacity:0.6; padding:0 6px;">❆</td>
+                  <td style="text-align:center; font-size:18px; line-height:1; color:#00a499; opacity:0.75; padding:0 6px;">❅</td>
+                  <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❄</td>
+                  <td style="text-align:center; font-size:14px; line-height:1; color:#00a499; opacity:0.6; padding:0 6px;">❆</td>
+                  <td style="text-align:center; font-size:20px; line-height:1; color:#00a499; opacity:0.8; padding:0 6px;">❅</td>
+                  <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❄</td>
                 </tr>
               </table>
             </td>
@@ -463,7 +563,7 @@
 
           <!-- Snowflakes divider -->
           <tr>
-            <td style="padding:8px 20px;">
+            <td style="padding:8px 20px 20px 20px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❅</td>
@@ -498,13 +598,13 @@
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:24px;">
                       <tr>
                         <td class="stack-column" style="width:50%; padding:0 8px 0 0; vertical-align:top;">
-                          <div class="edition-box" style="background-color:#F9F5F0; border-radius:8px; padding:16px; min-height:90px; box-sizing:border-box;">
+                          <div class="edition-box" style="background-color:#F9F5F0; border-radius:8px; padding:16px; min-height:120px; box-sizing:border-box;">
                             <h4 style="margin:0 0 8px 0; font-size:16px; line-height:22px; color:#00A499; font-weight:700;">OSQ Original</h4>
                             <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Классический крафт-картон – надежный и стильный выбор для вашего бизнеса.</p>
                           </div>
                         </td>
                         <td class="stack-column em-mob-padding_top-15" style="width:50%; padding:0 0 0 8px; vertical-align:top;">
-                          <div class="edition-box" style="background-color:#F0F0F0; border-radius:8px; padding:16px; min-height:90px; box-sizing:border-box;">
+                          <div class="edition-box" style="background-color:#F0F0F0; border-radius:8px; padding:16px; min-height:120px; box-sizing:border-box;">
                             <h4 style="margin:0 0 8px 0; font-size:16px; line-height:22px; color:#00A499; font-weight:700;">OSQ White Edition</h4>
                             <p style="margin:0; font-size:14px; line-height:20px; color:#53565A;">Премиальная белая упаковка для изысканной подачи продукции.</p>
                           </div>
@@ -520,7 +620,7 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="product-box" style="width:25%; padding:0 6px 12px 0; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 6px 12px 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original300-01.png" alt="SMART PACK 300" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -528,7 +628,7 @@
                             <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300" style="color:#53565A; text-decoration:underline;">300</a></p>
                           </div>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-550/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original550-01.png" alt="SMART PACK 550" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -536,7 +636,7 @@
                             <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-550/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550" style="color:#53565A; text-decoration:underline;">550</a></p>
                           </div>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 12px 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-800/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original800-01.png" alt="SMART PACK 800" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -544,7 +644,7 @@
                             <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-800/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800" style="color:#53565A; text-decoration:underline;">800</a></p>
                           </div>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 0 12px 6px; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 0 12px 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-900/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-10-SmartPack-Original900-01.png" alt="SMART PACK 900" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -559,7 +659,7 @@
                         </td>
                       </tr>
                       <tr>
-                        <td class="product-box" style="width:25%; padding:0 6px 0 0; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 6px 0 0; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300_white" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White300-01.png" alt="SMART PACK 300 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -567,7 +667,7 @@
                             <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_300_white" style="color:#53565A; text-decoration:underline;">300</a></p>
                           </div>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-550-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550_white" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White550-01.png" alt="SMART PACK 550 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -575,7 +675,7 @@
                             <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-550-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_550_white" style="color:#53565A; text-decoration:underline;">550</a></p>
                           </div>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 0 3px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-800-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800_white" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White800-01.png" alt="SMART PACK 800 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -583,7 +683,7 @@
                             <p style="margin:0; font-size:12px; line-height:18px; color:#53565A; font-weight:600;"><a href="https://osqgroup.ru/product/osq-smartpack-800-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_800_white" style="color:#53565A; text-decoration:underline;">800</a></p>
                           </div>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 0 0 6px; vertical-align:top; text-align:center;">
+                        <td class="product-box-wide" style="width:25%; padding:0 0 0 6px; vertical-align:top; text-align:center;">
                           <div style="background-color:#F0F0F0; border-radius:8px; padding:8px;">
                             <a href="https://osqgroup.ru/product/osq-smartpack-900-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=smartpack_900_white" target="_blank" style="display:block; text-decoration:none;">
                               <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-11-SmartPack-White900-01.png" alt="SMART PACK 900 WHITE" width="100%" style="display:block; width:100%; height:auto; border-radius:6px; margin:0 auto 6px;">
@@ -615,7 +715,7 @@
 
           <!-- Snowflakes divider -->
           <tr>
-            <td style="padding:8px 20px;">
+            <td style="padding:8px 20px 20px 20px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❅</td>
@@ -668,25 +768,25 @@
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                       <!-- Row 1: Original 300, 500, 1000, 1450 -->
                       <tr>
-                        <td class="product-box" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-300/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_300" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-300-01.png" alt="OSQ TABOX PRO 300 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>300</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-500/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_500" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-500-01.png" alt="OSQ TABOX PRO 500 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>500</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1000/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1000" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1000-01.png" alt="OSQ TABOX PRO 1000 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1000</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1450/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1450" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1450-01.png" alt="OSQ TABOX PRO 1450 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1450</p>
@@ -695,25 +795,25 @@
                       </tr>
                       <!-- Row 2: Original 1500, 1555, 2500 + White 300 -->
                       <tr>
-                        <td class="product-box" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 6px 12px 0; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1500/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1500" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1500-01.png" alt="OSQ TABOX PRO 1500 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1500</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1555/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1555" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-1550-01.png" alt="OSQ TABOX PRO 1555 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1555</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 12px 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-2500/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_2500" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-craft-2500-01.png" alt="OSQ TABOX PRO 2500 Original" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>2500</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 0 12px 6px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-300-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_300we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-300-01.png" alt="OSQ TABOX PRO 300 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>300WE</p>
@@ -722,25 +822,25 @@
                       </tr>
                       <!-- Row 3: White 500, 1000, 1450, 1500 -->
                       <tr>
-                        <td class="product-box" style="width:25%; padding:0 6px 0 0; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 6px 0 0; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-500-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_500we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-500-01.png" alt="OSQ TABOX PRO 500 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>500WE</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1000-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1000we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-1000-01.png" alt="OSQ TABOX PRO 1000 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1000WE</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 3px 0 3px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1000-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1450we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-1450-01.png" alt="OSQ TABOX PRO 1450 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1450WE</p>
                           </a>
                         </td>
-                        <td class="product-box" style="width:25%; padding:0 0 0 6px; vertical-align:top;">
+                        <td class="product-box-wide" style="width:25%; padding:0 0 0 6px; vertical-align:top;">
                           <a href="https://osqgroup.ru/product/osq-tabox-pro-1500-belyy/?utm_source=osq_newsletter&utm_medium=email&utm_campaign=2025-11-17_bakery_line_ny&utm_content=product_1500we" target="_blank" style="display:block; text-decoration:none;">
                             <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-10-21-osq-email-tabox/images/october-01-04-white-1500-01.png" alt="OSQ TABOX PRO 1500 White Edition" style="display:block; width:100%; max-width:100%; height:auto; border-radius:8px;">
                             <p style="margin:8px 0 0 0; font-size:12px; line-height:16px; color:#53565A; font-weight:600; text-align:center; text-decoration:underline;">OSQ TABOX PRO<br>1500WE</p>
@@ -770,7 +870,7 @@
 
           <!-- Snowflakes divider -->
           <tr>
-            <td style="padding:8px 20px;">
+            <td style="padding:8px 20px 20px 20px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❅</td>
@@ -798,8 +898,8 @@
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                       <tr>
                         <!-- Certificate Image -->
-                        <td class="stack-column" style="width:40%; padding:0 16px 0 0; vertical-align:middle;">
-                          <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-13-certificate-01.png" alt="Сертификат Сделано в России" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px;">
+                        <td class="stack-column certificate-img-cell" style="width:40%; padding:0 16px 0 0; vertical-align:middle;">
+                          <img class="certificate-img" src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-13-certificate-01.png" alt="Сертификат Сделано в России" width="100%" style="width:100%; max-width:100%; display:block; border-radius: 8px;">
                         </td>
                         
                         <!-- Certificate Content -->
@@ -831,7 +931,7 @@
 
           <!-- Snowflakes divider -->
           <tr>
-            <td style="padding:8px 20px;">
+            <td style="padding:8px 20px 20px 20px;">
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="text-align:center; font-size:16px; line-height:1; color:#00a499; opacity:0.7; padding:0 6px;">❅</td>
@@ -917,7 +1017,7 @@
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td style="padding:0; line-height:0;">
-                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NewYear-02.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 0 0 12px 12px; transform:rotate(180deg); -webkit-transform:rotate(180deg); -ms-transform:rotate(180deg);">
+                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-11-17-osq-email-bakery-line/images/november-02-14-NewYear-02.jpg" alt="" width="600" style="display:block; width:100%; max-width:100%; height:auto; border-radius: 12px 12px 0 0; transform:rotate(180deg); -webkit-transform:rotate(180deg); -ms-transform:rotate(180deg);">
                   </td>
                 </tr>
               </table>
