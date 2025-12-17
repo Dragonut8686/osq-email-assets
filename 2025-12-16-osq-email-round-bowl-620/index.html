@@ -152,7 +152,7 @@
             }
 
             .mobile-text-pad {
-                padding: 30px 20px !important;
+                padding: 20px 15px !important;
             }
 
             /* Yandex-style utils */
@@ -173,20 +173,31 @@
             /* Mobile-only spacing for advantages blocks (Витрина, Выгода, Запайка) */
             td[style*="padding: 0 10px 5px 10px"] .mob_100,
             td[style*="padding: 0 10px 10px 10px"] .mob_100 {
-                margin-bottom: 20px !important;
+                margin-bottom: 30px !important;
             }
 
-            /* Mobile-only product image sizing - square format */
+            /* Mobile-only product image sizing - compact centered squares */
             .mobile-stack img[alt="OSQ ROUND BOWL 620"],
             .mobile-stack img[alt="BLACK WOOD edition"],
             .mobile-stack img[alt="WHITE EDITION"] {
-                width: 120px !important;
-                height: 120px !important;
-                max-width: 120px !important;
-                max-height: 120px !important;
+                width: 180px !important;
+                height: 180px !important;
+                max-width: 180px !important;
+                max-height: 180px !important;
+                min-height: auto !important;
                 object-fit: cover !important;
-                margin: 0 auto 10px auto !important;
+                margin: 0 auto 15px auto !important;
                 display: block !important;
+            }
+
+            /* Mobile-only product text centering */
+            .mobile-stack p {
+                text-align: center !important;
+            }
+
+            /* Add spacing between stacked products */
+            .mobile-pb-20 {
+                padding-bottom: 20px !important;
             }
         }
 
@@ -445,7 +456,7 @@
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td align="center">
-                                                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/december-02-zapayka-02.jpg"
+                                                    <img src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/december-02-zapayka-02.gif"
                                                         width="310" alt="Запайка" border="0"
                                                         style="display:block; width: 100%; max-width: 310px; height: auto;"
                                                         class="img-full">
