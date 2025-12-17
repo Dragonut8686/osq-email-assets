@@ -170,17 +170,23 @@
                 display: none !important;
             }
 
-            /* Mobile-only spacing for USP cards */
-            table tr td.mobile-stack {
-                padding-bottom: 10px !important;
+            /* Mobile-only spacing for advantages blocks (Витрина, Выгода, Запайка) */
+            td[style*="padding: 0 10px 5px 10px"] .mob_100,
+            td[style*="padding: 0 10px 10px 10px"] .mob_100 {
+                margin-bottom: 20px !important;
             }
 
-            /* Mobile-only product image sizing */
+            /* Mobile-only product image sizing - square format */
             .mobile-stack img[alt="OSQ ROUND BOWL 620"],
             .mobile-stack img[alt="BLACK WOOD edition"],
             .mobile-stack img[alt="WHITE EDITION"] {
-                max-height: 150px !important;
+                width: 120px !important;
+                height: 120px !important;
+                max-width: 120px !important;
+                max-height: 120px !important;
                 object-fit: cover !important;
+                margin: 0 auto 10px auto !important;
+                display: block !important;
             }
         }
 
