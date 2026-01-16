@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(planning-with-files)",
+      "Bash(bash \"C:\\\\Users\\\\user\\\\.claude\\\\plugins\\\\cache\\\\planning-with-files\\\\planning-with-files\\\\2.1.2\\\\skills\\\\planning-with-files\\\\scripts\\\\init-session.sh\")"
+    ]
+  }
+}
