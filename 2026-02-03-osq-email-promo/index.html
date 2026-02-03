@@ -54,89 +54,131 @@
     </style>
     <!--<![endif]-->
     <style type="text/css">
+      /* BASE RESETS */
+      html {
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+      }
+
       body {
         margin: 0;
         padding: 0;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
+        width: 100% !important;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        background-color: #ffffff;
+        font-family: "Qanelas", Arial, sans-serif;
+        color: #151515;
       }
-      table,
-      td {
-        border-collapse: collapse;
+
+      table {
+        border-spacing: 0;
         mso-table-lspace: 0pt;
         mso-table-rspace: 0pt;
+        border-collapse: collapse;
       }
+
+      td {
+        padding: 0;
+      }
+
       img {
         border: 0;
+        display: block;
+        height: auto;
         line-height: 100%;
         outline: none;
         text-decoration: none;
         -ms-interpolation-mode: bicubic;
       }
+
       a {
         text-decoration: none;
-      }
-      .preheader {
-        display: none !important;
-        visibility: hidden;
-        mso-hide: all;
-        font-size: 1px;
-        line-height: 1px;
-        max-height: 0;
-        max-width: 0;
-        opacity: 0;
-        overflow: hidden;
+        color: #00a499;
       }
 
+      /* WRAPPER */
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        background-color: #ffffff;
+        padding-bottom: 60px;
+      }
+
+      .webkit {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .outer {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 640px;
+      }
+
+      /* MOBILE */
       @media only screen and (max-width: 640px) {
         .mobile-stack {
           display: block !important;
           width: 100% !important;
+          padding: 0 !important;
         }
+
+        .mobile-stack img {
+          height: auto !important;
+          object-fit: contain !important;
+        }
+
         .mobile-pad {
           padding-left: 20px !important;
           padding-right: 20px !important;
         }
+
+        .mobile-pt-20 {
+          padding-top: 20px !important;
+        }
+
+        .mobile-pb-20 {
+          padding-bottom: 20px !important;
+        }
+
         .h1-mobile {
           font-size: 24px !important;
           line-height: 28px !important;
         }
+
         .h2-mobile {
-          font-size: 22px !important;
-          line-height: 26px !important;
+          font-size: 24px !important;
+          line-height: 28px !important;
         }
-        .mob_100 {
-          display: block !important;
-          width: 100% !important;
-          background: none !important;
-        }
-        .mob-gif-wrap {
-          display: block !important;
-          width: 100% !important;
-          max-height: none !important;
-        }
-        .mob-gif-img {
-          display: block !important;
+
+        .img-full {
           width: 100% !important;
           height: auto !important;
+          max-width: 100% !important;
+          padding: 0 !important;
         }
+
+        .header-browser-link {
+          font-size: 10px !important;
+        }
+
+        .header-logo {
+          width: 90px !important;
+        }
+
+        .header-catalog {
+          font-size: 12px !important;
+        }
+
         .product-card {
           display: block !important;
           width: 100% !important;
           padding: 10px 0 !important;
         }
+
         .product-card-inner {
           width: 100% !important;
-        }
-        .mobile-text-center {
-          text-align: center !important;
-        }
-        .mobile-hide {
-          display: none !important;
-        }
-        .footer-social-icon {
-          width: 36px !important;
-          height: 36px !important;
         }
       }
 
@@ -144,10 +186,12 @@
       @media only screen and (max-width: 500px) {
         u + .body .white_text {
           background: linear-gradient(#ffffff, #ffffff);
+          background-image: linear-gradient(#ffffff, #ffffff);
           background-clip: text;
           -webkit-background-clip: text;
           color: transparent !important;
         }
+
         div > u + .body .white_text {
           background-image: none;
           background-clip: inherit;
@@ -157,881 +201,917 @@
       }
     </style>
   </head>
+
   <body
     class="body"
-    style="
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      font-family: 'Qanelas', Arial, Helvetica, sans-serif;
-    "
+    bgcolor="#FFFFFF"
+    style="margin: 0; padding: 0; background-color: #ffffff"
   >
-    <!-- Preheader -->
-    <div class="preheader">
-      Скидка 10% на OSQ TABOX PRO, CAKE и MB до 31 марта!<vk-snippet-end />&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
-    </div>
-
-    <!-- Main Container -->
-    <!--[if gte mso 9]>
-    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="640">
-      <tr>
-        <td>
-    <![endif]-->
-    <table
-      role="presentation"
-      align="center"
-      border="0"
-      cellpadding="0"
-      cellspacing="0"
-      width="100%"
-      style="max-width: 640px; margin: 0 auto"
+    <!-- PREHEADER -->
+    <div
+      class="preheader"
+      style="color: #f0f1f3; font-size: 0px; line-height: 0px"
     >
-      <!-- HEADER -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="
-              background-color: #f6f7f8;
-              border-radius: 32px 32px 0 0;
-            "
+      Скидка 10% на OSQ TABOX PRO, CAKE и MB до 31 марта! <vk-snippet-end />͏‌͏͏‌ ͏‌ ͏‌ ͏‌ ͏‌
+      ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌
+      ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌
+    </div>
+    <span
+      style="
+        display: none !important;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        width: 0;
+      "
+      >⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌</span
+    >
+
+    <div
+      align="center"
+      style="
+        line-height: normal;
+        word-break: normal;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+      "
+    >
+      <table
+        width="100%"
+        border="0"
+        cellspacing="0"
+        cellpadding="0"
+        role="presentation"
+        style="line-height: normal"
+      >
+        <tr>
+          <td
+            align="center"
+            bgcolor="#FFFFFF"
+            style="background-color: #ffffff"
           >
-            <tr>
-              <td style="padding: 25px 30px">
-                <table
-                  role="presentation"
-                  width="100%"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr>
-                    <td width="140" valign="middle">
-                      <a
-                        href="https://osq-group.ru/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/logo-osq-black.png"
-                          alt="OSQ Group"
-                          width="140"
-                          style="display: block; width: 140px; height: auto"
-                        />
-                      </a>
-                    </td>
-                    <td align="right" valign="middle">
-                      <table
-                        role="presentation"
-                        border="0"
-                        cellpadding="0"
-                        cellspacing="0"
-                      >
+            <!--[if (gte mso 9)|(IE)]>
+                    <table width="640" border="0" cellspacing="0" cellpadding="0" style="width: 640px;">
                         <tr>
-                          <td style="padding-right: 20px">
-                            <a
-                              href="https://osq-group.ru/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                              style="
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 14px;
-                                color: #555555;
-                                text-decoration: none;
-                              "
-                              >В браузере</a
-                            >
-                          </td>
-                          <td>
-                            <a
-                              href="https://osq-group.ru/catalog/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                              style="
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 14px;
-                                font-weight: 500;
-                                color: #00a499;
-                                text-decoration: none;
-                              "
-                              >Каталог →</a
-                            >
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- BANNER -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8"
-          >
-            <tr>
-              <td style="padding: 0 10px">
-                <a
-                  href="https://osq-group.ru/catalog/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/february-01-01-banner-01.png"
-                    alt="Время подарков от OSQ GROUP — скидка 10% с 1 февраля по 31 марта 2026"
-                    width="600"
-                    style="
-                      display: block;
-                      width: 100%;
-                      max-width: 600px;
-                      height: auto;
-                      border-radius: 24px;
-                    "
-                  />
-                </a>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- MAIN TEXT BLOCK -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8"
-          >
-            <tr>
-              <td style="padding: 30px 30px 25px 30px">
-                <h1
-                  class="h1-mobile"
-                  style="
-                    margin: 0 0 20px 0;
-                    font-family: 'Qanelas', Arial, sans-serif;
-                    font-size: 28px;
-                    font-weight: 800;
-                    line-height: 34px;
-                    color: #151515;
-                  "
-                >
-                  Время подарков от OSQ GROUP!
-                </h1>
-                <p
-                  style="
-                    margin: 0 0 20px 0;
-                    font-family: 'Qanelas', Arial, sans-serif;
-                    font-size: 16px;
-                    line-height: 24px;
-                    color: #555555;
-                  "
-                >
-                  Дорогие партнёры! Мы рады сообщить о специальной акции для наших клиентов.
-                  В период с <strong style="color: #151515;">1 февраля по 31 марта 2026 года</strong>
-                  вы получаете <strong style="color: #00a499;">скидку 10%</strong> на популярные линейки продукции.
-                </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- CONDITIONS BLOCK -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8"
-          >
-            <tr>
-              <td style="padding: 0 30px 30px 30px">
-                <table
-                  role="presentation"
-                  width="100%"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  style="
-                    background-color: #ffffff;
-                    border-radius: 16px;
-                  "
-                >
-                  <tr>
-                    <td style="padding: 25px 25px">
-                      <h2
-                        style="
-                          margin: 0 0 15px 0;
-                          font-family: 'Qanelas', Arial, sans-serif;
-                          font-size: 18px;
-                          font-weight: 700;
-                          color: #151515;
-                        "
-                      >
-                        Условия акции:
-                      </h2>
-                      <table
-                        role="presentation"
-                        border="0"
-                        cellpadding="0"
-                        cellspacing="0"
-                      >
-                        <tr>
-                          <td
-                            valign="top"
-                            style="
-                              padding: 0 10px 10px 0;
-                              font-family: 'Qanelas', Arial, sans-serif;
-                              font-size: 16px;
-                              color: #00a499;
-                            "
-                          >
-                            ✓
-                          </td>
-                          <td
-                            style="
-                              padding: 0 0 10px 0;
-                              font-family: 'Qanelas', Arial, sans-serif;
-                              font-size: 15px;
-                              line-height: 22px;
-                              color: #555555;
-                            "
-                          >
-                            Период: <strong style="color: #151515;">01.02.2026 — 31.03.2026</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            valign="top"
-                            style="
-                              padding: 0 10px 10px 0;
-                              font-family: 'Qanelas', Arial, sans-serif;
-                              font-size: 16px;
-                              color: #00a499;
-                            "
-                          >
-                            ✓
-                          </td>
-                          <td
-                            style="
-                              padding: 0 0 10px 0;
-                              font-family: 'Qanelas', Arial, sans-serif;
-                              font-size: 15px;
-                              line-height: 22px;
-                              color: #555555;
-                            "
-                          >
-                            Территория: <strong style="color: #151515;">РФ и СНГ</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            valign="top"
-                            style="
-                              padding: 0 10px 0 0;
-                              font-family: 'Qanelas', Arial, sans-serif;
-                              font-size: 16px;
-                              color: #00a499;
-                            "
-                          >
-                            ✓
-                          </td>
-                          <td
-                            style="
-                              font-family: 'Qanelas', Arial, sans-serif;
-                              font-size: 15px;
-                              line-height: 22px;
-                              color: #555555;
-                            "
-                          >
-                            Скидка: <strong style="color: #00a499;">10%</strong> на выбранные линейки
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- PRODUCTS HEADER -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8"
-          >
-            <tr>
-              <td style="padding: 10px 30px 20px 30px">
-                <h2
-                  class="h2-mobile"
-                  style="
-                    margin: 0;
-                    font-family: 'Qanelas', Arial, sans-serif;
-                    font-size: 24px;
-                    font-weight: 700;
-                    line-height: 30px;
-                    color: #151515;
-                    text-align: center;
-                  "
-                >
-                  Продукция, участвующая в акции
-                </h2>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- PRODUCT CARDS -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8"
-          >
-            <tr>
-              <td style="padding: 0 20px 30px 20px">
-                <table
-                  role="presentation"
-                  width="100%"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr>
-                    <!-- TABOX PRO -->
-                    <td
-                      class="product-card"
-                      width="33.33%"
-                      valign="top"
-                      style="padding: 0 5px"
-                    >
-                      <table
-                        role="presentation"
-                        class="product-card-inner"
-                        width="100%"
-                        border="0"
-                        cellpadding="0"
-                        cellspacing="0"
-                        style="
-                          background-color: #ffffff;
-                          border-radius: 16px;
-                        "
-                      >
-                        <tr>
-                          <td style="padding: 15px 15px 20px 15px" align="center">
-                            <a
-                              href="https://osq-group.ru/catalog/tabox-pro/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                            >
-                              <img
-                                src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/product-tabox-pro.png"
-                                alt="OSQ TABOX PRO"
-                                width="150"
-                                style="
-                                  display: block;
-                                  width: 100%;
-                                  max-width: 150px;
-                                  height: auto;
-                                  margin-bottom: 15px;
-                                "
-                              />
-                            </a>
-                            <p
-                              style="
-                                margin: 0 0 10px 0;
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 16px;
-                                font-weight: 700;
-                                color: #151515;
-                              "
-                            >
-                              OSQ TABOX PRO
-                            </p>
-                            <a
-                              href="https://osq-group.ru/catalog/tabox-pro/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                              style="
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 14px;
-                                font-weight: 500;
-                                color: #00a499;
-                                text-decoration: none;
-                              "
-                              >Подробнее →</a
-                            >
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-
-                    <!-- CAKE -->
-                    <td
-                      class="product-card"
-                      width="33.33%"
-                      valign="top"
-                      style="padding: 0 5px"
-                    >
-                      <table
-                        role="presentation"
-                        class="product-card-inner"
-                        width="100%"
-                        border="0"
-                        cellpadding="0"
-                        cellspacing="0"
-                        style="
-                          background-color: #ffffff;
-                          border-radius: 16px;
-                        "
-                      >
-                        <tr>
-                          <td style="padding: 15px 15px 20px 15px" align="center">
-                            <a
-                              href="https://osq-group.ru/catalog/cake/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                            >
-                              <img
-                                src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/product-cake.png"
-                                alt="OSQ CAKE"
-                                width="150"
-                                style="
-                                  display: block;
-                                  width: 100%;
-                                  max-width: 150px;
-                                  height: auto;
-                                  margin-bottom: 15px;
-                                "
-                              />
-                            </a>
-                            <p
-                              style="
-                                margin: 0 0 10px 0;
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 16px;
-                                font-weight: 700;
-                                color: #151515;
-                              "
-                            >
-                              OSQ CAKE
-                            </p>
-                            <a
-                              href="https://osq-group.ru/catalog/cake/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                              style="
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 14px;
-                                font-weight: 500;
-                                color: #00a499;
-                                text-decoration: none;
-                              "
-                              >Подробнее →</a
-                            >
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-
-                    <!-- MB -->
-                    <td
-                      class="product-card"
-                      width="33.33%"
-                      valign="top"
-                      style="padding: 0 5px"
-                    >
-                      <table
-                        role="presentation"
-                        class="product-card-inner"
-                        width="100%"
-                        border="0"
-                        cellpadding="0"
-                        cellspacing="0"
-                        style="
-                          background-color: #ffffff;
-                          border-radius: 16px;
-                        "
-                      >
-                        <tr>
-                          <td style="padding: 15px 15px 20px 15px" align="center">
-                            <a
-                              href="https://osq-group.ru/catalog/mb/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                            >
-                              <img
-                                src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/product-mb.png"
-                                alt="OSQ MB"
-                                width="150"
-                                style="
-                                  display: block;
-                                  width: 100%;
-                                  max-width: 150px;
-                                  height: auto;
-                                  margin-bottom: 15px;
-                                "
-                              />
-                            </a>
-                            <p
-                              style="
-                                margin: 0 0 10px 0;
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 16px;
-                                font-weight: 700;
-                                color: #151515;
-                              "
-                            >
-                              OSQ MB
-                            </p>
-                            <a
-                              href="https://osq-group.ru/catalog/mb/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                              target="_blank"
-                              rel="noopener"
-                              style="
-                                font-family: 'Qanelas', Arial, sans-serif;
-                                font-size: 14px;
-                                font-weight: 500;
-                                color: #00a499;
-                                text-decoration: none;
-                              "
-                              >Подробнее →</a
-                            >
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- DISCLAIMER -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8"
-          >
-            <tr>
-              <td style="padding: 0 30px 25px 30px">
-                <p
-                  style="
-                    margin: 0;
-                    font-family: 'Qanelas', Arial, sans-serif;
-                    font-size: 13px;
-                    line-height: 20px;
-                    color: #777777;
-                    text-align: center;
-                  "
-                >
-                  * Акция не распространяется на линейки: OSQ BAKE, OSQ SLIDE, OSQ JUMPL, OSQ CAKE WW
-                </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- CTA BLOCK -->
-      <tr>
-        <td style="padding: 0 10px 5px 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="background-color: #f6f7f8; border-radius: 0 0 32px 32px"
-          >
-            <tr>
-              <td style="padding: 15px 30px 40px 30px" align="center">
-                <p
-                  style="
-                    margin: 0 0 25px 0;
-                    font-family: 'Qanelas', Arial, sans-serif;
-                    font-size: 18px;
-                    line-height: 26px;
-                    color: #151515;
-                    text-align: center;
-                  "
-                >
-                  Свяжитесь с нами, чтобы оформить заказ<br />
-                  со скидкой по акции!
-                </p>
-                <table
-                  role="presentation"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                >
-                  <tr>
-                    <td
-                      bgcolor="#00A499"
-                      style="
-                        border-radius: 50px;
-                        mso-padding-alt: 17px 45px;
-                      "
-                    >
-                      <!--[if gte mso 9]>
-                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://osq-group.ru/contacts/?utm_source=email&utm_medium=promo&utm_campaign=february_2026" style="height:54px;v-text-anchor:middle;width:220px;" arcsize="50%" stroke="f" fillcolor="#00A499">
-                        <w:anchorlock/>
-                        <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;">Оставить заявку</center>
-                      </v:roundrect>
-                      <![endif]-->
-                      <!--[if !mso]><!-->
-                      <a
-                        href="https://osq-group.ru/contacts/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                        target="_blank"
-                        rel="noopener"
-                        class="white_text"
-                        style="
-                          display: inline-block;
-                          padding: 17px 45px;
-                          font-family: 'Qanelas', Arial, sans-serif;
-                          font-size: 16px;
-                          font-weight: 700;
-                          color: #ffffff;
-                          text-decoration: none;
-                        "
-                        >Оставить заявку</a
-                      >
-                      <!--<![endif]-->
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- Spacer -->
-      <tr>
-        <td height="5" aria-hidden="true" style="font-size: 0; line-height: 0">
-          &nbsp;
-        </td>
-      </tr>
-
-      <!-- FOOTER -->
-      <tr>
-        <td style="padding: 0 10px">
-          <table
-            role="presentation"
-            width="100%"
-            border="0"
-            cellpadding="0"
-            cellspacing="0"
-            style="
-              background-color: #1a1a1a;
-              border-radius: 32px;
-            "
-          >
-            <tr>
-              <td style="padding: 35px 30px 30px 30px">
-                <!-- Social Icons -->
-                <table
-                  role="presentation"
+                            <td>
+                    <![endif]-->
+            <table
+              width="100%"
+              border="0"
+              cellspacing="0"
+              cellpadding="0"
+              style="max-width: 640px; min-width: 300px"
+            >
+              <tr>
+                <td
                   align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  style="margin: 0 auto 25px auto"
+                  bgcolor="#FFFFFF"
+                  style="background-color: #ffffff"
                 >
-                  <tr>
-                    <td style="padding: 0 8px">
-                      <a
-                        href="https://t.me/osqgroup"
-                        target="_blank"
-                        rel="noopener"
-                        title="Telegram OSQ Group"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/icon-telegram.png"
-                          alt="Telegram"
-                          width="40"
-                          height="40"
-                          class="footer-social-icon"
-                          style="display: block"
-                        />
-                      </a>
-                    </td>
-                    <td style="padding: 0 8px">
-                      <a
-                        href="https://vk.com/osqgroup"
-                        target="_blank"
-                        rel="noopener"
-                        title="ВКонтакте OSQ Group"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/icon-vk.png"
-                          alt="ВКонтакте"
-                          width="40"
-                          height="40"
-                          class="footer-social-icon"
-                          style="display: block"
-                        />
-                      </a>
-                    </td>
-                    <td style="padding: 0 8px">
-                      <a
-                        href="https://www.youtube.com/@osqgroup"
-                        target="_blank"
-                        rel="noopener"
-                        title="YouTube OSQ Group"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/icon-youtube.png"
-                          alt="YouTube"
-                          width="40"
-                          height="40"
-                          class="footer-social-icon"
-                          style="display: block"
-                        />
-                      </a>
-                    </td>
-                    <td style="padding: 0 8px">
-                      <a
-                        href="https://dzen.ru/osqgroup"
-                        target="_blank"
-                        rel="noopener"
-                        title="Дзен OSQ Group"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2025-12-16-osq-email-round-bowl-620/images/icon-dzen.png"
-                          alt="Дзен"
-                          width="40"
-                          height="40"
-                          class="footer-social-icon"
-                          style="display: block"
-                        />
-                      </a>
-                    </td>
-                  </tr>
-                </table>
-
-                <!-- Contact Info -->
-                <table
-                  role="presentation"
-                  align="center"
-                  border="0"
-                  cellpadding="0"
-                  cellspacing="0"
-                  style="margin: 0 auto"
-                >
-                  <tr>
-                    <td align="center" style="padding-bottom: 10px">
-                      <a
-                        href="tel:+78005005995"
-                        class="white_text"
-                        style="
-                          font-family: 'Qanelas', Arial, sans-serif;
-                          font-size: 18px;
-                          font-weight: 700;
-                          color: #ffffff;
-                          text-decoration: none;
-                        "
-                        >8 800 500-59-95</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="center" style="padding-bottom: 15px">
-                      <a
-                        href="mailto:info@osq-group.ru"
-                        class="white_text"
-                        style="
-                          font-family: 'Qanelas', Arial, sans-serif;
-                          font-size: 14px;
-                          color: #ffffff;
-                          text-decoration: none;
-                        "
-                        >info@osq-group.ru</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="center">
-                      <p
-                        style="
-                          margin: 0;
-                          font-family: 'Qanelas', Arial, sans-serif;
-                          font-size: 12px;
-                          line-height: 18px;
-                          color: #777777;
-                          text-align: center;
-                        "
-                      >
-                        © 2026 OSQ Group. Все права защищены.<br />
-                        <a
-                          href="https://osq-group.ru/unsubscribe/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
-                          target="_blank"
-                          rel="noopener"
-                          style="color: #777777; text-decoration: underline"
-                          >Отписаться от рассылки</a
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                  >
+                    <!-- HEADER -->
+                    <tr>
+                      <td style="padding: 30px 20px 20px 20px">
+                        <table
+                          width="100%"
+                          border="0"
+                          cellspacing="0"
+                          cellpadding="0"
+                          style="max-width: 600px"
                         >
-                      </p>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+                          <tr>
+                            <td align="left" valign="middle">
+                              <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td
+                                    valign="middle"
+                                    style="padding-right: 12px"
+                                  >
+                                    <a
+                                      href="https://osqgroup.ru?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                      target="_blank"
+                                      rel="noopener"
+                                    >
+                                      <img
+                                        src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/february-00-logo-rus.png"
+                                        width="110"
+                                        alt="OSQ Group — Новый взгляд на упаковку"
+                                        border="0"
+                                        class="header-logo"
+                                        style="display: block"
+                                      />
+                                    </a>
+                                  </td>
+                                  <td valign="middle">
+                                    <a
+                                      href="#"
+                                      target="_blank"
+                                      rel="noopener"
+                                      class="header-browser-link"
+                                      style="
+                                        font-family:
+                                          'Qanelas', Arial, sans-serif;
+                                        font-size: 13px;
+                                        color: #999999;
+                                        text-decoration: underline;
+                                        white-space: nowrap;
+                                      "
+                                      >В браузере</a
+                                    >
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td align="right" valign="middle">
+                              <a
+                                href="https://osqgroup.ru/catalog/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                target="_blank"
+                                rel="noopener"
+                                class="header-catalog"
+                                style="
+                                  font-family:
+                                    'Qanelas', Arial, sans-serif;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  color: #555555;
+                                  text-transform: uppercase;
+                                  letter-spacing: 1px;
+                                  white-space: nowrap;
+                                "
+                                >Каталог →</a
+                              >
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
 
-      <!-- Bottom Spacer -->
-      <tr>
-        <td height="20" aria-hidden="true" style="font-size: 0; line-height: 0">
-          &nbsp;
-        </td>
-      </tr>
-    </table>
-    <!--[if gte mso 9]>
-        </td>
-      </tr>
-    </table>
-    <![endif]-->
+                    <!-- BANNER BLOCK -->
+                    <tr>
+                      <td style="padding: 0 10px 5px 10px">
+                        <table
+                          width="100%"
+                          bgcolor="#F6F7F8"
+                          style="
+                            border-radius: 32px;
+                            background-color: #f6f7f8;
+                            overflow: hidden;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0">
+                              <a
+                                href="https://osqgroup.ru/catalog/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                target="_blank"
+                                rel="noopener"
+                              >
+                                <img
+                                  src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/february-01-01-banner-01.png"
+                                  width="620"
+                                  alt="Время подарков от OSQ GROUP — скидка 10% с 1 февраля по 31 марта 2026"
+                                  border="0"
+                                  style="
+                                    display: block;
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: 32px 32px 0 0;
+                                  "
+                                />
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="padding: 30px 30px 28px 30px"
+                              class="mobile-pad"
+                            >
+                              <h1
+                                class="h1-mobile"
+                                style="
+                                  margin: 0 0 15px 0;
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  font-size: 28px;
+                                  line-height: 34px;
+                                  color: #151515;
+                                  font-weight: 800;
+                                  text-align: left;
+                                  letter-spacing: -0.3px;
+                                "
+                              >
+                                Время подарков от <span style="color: #00a499">OSQ GROUP</span>!
+                              </h1>
+                              <p
+                                style="
+                                  margin: 0;
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  font-size: 16px;
+                                  line-height: 24px;
+                                  color: #555555;
+                                  text-align: left;
+                                  letter-spacing: 0.2px;
+                                "
+                              >
+                                Дорогие партнёры! Мы рады сообщить о специальной акции.
+                                В период с <strong style="color: #151515;">1 февраля по 31 марта 2026 года</strong>
+                                вы получаете <strong style="color: #00a499;">скидку 10%</strong> на популярные линейки продукции.
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        height="20"
+                        aria-hidden="true"
+                        style="font-size: 20px; line-height: 20px"
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
+                    <!-- CONDITIONS BLOCK -->
+                    <tr>
+                      <td style="padding: 0 10px 5px 10px">
+                        <table
+                          width="100%"
+                          bgcolor="#F6F7F8"
+                          style="border-radius: 32px; background-color: #f6f7f8"
+                        >
+                          <tr>
+                            <td style="padding: 30px 30px" class="mobile-pad">
+                              <h2
+                                class="h2-mobile"
+                                style="
+                                  margin: 0 0 20px 0;
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  font-size: 24px;
+                                  line-height: 30px;
+                                  color: #151515;
+                                  font-weight: 700;
+                                  text-align: left;
+                                  letter-spacing: -0.3px;
+                                "
+                              >
+                                Условия акции
+                              </h2>
+                              <!-- PLACEHOLDER: Баннер условий акции 1160x400px (отображается 580x200) -->
+                              <img
+                                src="https://placehold.co/1160x400/FFFFFF/151515?text=Banner+580x200"
+                                width="580"
+                                style="
+                                  display: block;
+                                  width: 100%;
+                                  max-width: 580px;
+                                  height: auto;
+                                  border-radius: 16px;
+                                  margin-bottom: 20px;
+                                "
+                                alt="Условия акции"
+                              />
+                              <table
+                                width="100%"
+                                bgcolor="#FFFFFF"
+                                style="
+                                  border-radius: 16px;
+                                  background-color: #ffffff;
+                                "
+                              >
+                                <tr>
+                                  <td style="padding: 25px">
+                                    <table
+                                      border="0"
+                                      cellspacing="0"
+                                      cellpadding="0"
+                                    >
+                                      <tr>
+                                        <td
+                                          valign="top"
+                                          style="
+                                            padding: 0 12px 12px 0;
+                                            font-family: 'Qanelas', Arial, sans-serif;
+                                            font-size: 18px;
+                                            color: #00a499;
+                                          "
+                                        >
+                                          ✓
+                                        </td>
+                                        <td
+                                          style="
+                                            padding: 0 0 12px 0;
+                                            font-family: 'Qanelas', Arial, sans-serif;
+                                            font-size: 15px;
+                                            line-height: 22px;
+                                            color: #555555;
+                                          "
+                                        >
+                                          Период: <strong style="color: #151515;">01.02.2026 — 31.03.2026</strong>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          valign="top"
+                                          style="
+                                            padding: 0 12px 12px 0;
+                                            font-family: 'Qanelas', Arial, sans-serif;
+                                            font-size: 18px;
+                                            color: #00a499;
+                                          "
+                                        >
+                                          ✓
+                                        </td>
+                                        <td
+                                          style="
+                                            padding: 0 0 12px 0;
+                                            font-family: 'Qanelas', Arial, sans-serif;
+                                            font-size: 15px;
+                                            line-height: 22px;
+                                            color: #555555;
+                                          "
+                                        >
+                                          Территория: <strong style="color: #151515;">РФ и СНГ</strong>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          valign="top"
+                                          style="
+                                            padding: 0 12px 0 0;
+                                            font-family: 'Qanelas', Arial, sans-serif;
+                                            font-size: 18px;
+                                            color: #00a499;
+                                          "
+                                        >
+                                          ✓
+                                        </td>
+                                        <td
+                                          style="
+                                            font-family: 'Qanelas', Arial, sans-serif;
+                                            font-size: 15px;
+                                            line-height: 22px;
+                                            color: #555555;
+                                          "
+                                        >
+                                          Скидка: <strong style="color: #00a499;">10%</strong> на выбранные линейки
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        height="20"
+                        aria-hidden="true"
+                        style="font-size: 20px; line-height: 20px"
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
+                    <!-- PRODUCTS BLOCK -->
+                    <tr>
+                      <td style="padding: 0 10px 5px 10px">
+                        <table
+                          width="100%"
+                          bgcolor="#F6F7F8"
+                          style="border-radius: 32px; background-color: #f6f7f8"
+                        >
+                          <tr>
+                            <td style="padding: 30px 20px" class="mobile-pad">
+                              <h2
+                                class="h2-mobile"
+                                style="
+                                  margin: 0 0 25px 0;
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  font-size: 24px;
+                                  line-height: 30px;
+                                  color: #151515;
+                                  font-weight: 700;
+                                  text-align: left;
+                                  letter-spacing: -0.3px;
+                                "
+                              >
+                                Продукция, участвующая в акции
+                              </h2>
+                              <table
+                                width="100%"
+                                border="0"
+                                cellspacing="0"
+                                cellpadding="0"
+                              >
+                                <tr>
+                                  <!-- TABOX PRO -->
+                                  <td
+                                    width="33%"
+                                    valign="top"
+                                    style="padding: 0 5px 0 0"
+                                    class="product-card mobile-pb-20"
+                                  >
+                                    <table
+                                      width="100%"
+                                      bgcolor="#FFFFFF"
+                                      class="product-card-inner"
+                                      style="
+                                        border-radius: 12px;
+                                        background-color: #ffffff;
+                                        overflow: hidden;
+                                      "
+                                    >
+                                      <tr>
+                                        <td
+                                          align="center"
+                                          style="padding: 12px 10px 8px 10px"
+                                        >
+                                          <span
+                                            style="
+                                              color: #00a499;
+                                              font-weight: 700;
+                                              font-size: 14px;
+                                              font-family: 'Qanelas', Arial, sans-serif;
+                                              letter-spacing: 0.3px;
+                                            "
+                                            >OSQ TABOX PRO</span
+                                          >
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding: 0" align="center">
+                                          <!-- PLACEHOLDER: Нужно изображение 360x360px (отображается 180x180) -->
+                                          <img
+                                            src="https://placehold.co/360x360/F6F7F8/151515?text=TABOX+PRO"
+                                            width="180"
+                                            style="
+                                              display: block;
+                                              border-radius: 0;
+                                              width: 100%;
+                                              max-width: 180px;
+                                              height: auto;
+                                            "
+                                            alt="OSQ TABOX PRO"
+                                          />
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="padding: 15px">
+                                          <a
+                                            href="https://osqgroup.ru/catalog/tabox-pro/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                            target="_blank"
+                                            rel="noopener"
+                                            style="
+                                              color: #00a499;
+                                              font-weight: 500;
+                                              font-size: 14px;
+                                              font-family: 'Qanelas', Arial, sans-serif;
+                                            "
+                                            >Подробнее →</a
+                                          >
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+
+                                  <!-- CAKE -->
+                                  <td
+                                    width="33%"
+                                    valign="top"
+                                    style="padding: 0 3px"
+                                    class="product-card mobile-pb-20"
+                                  >
+                                    <table
+                                      width="100%"
+                                      bgcolor="#FFFFFF"
+                                      class="product-card-inner"
+                                      style="
+                                        border-radius: 12px;
+                                        background-color: #ffffff;
+                                        overflow: hidden;
+                                      "
+                                    >
+                                      <tr>
+                                        <td
+                                          align="center"
+                                          style="padding: 12px 10px 8px 10px"
+                                        >
+                                          <span
+                                            style="
+                                              color: #00a499;
+                                              font-weight: 700;
+                                              font-size: 14px;
+                                              font-family: 'Qanelas', Arial, sans-serif;
+                                              letter-spacing: 0.3px;
+                                            "
+                                            >OSQ CAKE</span
+                                          >
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding: 0" align="center">
+                                          <!-- PLACEHOLDER: Нужно изображение 360x360px (отображается 180x180) -->
+                                          <img
+                                            src="https://placehold.co/360x360/F6F7F8/151515?text=CAKE"
+                                            width="180"
+                                            style="
+                                              display: block;
+                                              border-radius: 0;
+                                              width: 100%;
+                                              max-width: 180px;
+                                              height: auto;
+                                            "
+                                            alt="OSQ CAKE"
+                                          />
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="padding: 15px">
+                                          <a
+                                            href="https://osqgroup.ru/catalog/cake/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                            target="_blank"
+                                            rel="noopener"
+                                            style="
+                                              color: #00a499;
+                                              font-weight: 500;
+                                              font-size: 14px;
+                                              font-family: 'Qanelas', Arial, sans-serif;
+                                            "
+                                            >Подробнее →</a
+                                          >
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+
+                                  <!-- MB -->
+                                  <td
+                                    width="33%"
+                                    valign="top"
+                                    style="padding: 0 0 0 5px"
+                                    class="product-card"
+                                  >
+                                    <table
+                                      width="100%"
+                                      bgcolor="#FFFFFF"
+                                      class="product-card-inner"
+                                      style="
+                                        border-radius: 12px;
+                                        background-color: #ffffff;
+                                        overflow: hidden;
+                                      "
+                                    >
+                                      <tr>
+                                        <td
+                                          align="center"
+                                          style="padding: 12px 10px 8px 10px"
+                                        >
+                                          <span
+                                            style="
+                                              color: #00a499;
+                                              font-weight: 700;
+                                              font-size: 14px;
+                                              font-family: 'Qanelas', Arial, sans-serif;
+                                              letter-spacing: 0.3px;
+                                            "
+                                            >OSQ MB</span
+                                          >
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding: 0" align="center">
+                                          <!-- PLACEHOLDER: Нужно изображение 360x360px (отображается 180x180) -->
+                                          <img
+                                            src="https://placehold.co/360x360/F6F7F8/151515?text=MB"
+                                            width="180"
+                                            style="
+                                              display: block;
+                                              border-radius: 0;
+                                              width: 100%;
+                                              max-width: 180px;
+                                              height: auto;
+                                            "
+                                            alt="OSQ MB"
+                                          />
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="padding: 15px">
+                                          <a
+                                            href="https://osqgroup.ru/catalog/mb/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                            target="_blank"
+                                            rel="noopener"
+                                            style="
+                                              color: #00a499;
+                                              font-weight: 500;
+                                              font-size: 14px;
+                                              font-family: 'Qanelas', Arial, sans-serif;
+                                            "
+                                            >Подробнее →</a
+                                          >
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+
+                              <!-- Disclaimer -->
+                              <p
+                                style="
+                                  margin: 25px 0 0 0;
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  font-size: 13px;
+                                  line-height: 20px;
+                                  color: #777777;
+                                  text-align: center;
+                                "
+                              >
+                                * Акция не распространяется на линейки: OSQ BAKE, OSQ SLIDE, OSQ JUMPL, OSQ CAKE WW
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        height="20"
+                        aria-hidden="true"
+                        style="font-size: 20px; line-height: 20px"
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
+                    <!-- CTA BLOCK -->
+                    <tr>
+                      <td style="padding: 0 10px 5px 10px">
+                        <table
+                          width="100%"
+                          bgcolor="#F6F7F8"
+                          style="border-radius: 32px; background-color: #f6f7f8"
+                        >
+                          <tr>
+                            <td
+                              style="padding: 35px 30px 40px 30px"
+                              class="mobile-pad"
+                            >
+                              <!-- PLACEHOLDER: Баннер CTA 1160x300px (отображается 580x150) -->
+                              <img
+                                src="https://placehold.co/1160x300/FFFFFF/151515?text=Banner+580x150"
+                                width="580"
+                                style="
+                                  display: block;
+                                  width: 100%;
+                                  max-width: 580px;
+                                  height: auto;
+                                  border-radius: 16px;
+                                  margin-bottom: 25px;
+                                "
+                                alt="Оформить заказ"
+                              />
+                              <p
+                                style="
+                                  margin: 0 0 25px 0;
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  font-size: 18px;
+                                  line-height: 26px;
+                                  color: #151515;
+                                  text-align: left;
+                                "
+                              >
+                                Свяжитесь с нами, чтобы оформить заказ<br />
+                                со скидкой по акции!
+                              </p>
+                              <table
+                                border="0"
+                                cellspacing="0"
+                                cellpadding="0"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    bgcolor="#00A499"
+                                    style="
+                                      background-color: #00a499;
+                                      border-radius: 50px;
+                                    "
+                                  >
+                                    <a
+                                      href="https://b24-0ioyfv.bitrix24.site/crm_form_kf0zv/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                      target="_blank"
+                                      rel="noopener"
+                                      class="white_text"
+                                      style="
+                                        font-family: 'Qanelas', Arial, sans-serif;
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                        color: #ffffff;
+                                        text-decoration: none;
+                                        display: block;
+                                        padding: 17px 35px;
+                                        letter-spacing: 0.3px;
+                                        white-space: nowrap;
+                                      "
+                                    >
+                                      Оставить заявку
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        height="20"
+                        aria-hidden="true"
+                        style="font-size: 20px; line-height: 20px"
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+
+                    <!-- FOOTER -->
+                    <tr>
+                      <td style="padding: 0 10px">
+                        <table
+                          width="100%"
+                          bgcolor="#1A1A1A"
+                          style="border-radius: 32px; background-color: #1a1a1a"
+                        >
+                          <tr>
+                            <td style="padding: 40px 30px" class="mobile-pad">
+                              <table
+                                border="0"
+                                cellspacing="0"
+                                cellpadding="0"
+                                role="presentation"
+                                style="margin-bottom: 25px"
+                              >
+                                <tr>
+                                  <td style="padding-right: 15px">
+                                    <a
+                                      href="https://vk.com/osqgroup?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                      target="_blank"
+                                      rel="noopener"
+                                    >
+                                      <img
+                                        src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/VK.png"
+                                        width="32"
+                                        alt="OSQ Group в ВКонтакте"
+                                        border="0"
+                                        style="display: block"
+                                      />
+                                    </a>
+                                  </td>
+                                  <td style="padding-right: 15px">
+                                    <a
+                                      href="https://t.me/osqpack?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                      target="_blank"
+                                      rel="noopener"
+                                    >
+                                      <img
+                                        src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/Telegram.png"
+                                        width="32"
+                                        alt="OSQ Group в Telegram"
+                                        border="0"
+                                        style="display: block"
+                                      />
+                                    </a>
+                                  </td>
+                                  <td>
+                                    <a
+                                      href="https://dzen.ru/osqgroup?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                      target="_blank"
+                                      rel="noopener"
+                                    >
+                                      <img
+                                        src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-03-osq-email-promo/images/Dzen.png"
+                                        width="32"
+                                        alt="OSQ Group в Дзен"
+                                        border="0"
+                                        style="display: block"
+                                      />
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                              <p
+                                style="
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  color: #777777;
+                                  font-size: 12px;
+                                  line-height: 18px;
+                                  margin: 0 0 15px 0;
+                                  text-align: left;
+                                "
+                              >
+                                ООО «ОЭСКЬЮ ТРЕЙДИНГ»<br />
+                                ОГРН 1197746065472, ИНН 7734420298, КПП
+                                772501001<br />
+                                115432, г. Москва, муниципальный округ
+                                Даниловский,<br />проезд Проектируемый 4062-й,
+                                д. 6, стр. 16, помещение 4837/1
+                              </p>
+                              <p
+                                style="
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  color: #777777;
+                                  font-size: 12px;
+                                  line-height: 18px;
+                                  margin: 0 0 15px 0;
+                                  text-align: left;
+                                "
+                              >
+                                Телефон:
+                                <a
+                                  href="tel:+74957738718"
+                                  style="color: #999999; text-decoration: none"
+                                  >+7 (495) 773-87-18</a
+                                ><br />
+                                E-mail:
+                                <a
+                                  href="mailto:clients@osqgroup.ru"
+                                  style="color: #999999; text-decoration: none"
+                                  >clients@osqgroup.ru</a
+                                >
+                              </p>
+                              <p
+                                style="
+                                  font-family: 'Qanelas', Arial, sans-serif;
+                                  margin: 0;
+                                  color: #555555;
+                                  font-size: 11px;
+                                  text-align: left;
+                                "
+                              >
+                                <a
+                                  href="https://osqgroup.ru/privacy-policy/?utm_source=email&utm_medium=promo&utm_campaign=february_2026"
+                                  target="_blank"
+                                  rel="noopener"
+                                  style="
+                                    color: #666666;
+                                    text-decoration: underline;
+                                  "
+                                  >Политика конфиденциальности</a
+                                >
+                                &nbsp;•&nbsp;
+                                <a
+                                  href="#"
+                                  style="
+                                    color: #666666;
+                                    text-decoration: underline;
+                                  "
+                                  >Отписаться</a
+                                >
+                              </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        height="20"
+                        aria-hidden="true"
+                        style="font-size: 20px; line-height: 20px"
+                      >
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                        </tr>
+                    </table>
+                    <![endif]-->
+          </td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
