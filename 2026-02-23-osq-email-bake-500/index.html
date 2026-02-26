@@ -89,6 +89,43 @@
       text-decoration: none;
       color: #00a499;
     }
+
+    .mobile-break-line {
+      display: inline;
+    }
+
+    @media only screen and (max-width: 620px) {
+      .mobile-pad-outer {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+
+      .mobile-pad-inner {
+        padding: 22px 16px 24px 16px !important;
+      }
+
+      .mobile-break-line {
+        display: block !important;
+      }
+
+      .spec-col {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0 8px 0 !important;
+      }
+
+      .scenario-col {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 0 10px 0 !important;
+      }
+
+      .scenario-card-text {
+        height: auto !important;
+      }
+    }
   </style>
 </head>
 
@@ -153,7 +190,7 @@
 
                   <!-- HERO BLOCK: как в 620_style, с градиентом и текстом снизу -->
                   <tr>
-                    <td style="padding: 0 10px 5px 10px">
+                    <td style="padding: 0 10px 5px 10px" class="mobile-pad-outer">
                       <table width="100%" bgcolor="#F6F7F8"
                         style="border-radius: 32px; background-color: #f6f7f8; overflow: hidden;">
                         <tr>
@@ -170,15 +207,15 @@
                               <table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
                                 <tr>
                                   <td align="left" valign="bottom"
-                                    style="padding: 30px 30px 22px 30px; background: linear-gradient(to top, rgba(0, 164, 153, 0.90) 0%, rgba(0, 164, 153, 0) 68%);">
+                                    style="padding: 30px 30px 22px 30px; background: linear-gradient(to top, rgba(14, 18, 24, 0.86) 0%, rgba(14, 18, 24, 0.32) 58%, rgba(14, 18, 24, 0) 82%);">
                                     <span
                                       style="background-color: #00a499; color: #ffffff; font-size: 12px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Новинка</span>
                                     <h1
-                                      style="margin: 10px 0 4px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 38px; line-height: 40px; color: #ffffff; font-weight: 800; text-align: left; letter-spacing: -0.4px;">
+                                      style="margin: 10px 0 4px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 38px; line-height: 40px; color: #ffffff; font-weight: 800; text-align: left; letter-spacing: -0.4px; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);">
                                       OSQ BAKE 500
                                     </h1>
                                     <h2
-                                      style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 21px; line-height: 27px; color: #ffffff; font-weight: 700; text-align: left;">
+                                      style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 21px; line-height: 27px; color: #ffffff; font-weight: 700; text-align: left; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);">
                                       Термостойкая упаковка для выпечки и горячих блюд
                                     </h2>
                                   </td>
@@ -201,11 +238,11 @@
 
                   <!-- SPLIT INTRO BLOCK -->
                   <tr>
-                    <td style="padding: 0 10px 5px 10px">
+                    <td style="padding: 0 10px 5px 10px" class="mobile-pad-outer">
                       <table width="100%" bgcolor="#F6F7F8"
                         style="border-radius: 32px; background-color: #f6f7f8; overflow: hidden;">
                         <tr>
-                          <td style="padding: 28px 24px 30px 24px;">
+                          <td style="padding: 28px 24px 30px 24px;" class="mobile-pad-inner">
                             <h2
                               style="margin: 0 0 12px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 30px; line-height: 34px; color: #151515; font-weight: 700; letter-spacing: -0.3px;">
                               Почему выбирают OSQ BAKE 500
@@ -236,33 +273,91 @@
                                 <td style="padding: 18px 16px;">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
-                                      <td width="50%" valign="top"
-                                        style="padding: 0 8px 6px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 15px; line-height: 21px; color: #151515;">
-                                        <strong>Полный объем:</strong> 540 мл
+                                      <td width="50%" valign="top" class="spec-col" style="padding: 0 8px 8px 0;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F7F8"
+                                          style="border-radius: 10px; background-color: #f6f7f8;">
+                                          <tr>
+                                            <td
+                                              style="padding: 10px 12px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
+                                              <span
+                                                style="display: block; margin: 0 0 2px 0; font-size: 13px; line-height: 16px; color: #777777;">Полный
+                                                объем</span>
+                                              <strong style="font-size: 16px; line-height: 20px;">540 мл</strong>
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
-                                      <td width="50%" valign="top"
-                                        style="padding: 0 0 6px 8px; font-family: 'Qanelas', Arial, sans-serif; font-size: 15px; line-height: 21px; color: #151515;">
-                                        <strong>Полезный объем:</strong> 400 мл
+                                      <td width="50%" valign="top" class="spec-col" style="padding: 0 0 8px 8px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F7F8"
+                                          style="border-radius: 10px; background-color: #f6f7f8;">
+                                          <tr>
+                                            <td
+                                              style="padding: 10px 12px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
+                                              <span
+                                                style="display: block; margin: 0 0 2px 0; font-size: 13px; line-height: 16px; color: #777777;">Полезный
+                                                объем</span>
+                                              <strong style="font-size: 16px; line-height: 20px;">400 мл</strong>
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td width="50%" valign="top"
-                                        style="padding: 0 8px 6px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 15px; line-height: 21px; color: #151515;">
-                                        <strong>Высота:</strong> 45 мм
+                                      <td width="50%" valign="top" class="spec-col" style="padding: 0 8px 8px 0;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F7F8"
+                                          style="border-radius: 10px; background-color: #f6f7f8;">
+                                          <tr>
+                                            <td
+                                              style="padding: 10px 12px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
+                                              <span
+                                                style="display: block; margin: 0 0 2px 0; font-size: 13px; line-height: 16px; color: #777777;">Высота</span>
+                                              <strong style="font-size: 16px; line-height: 20px;">45 мм</strong>
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
-                                      <td width="50%" valign="top"
-                                        style="padding: 0 0 6px 8px; font-family: 'Qanelas', Arial, sans-serif; font-size: 15px; line-height: 21px; color: #151515;">
-                                        <strong>В упаковке:</strong> 100 шт
+                                      <td width="50%" valign="top" class="spec-col" style="padding: 0 0 8px 8px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F7F8"
+                                          style="border-radius: 10px; background-color: #f6f7f8;">
+                                          <tr>
+                                            <td
+                                              style="padding: 10px 12px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
+                                              <span
+                                                style="display: block; margin: 0 0 2px 0; font-size: 13px; line-height: 16px; color: #777777;">В
+                                                упаковке</span>
+                                              <strong style="font-size: 16px; line-height: 20px;">100 шт</strong>
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td width="50%" valign="top"
-                                        style="padding: 0 8px 0 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 15px; line-height: 21px; color: #151515;">
-                                        <strong>В коробе:</strong> 800 шт
+                                      <td width="50%" valign="top" class="spec-col" style="padding: 0 8px 0 0;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F7F8"
+                                          style="border-radius: 10px; background-color: #f6f7f8;">
+                                          <tr>
+                                            <td
+                                              style="padding: 10px 12px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
+                                              <span
+                                                style="display: block; margin: 0 0 2px 0; font-size: 13px; line-height: 16px; color: #777777;">В
+                                                коробе</span>
+                                              <strong style="font-size: 16px; line-height: 20px;">800 шт</strong>
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
-                                      <td width="50%" valign="top"
-                                        style="padding: 0 0 0 8px; font-family: 'Qanelas', Arial, sans-serif; font-size: 15px; line-height: 21px; color: #151515;">
-                                        <strong>Габариты:</strong> 170 x 90 x 45 мм
+                                      <td width="50%" valign="top" class="spec-col" style="padding: 0 0 0 8px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F7F8"
+                                          style="border-radius: 10px; background-color: #f6f7f8;">
+                                          <tr>
+                                            <td
+                                              style="padding: 10px 12px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
+                                              <span
+                                                style="display: block; margin: 0 0 2px 0; font-size: 13px; line-height: 16px; color: #777777;">Габариты</span>
+                                              <strong style="font-size: 16px; line-height: 20px;">170x90x45 мм</strong>
+                                            </td>
+                                          </tr>
+                                        </table>
                                       </td>
                                     </tr>
                                   </table>
@@ -554,14 +649,14 @@
 
                   <!-- NEW UNUSUAL BLOCK: Тепловой диапазон -->
                   <tr>
-                    <td style="padding: 0 10px 5px 10px">
+                    <td style="padding: 0 10px 5px 10px" class="mobile-pad-outer">
                       <table width="100%" bgcolor="#111111"
                         style="border-radius: 32px; background-color: #111111; overflow: hidden;">
                         <tr>
-                          <td style="padding: 28px 26px 30px 26px;">
+                          <td style="padding: 28px 26px 30px 26px;" class="mobile-pad-inner">
                             <h2
                               style="margin: 0 0 12px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 30px; line-height: 34px; color: #ffffff; font-weight: 700; letter-spacing: -0.3px;">
-                              Тепловой диапазон BAKE 500
+                              Тепловой диапазон <span class="mobile-break-line">OSQ BAKE 500</span>
                             </h2>
                             <img
                               src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-23-osq-email-bake-500/images/february-02-bake02.jpg"
@@ -601,11 +696,11 @@
 
                   <!-- GALLERY BLOCK -->
                   <tr>
-                    <td style="padding: 0 10px 5px 10px">
+                    <td style="padding: 0 10px 5px 10px" class="mobile-pad-outer">
                       <table width="100%" bgcolor="#F6F7F8"
                         style="border-radius: 32px; background-color: #f6f7f8; overflow: hidden;">
                         <tr>
-                          <td style="padding: 30px 20px;">
+                          <td style="padding: 30px 20px;" class="mobile-pad-inner">
                             <h2
                               style="margin: 0 0 20px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 30px; line-height: 34px; color: #151515; font-weight: 700; letter-spacing: -0.3px;">
                               Сценарии подачи и продаж
@@ -616,17 +711,17 @@
                             </p>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
-                                <td width="33%" valign="top" style="padding: 0 5px 0 0;">
+                                <td width="33%" valign="top" class="scenario-col" style="padding: 0 5px 0 0;">
                                   <table width="100%" bgcolor="#ffffff"
                                     style="border-radius: 12px; background-color: #ffffff; overflow: hidden; table-layout: fixed;">
                                     <tr>
                                       <td><img
                                           src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-23-osq-email-bake-500/images/february-02-bake01.jpg"
                                           width="186" alt="Выпечка в OSQ BAKE 500"
-                                          style="display: block; width: 100%; max-width: 186px; height: auto;" /></td>
+                                          style="display: block; width: 100%; height: auto;" /></td>
                                     </tr>
                                     <tr>
-                                      <td height="74" valign="top" align="left"
+                                      <td height="74" valign="top" align="left" class="scenario-card-text"
                                         style="height: 74px; padding: 10px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
                                         <p
                                           style="margin: 0 0 4px 0; font-size: 14px; line-height: 18px; font-weight: 700;">
@@ -637,17 +732,17 @@
                                     </tr>
                                   </table>
                                 </td>
-                                <td width="33%" valign="top" style="padding: 0 3px;">
+                                <td width="33%" valign="top" class="scenario-col" style="padding: 0 3px;">
                                   <table width="100%" bgcolor="#ffffff"
                                     style="border-radius: 12px; background-color: #ffffff; overflow: hidden; table-layout: fixed;">
                                     <tr>
                                       <td><img
                                           src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-23-osq-email-bake-500/images/february-02-bake02.jpg"
                                           width="186" alt="Горячее блюдо в OSQ BAKE 500"
-                                          style="display: block; width: 100%; max-width: 186px; height: auto;" /></td>
+                                          style="display: block; width: 100%; height: auto;" /></td>
                                     </tr>
                                     <tr>
-                                      <td height="74" valign="top" align="left"
+                                      <td height="74" valign="top" align="left" class="scenario-card-text"
                                         style="height: 74px; padding: 10px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
                                         <p
                                           style="margin: 0 0 4px 0; font-size: 14px; line-height: 18px; font-weight: 700;">
@@ -658,17 +753,17 @@
                                     </tr>
                                   </table>
                                 </td>
-                                <td width="33%" valign="top" style="padding: 0 0 0 5px;">
+                                <td width="33%" valign="top" class="scenario-col" style="padding: 0 0 0 5px;">
                                   <table width="100%" bgcolor="#ffffff"
                                     style="border-radius: 12px; background-color: #ffffff; overflow: hidden; table-layout: fixed;">
                                     <tr>
                                       <td><img
                                           src="https://cdn.jsdelivr.net/gh/Dragonut8686/osq-email-assets@main/2026-02-23-osq-email-bake-500/images/february-02-bake03.jpg"
                                           width="186" alt="Десерты в OSQ BAKE 500"
-                                          style="display: block; width: 100%; max-width: 186px; height: auto;" /></td>
+                                          style="display: block; width: 100%; height: auto;" /></td>
                                     </tr>
                                     <tr>
-                                      <td height="74" valign="top" align="left"
+                                      <td height="74" valign="top" align="left" class="scenario-card-text"
                                         style="height: 74px; padding: 10px; font-family: 'Qanelas', Arial, sans-serif; color: #151515;">
                                         <p
                                           style="margin: 0 0 4px 0; font-size: 14px; line-height: 18px; font-weight: 700;">
