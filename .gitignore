@@ -17,3 +17,6 @@ Thumbs.db
 
 # Git файлы (если случайно попадут)
 .git/ 
+
+# GitHub rejects regular git blobs over 100 MB; keep this local export video out of deploy.bat commits.
+2026-05-27-telegram-export/video_files/OSQ CASE BOWL.mp4
