@@ -20,7 +20,7 @@
 ## Блоки письма
 
 1. Header как в последних OSQ-письмах: логотип, "В браузере", "Каталог".
-2. Hero как в последних OSQ-письмах: background-image, VML fallback, нижний градиент и живой заголовок "Жаркая премьера лета!" / "Новинка: OSQ SMART BOWL".
+2. Hero как в последних OSQ-письмах: background-image, VML fallback, нижний градиент и живой заголовок "Жаркая премьера лета!" / "OSQ SMART BOWL".
 3. Вводный продающий блок с чистым product-визуалом: что это за формат и почему он удобен для продаж.
 4. Имиджевый продуктовый блок с фото на столе и описанием сценариев.
 5. Светлый блок ключевых характеристик с product-визуалом: 690 мл, 520 мл, 75 мм с крышкой, 45/360 шт, штабелирование до 4 кг.
@@ -39,6 +39,7 @@
 - `smart-bowl-dessert-lifestyle.jpg`: крупный lifestyle-блок с десертом.
 - `smart-bowl-we-cupcakes.png`, `smart-bowl-bw-yuzu.png`, `smart-bowl-cake-lid-kraft2.png`, `smart-bowl-bw-lisichki-lid.png`: клиентские PNG для сценариев, вставлены без кропа и деформации.
 - `smart-bowl-sealed-bagel.jpg`: сгенерированный через Image2 имиджевый sealed-визуал для технологического блока.
+- `smart-icon-format.png`, `smart-icon-visibility.png`, `smart-icon-sealing.png`, `smart-icon-ready.png`, `smart-icon-temperature.png`, `smart-icon-microwave.png`, `smart-icon-colors.png`, `smart-icon-print.png`: сгенерированные через Image2 raster PNG-иконки в line-style OSQ; не 3D, не SVG.
 - GIF не использовать.
 - SVG не использовать.
 
