@@ -32,12 +32,13 @@
 ## Изображения
 
 - `smart-bowl-hero-lifestyle.jpg`: имиджевый hero-фон без запечённого текста; продукт в верхней части, нижняя зона оставлена под HTML-градиент и заголовок.
-- `smart-bowl-form-lifestyle.jpg`: имиджевый lifestyle-визуал без запечённого текста для вводного блока о форме и витринной подаче.
+- `smart-bowl-form-lifestyle.jpg`: сгенерированный через Image2 имиджевый lifestyle-визуал без запечённого текста для вводного блока о форме и витринной подаче; референсы — `5ebc3736d4e54af6820c0d2fc68dbe5d_bananalab-nb2_1K.png` и product cutout.
 - `smart-bowl-wide-table.jpg`: широкий имиджевый product-блок без эффекта "картинка в картинке".
-- `smart-bowl-specs-light.jpg`: спокойный product-визуал для блока характеристик.
+- `smart-bowl-specs-light.jpg`: сгенерированный через Image2 имиджевый product-визуал для блока характеристик.
 - `smart-bowl-custom-project.jpg`: product-визуал для блока индивидуальной адаптации.
 - `smart-bowl-dessert-lifestyle.jpg`: крупный lifestyle-блок с десертом.
-- `smart-bowl-dessert-lid.jpg`, `smart-bowl-sandwich.jpg`, `smart-bowl-rolls.jpg`, `smart-bowl-cupcakes-lid.jpg`, `smart-bowl-sealed-bagel.jpg`: предметные карточки сценариев.
+- `smart-bowl-we-cupcakes.png`, `smart-bowl-bw-yuzu.png`, `smart-bowl-cake-lid-kraft2.png`, `smart-bowl-bw-lisichki-lid.png`: клиентские PNG для сценариев, вставлены без кропа и деформации.
+- `smart-bowl-sealed-bagel.jpg`: сгенерированный через Image2 имиджевый sealed-визуал для технологического блока.
 - GIF не использовать.
 - SVG не использовать.
 
