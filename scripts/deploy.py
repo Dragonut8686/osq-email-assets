@@ -52,7 +52,16 @@ def main():
 
     msg = args.message or f"Assets update {dt.datetime.now():%d.%m.%Y %H:%M}"
     git("commit", "-m", msg)
-    git("push", "-u", "origin", "main")
+
+    # Пуш с авто-подтягиванием чужих коммитов (деплой бывает с двух машин)
+    push = subprocess.run(["git", "push", "-u", "origin", "main"],
+                          cwd=ROOT, capture_output=True, text=True)
+    if push.returncode != 0 and "fetch first" in (push.stderr or ""):
+        print("[..] На GitHub есть новые коммиты — подтягиваю (pull --rebase)")
+        git("pull", "--rebase", "origin", "main")
+        git("push", "-u", "origin", "main")
+    elif push.returncode != 0:
+        sys.exit(f"[error] git push:\n{push.stderr[:1500]}")
     print("[ok] Запушено на GitHub")
 
     if not args.no_purge:
