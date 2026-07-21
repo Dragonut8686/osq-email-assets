@@ -1,3 +1,25 @@
+# СЕКРЕТЫ — никогда не коммитить (репозиторий публичный!)
+.env
+.env.*
+*.env
+secrets/
+
+# Клиентские исходники кампаний (pptx, фотосессии, тяжёлые рефы) — только локально.
+# В публичный репозиторий деплоятся только index.html, images/ и fonts/.
+**/ref/
+tmp/
+
+# Выгрузки Telegram (сырые медиа тяжёлые; корпус берётся скриптом в docs/corpus)
+ChatExport_*/photos/
+ChatExport_*/video_files/
+ChatExport_*/files/
+ChatExport_*/stickers/
+2026-05-27-telegram-export/video_files/
+2026-05-27-telegram-export/files/
+
+# Служебное Claude Code
+.claude/worktrees/
+
 # Системные файлы
 .DS_Store
 Thumbs.db
