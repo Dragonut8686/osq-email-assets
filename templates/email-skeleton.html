@@ -509,6 +509,157 @@
                   </td>
                 </tr>
 
+                <!-- BLOCK: ZIGZAG — пара «фото + текст» в стиле Яндекса.
+                     Тройная защита: td font-size:0 + два inline-block div 270px
+                     + класс mobile-stack. Текст в колонке КОРОТКИЙ: заголовок +
+                     1-2 предложения. Для смены стороны фото поменять div местами. -->
+                <tr>
+                  <td style="padding: 0 10px 20px 10px">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#F6F7F8" style="width: 100%; background-color: #f6f7f8; border-radius: 32px; overflow: hidden">
+                      <tr>
+                        <td class="mobile-pad" style="padding: 28px 30px 30px 30px; font-size: 0; line-height: 0; text-align: center">
+                          <div class="mobile-stack" style="display: inline-block; width: 100%; max-width: 270px; vertical-align: middle">
+                            <table width="100%" height="270" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#E2E5E7" style="background-color:#e2e5e7; border-radius: 18px">
+                              <tr><td align="center" valign="middle" height="270" style="font-family:'Qanelas',Arial,sans-serif; font-size:16px; color:#8a9296">Фото {{...}} &middot; 270&times;270</td></tr>
+                            </table>
+                          </div>
+                          <div class="mobile-stack" style="display: inline-block; width: 100%; max-width: 290px; vertical-align: middle">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                              <tr>
+                                <td align="left" style="padding: 16px 0 0 20px">
+                                  <h3 style="margin: 0 0 8px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 24px; line-height: 29px; color: #151515; font-weight: 800">{{Заголовок пары}}</h3>
+                                  <p style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 17px; line-height: 24px; color: #555555">{{Одно-два коротких предложения.}}</p>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK: COLOR-STRIP — полоса из 3 панелей (цвета линейки:
+                     ORIGINAL / BLACK WOOD / WHITE EDITION), приём Яндекса
+                     «один продукт в разных атмосферах». Только картинки,
+                     подписи под ними. Каждая панель 186x230 (генерятся одним
+                     сетом с единым style bible). -->
+                <tr>
+                  <td style="padding: 0 10px 20px 10px">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#F6F7F8" style="width: 100%; background-color: #f6f7f8; border-radius: 32px; overflow: hidden">
+                      <tr>
+                        <td class="mobile-pad" style="padding: 28px 30px 8px 30px">
+                          <h2 class="h2-mobile" style="margin: 0 0 18px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 34px; line-height: 40px; color: #151515; font-weight: 800; text-align: left">{{H2 цветов/вариантов}}</h2>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0 30px 28px 30px">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                            <tr>
+                              <td width="33%" valign="top" style="padding: 0 4px 0 0">
+                                <table width="100%" height="230" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#E2E5E7" style="background-color:#e2e5e7; border-radius: 16px">
+                                  <tr><td align="center" valign="middle" height="230" style="font-family:'Qanelas',Arial,sans-serif; font-size:14px; color:#8a9296">186&times;230</td></tr>
+                                </table>
+                                <p style="margin: 8px 0 0 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 16px; line-height: 20px; color: #151515; font-weight: 800; text-align: center">ORIGINAL</p>
+                              </td>
+                              <td width="33%" valign="top" style="padding: 0 2px">
+                                <table width="100%" height="230" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#E2E5E7" style="background-color:#e2e5e7; border-radius: 16px">
+                                  <tr><td align="center" valign="middle" height="230" style="font-family:'Qanelas',Arial,sans-serif; font-size:14px; color:#8a9296">186&times;230</td></tr>
+                                </table>
+                                <p style="margin: 8px 0 0 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 16px; line-height: 20px; color: #151515; font-weight: 800; text-align: center">BLACK WOOD</p>
+                              </td>
+                              <td width="33%" valign="top" style="padding: 0 0 0 4px">
+                                <table width="100%" height="230" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#E2E5E7" style="background-color:#e2e5e7; border-radius: 16px">
+                                  <tr><td align="center" valign="middle" height="230" style="font-family:'Qanelas',Arial,sans-serif; font-size:14px; color:#8a9296">186&times;230</td></tr>
+                                </table>
+                                <p style="margin: 8px 0 0 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 16px; line-height: 20px; color: #151515; font-weight: 800; text-align: center">WHITE EDITION</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK: ICON-TILES — пара плиток «иконка на градиенте» (приём
+                     Яндекса: иконка как дизайн-элемент на сочном фоне, а не
+                     мелкая пиктограмма). Плитка 270x160 генерится: line-иконка
+                     на светлом teal-градиенте OSQ. Под плиткой заголовок + текст. -->
+                <tr>
+                  <td style="padding: 0 10px 20px 10px">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#F6F7F8" style="width: 100%; background-color: #f6f7f8; border-radius: 32px; overflow: hidden">
+                      <tr>
+                        <td class="mobile-pad" style="padding: 28px 30px 30px 30px">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                            <tr>
+                              <td class="mobile-stack" width="50%" valign="top" style="padding: 0 5px 0 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 18px; overflow: hidden">
+                                  <tr>
+                                    <td>
+                                      <table width="100%" height="160" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#D7EFEC" style="background-color:#d7efec; border-radius: 18px 18px 0 0">
+                                        <tr><td align="center" valign="middle" height="160" style="font-family:'Qanelas',Arial,sans-serif; font-size:14px; color:#5aa89f">Плитка-иконка 270&times;160</td></tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 16px 18px 18px 18px">
+                                      <h3 style="margin: 0 0 6px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 20px; line-height: 25px; color: #151515; font-weight: 800">{{Фича}}</h3>
+                                      <p style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 16px; line-height: 23px; color: #555555">{{Короткий факт.}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td class="mobile-stack" width="50%" valign="top" style="padding: 0 0 0 5px">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#FFFFFF" style="background-color: #ffffff; border-radius: 18px; overflow: hidden">
+                                  <tr>
+                                    <td>
+                                      <table width="100%" height="160" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#D7EFEC" style="background-color:#d7efec; border-radius: 18px 18px 0 0">
+                                        <tr><td align="center" valign="middle" height="160" style="font-family:'Qanelas',Arial,sans-serif; font-size:14px; color:#5aa89f">Плитка-иконка 270&times;160</td></tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 16px 18px 18px 18px">
+                                      <h3 style="margin: 0 0 6px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 20px; line-height: 25px; color: #151515; font-weight: 800">{{Фича}}</h3>
+                                      <p style="margin: 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 16px; line-height: 23px; color: #555555">{{Короткий факт.}}</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- BLOCK: SPECS-LIST — список характеристик строками с
+                     разделителями (приём Яндекса для сводки в конце письма) -->
+                <tr>
+                  <td style="padding: 0 10px 20px 10px">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#F6F7F8" style="width: 100%; background-color: #f6f7f8; border-radius: 32px">
+                      <tr>
+                        <td class="mobile-pad" style="padding: 30px 30px 12px 30px">
+                          <h2 class="h2-mobile" style="margin: 0 0 6px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 34px; line-height: 40px; color: #151515; font-weight: 800; text-align: left">{{Коротко о продукте}}</h2>
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                            <tr>
+                              <td style="padding: 14px 0; border-bottom: 1px solid #dde2e4; font-family: 'Qanelas', Arial, sans-serif; font-size: 18px; line-height: 24px; color: #151515; font-weight: 700">{{Характеристика 1}}</td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 14px 0; border-bottom: 1px solid #dde2e4; font-family: 'Qanelas', Arial, sans-serif; font-size: 18px; line-height: 24px; color: #151515; font-weight: 700">{{Характеристика 2}}</td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 14px 0 20px 0; font-family: 'Qanelas', Arial, sans-serif; font-size: 18px; line-height: 24px; color: #151515; font-weight: 700">{{Характеристика 3}}</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
                 <!-- BLOCK: BENEFITS — вертикальные карточки «иконка + заголовок + текст» -->
                 <tr>
                   <td style="padding: 0 10px 20px 10px">
